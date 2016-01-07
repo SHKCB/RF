@@ -130,6 +130,7 @@
     <Content Include="app.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\logo.jpg" />
     <Content Include="Resources\ok.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

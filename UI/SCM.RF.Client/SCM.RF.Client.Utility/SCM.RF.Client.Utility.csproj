@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoSizeForm.cs" />
     <Compile Include="DataTablePage.cs" />
     <Compile Include="FullScreenClass.cs" />
     <Compile Include="EncodingInstance.cs" />

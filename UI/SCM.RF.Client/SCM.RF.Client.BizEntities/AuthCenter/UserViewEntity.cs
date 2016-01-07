@@ -8,6 +8,7 @@ namespace SCM.RF.Client.BizEntities.AuthCenter
         /// </summary>
         public UserViewEntity() { }
 
+
         public int UserID { get; set; }
 
         /// <summary>

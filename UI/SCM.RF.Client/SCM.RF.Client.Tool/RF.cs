@@ -51,7 +51,7 @@ namespace SCM.RF.Client.Tool
         /// <summary>
         /// 热键
         /// </summary>
-        //private HookKeyHelper HookKeyHelper = new HookKeyHelper();
+        private HookKeyHelper HookKeyHelper = new HookKeyHelper();
 
         /// <summary>
         /// 热键类型
@@ -157,8 +157,6 @@ namespace SCM.RF.Client.Tool
         }
 
         #endregion
-
-        
 
         #region 登录框
 
@@ -280,9 +278,7 @@ namespace SCM.RF.Client.Tool
             }
         }
 
-        #endregion            
-
-        
+        #endregion
 
         #region 返回
 
@@ -303,7 +299,7 @@ namespace SCM.RF.Client.Tool
 
             this.Remove();
 
-            ShowLogin();
+            this.ShowLogin();
         }
 
         /// <summary>
@@ -336,8 +332,6 @@ namespace SCM.RF.Client.Tool
 
         #endregion
 
-        
-
         #endregion
 
         #region PRIVATE FUNCTION
@@ -346,12 +340,12 @@ namespace SCM.RF.Client.Tool
         {
             this.KeepAlive = false;
 
-           // HookKeyHelper.KeyEvent += new HookKeyHelper.KeyEventHandler(HookKeyHelper_KeyEvent);
+            HookKeyHelper.KeyEvent += new HookKeyHelper.KeyEventHandler(HookKeyHelper_KeyEvent);
 
             //隐藏窗体边框
-            //this.FormBorderStyle = FormBorderStyle.None;
+            this.FormBorderStyle = FormBorderStyle.None;
 
-            //WinceHelper.HoldTaskBar();
+            WinceHelper.HoldTaskBar();
 
             this.ShowLogin();
         }
@@ -371,7 +365,7 @@ namespace SCM.RF.Client.Tool
 
                     case 112: this.ucLogin.HookLogin(); break;//F1
                     case 115: this.ucLogin.HookReset(); break;//F4
-                    case 119: this.ucLogin.HookSetting(); break;//F8
+                    case 117: this.ucLogin.HookSetting(); break;//F6
                     default: break;
 
                     #endregion
@@ -386,7 +380,7 @@ namespace SCM.RF.Client.Tool
                     #region 快捷键
 
                     case 112: this.ucSetting.HookExit(); break;//F1
-                    case 121: this.ucSetting.HookSave(); break;//F10
+                    case 116: this.ucSetting.HookSave(); break;//F5
                     default: break;
 
                     #endregion
@@ -956,8 +950,6 @@ namespace SCM.RF.Client.Tool
         private void myTimer_Tick(object sender, EventArgs e)
         {
             this.lbPower.Text = string.Format("{0:D}%", WinceHelper.GetBattery());
-
-            this.lbTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
 
             if (KeepAlive)
             {

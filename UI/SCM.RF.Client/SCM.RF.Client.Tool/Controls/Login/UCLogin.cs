@@ -92,19 +92,12 @@ namespace SCM.RF.Client.Tool.Controls.Login
 
         private void txtBarCode_GotFocus(object sender, System.EventArgs e)
         {
-            this.pbBarCode.BackColor = Color.Yellow;
             this.pbUserName.BackColor = Color.White;
             this.pbPassWord.BackColor = Color.White;
         }
 
-        private void txtBarCode_LostFocus(object sender, System.EventArgs e)
-        {
-            this.pbBarCode.BackColor = Color.White;
-        }
-
         private void txtUserName_GotFocus(object sender, System.EventArgs e)
         {
-            this.pbBarCode.BackColor = Color.White;
             this.pbUserName.BackColor = Color.Yellow;
             this.pbPassWord.BackColor = Color.White;
         }
@@ -116,7 +109,6 @@ namespace SCM.RF.Client.Tool.Controls.Login
 
         private void txtPassWord_GotFocus(object sender, System.EventArgs e)
         {
-            this.pbBarCode.BackColor = Color.White;
             this.pbUserName.BackColor = Color.White;
             this.pbPassWord.BackColor = Color.Yellow;
         }
@@ -128,12 +120,6 @@ namespace SCM.RF.Client.Tool.Controls.Login
         #endregion
 
         #region PRIVATE FUNCTION
-
-        private void FocusBarcode()
-        {
-            this.txtBarCode.Text = string.Empty;
-            this.txtBarCode.Focus();
-        }
 
         private void FocusUserName()
         {
@@ -174,23 +160,23 @@ namespace SCM.RF.Client.Tool.Controls.Login
 
             bool hasError = false;
 
-            bool needUpdate = SCM.RF.Client.BizProcess.Sys.InstanceBP.NeedUpdate(out hasError);
+            //bool needUpdate = SCM.RF.Client.BizProcess.Sys.InstanceBP.NeedUpdate(out hasError);
 
-            if (needUpdate)
-            {
-                base.ShowMessage("系统有更新！", false, EnMessageType.C);
+            //if (needUpdate)
+            //{
+            //    base.ShowMessage("系统有更新！", false, EnMessageType.C);
 
-                return;
-            }
-            else
-            {
-                if (hasError)
-                {
-                    base.ShowMessage("与服务器同步失败，请重试！", false, EnMessageType.A, false);
+            //    return;
+            //}
+            //else
+            //{
+            //    if (hasError)
+            //    {
+            //        base.ShowMessage("与服务器同步失败，请重试！", false, EnMessageType.A, false);
 
-                    return;
-                }
-            }
+            //        return;
+            //    }
+            //}
 
             #region 登录验证
 
@@ -258,7 +244,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
 
             this.txtPassWord.Text = string.Empty;
 
-            FocusBarcode();
+            FocusUserName();
         }
 
         public override void Proc(EnMessageType type)
@@ -277,7 +263,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
             }
             else
             {
-                this.FocusBarcode();
+                this.FocusUserName();
             }
         }
 
