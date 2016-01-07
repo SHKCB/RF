@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
@@ -7,7 +8,6 @@ using System.Xml;
 using SCM.RF.Client.BizProcess.Sys;
 using SCM.RF.Client.Tool.Controls.Common;
 using SCM.RF.Client.Utility;
-using System.Diagnostics;
 
 namespace SCM.RF.Client.Tool.Controls.Login
 {
@@ -68,8 +68,8 @@ namespace SCM.RF.Client.Tool.Controls.Login
         {
             this.btnSave.Enabled = true;
             string ip = this.txtIP.Text.Trim();
-
             string port = this.txtPort.Text.Trim();
+            string device = this.txtDevice.Text.Trim();
 
             if (ip.Length == 0)
             {
@@ -81,6 +81,13 @@ namespace SCM.RF.Client.Tool.Controls.Login
             if (port.Length == 0)
             {
                 base.ShowMessage("请输入端口号！", false, EnMessageType.C, false);
+
+                return;
+            }
+
+            if (device.Length == 0)
+            {
+                base.ShowMessage("请输入设备号！", false, EnMessageType.C, false);
 
                 return;
             }
@@ -99,7 +106,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
                 return;
             }
 
-            Save(ip, port);
+            Save(ip, port, device);
 
             this.btnSave.Enabled = true;
         }
@@ -245,13 +252,14 @@ namespace SCM.RF.Client.Tool.Controls.Login
         /// </summary>
         /// <param name="ip"></param>
         /// <param name="port"></param>
-        private void Save(string ip, string port)
+        private void Save(string ip, string port, string device)
         {
             XmlDocument doc = new XmlDocument();
             string path = string.Concat(Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase), @"\app.xml").Replace(@"file:\", "");
             doc.Load(path);
             doc.SelectSingleNode("app/ServerIp").InnerText = ip;
             doc.SelectSingleNode("app/ServerPort").InnerText = port;
+            doc.SelectSingleNode("app/Device").InnerText = device;
             doc.Save(path);
 
             InstanceBP.SystemInstance = null;
@@ -269,6 +277,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
             doc.Load(path);
             this.txtIP.Text = doc.SelectSingleNode("app/ServerIp").InnerText;
             this.txtPort.Text = doc.SelectSingleNode("app/ServerPort").InnerText;
+            this.txtDevice.Text = doc.SelectSingleNode("app/Device").InnerText;
         }
 
         #endregion

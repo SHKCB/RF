@@ -50,6 +50,9 @@
             this.btnWifi = new System.Windows.Forms.Button();
             this.btnIME = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.pbDevice = new System.Windows.Forms.PictureBox();
+            this.txtDevice = new System.Windows.Forms.TextBox();
+            this.lbDevice = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // pbPort
@@ -130,7 +133,7 @@
             this.btnCancel.Location = new System.Drawing.Point(120, 218);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 25);
-            this.btnCancel.TabIndex = 8;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.TabStop = false;
             this.btnCancel.Tag = "True";
             this.btnCancel.Text = "返回 [&F1]";
@@ -144,7 +147,7 @@
             this.btnSave.Location = new System.Drawing.Point(20, 218);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 25);
-            this.btnSave.TabIndex = 7;
+            this.btnSave.TabIndex = 8;
             this.btnSave.TabStop = false;
             this.btnSave.Tag = "True";
             this.btnSave.Text = "保存 [&F5]";
@@ -158,7 +161,7 @@
             this.BtnScan.Location = new System.Drawing.Point(20, 150);
             this.BtnScan.Name = "BtnScan";
             this.BtnScan.Size = new System.Drawing.Size(80, 25);
-            this.BtnScan.TabIndex = 3;
+            this.BtnScan.TabIndex = 4;
             this.BtnScan.TabStop = false;
             this.BtnScan.Tag = "True";
             this.BtnScan.Text = "开启扫描";
@@ -172,7 +175,7 @@
             this.btnWifi.Location = new System.Drawing.Point(20, 184);
             this.btnWifi.Name = "btnWifi";
             this.btnWifi.Size = new System.Drawing.Size(80, 25);
-            this.btnWifi.TabIndex = 5;
+            this.btnWifi.TabIndex = 6;
             this.btnWifi.TabStop = false;
             this.btnWifi.Tag = "True";
             this.btnWifi.Text = "开启 WIFI";
@@ -186,7 +189,7 @@
             this.btnIME.Location = new System.Drawing.Point(120, 150);
             this.btnIME.Name = "btnIME";
             this.btnIME.Size = new System.Drawing.Size(80, 25);
-            this.btnIME.TabIndex = 4;
+            this.btnIME.TabIndex = 5;
             this.btnIME.TabStop = false;
             this.btnIME.Tag = "True";
             this.btnIME.Text = "输入法";
@@ -200,17 +203,52 @@
             this.btnExit.Location = new System.Drawing.Point(120, 184);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(80, 25);
-            this.btnExit.TabIndex = 6;
+            this.btnExit.TabIndex = 7;
             this.btnExit.TabStop = false;
             this.btnExit.Tag = "True";
             this.btnExit.Text = "退出系统";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // pbDevice
+            // 
+            this.pbDevice.BackColor = System.Drawing.Color.White;
+            this.pbDevice.Location = new System.Drawing.Point(74, 100);
+            this.pbDevice.Name = "pbDevice";
+            this.pbDevice.Size = new System.Drawing.Size(142, 2);
+            this.pbDevice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            // 
+            // txtDevice
+            // 
+            this.txtDevice.BackColor = System.Drawing.Color.Black;
+            this.txtDevice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDevice.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
+            this.txtDevice.ForeColor = System.Drawing.Color.White;
+            this.txtDevice.Location = new System.Drawing.Point(74, 82);
+            this.txtDevice.MaxLength = 20;
+            this.txtDevice.Name = "txtDevice";
+            this.txtDevice.Size = new System.Drawing.Size(142, 25);
+            this.txtDevice.TabIndex = 3;
+            this.txtDevice.TabStop = false;
+            this.txtDevice.Tag = "True";
+            this.txtDevice.WordWrap = false;
+            // 
+            // lbDevice
+            // 
+            this.lbDevice.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
+            this.lbDevice.ForeColor = System.Drawing.Color.White;
+            this.lbDevice.Location = new System.Drawing.Point(0, 80);
+            this.lbDevice.Name = "lbDevice";
+            this.lbDevice.Size = new System.Drawing.Size(78, 25);
+            this.lbDevice.Text = "设备号：";
             // 
             // UCSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.pbDevice);
+            this.Controls.Add(this.txtDevice);
+            this.Controls.Add(this.lbDevice);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnIME);
             this.Controls.Add(this.btnWifi);
@@ -233,5 +271,8 @@
 
         private System.Windows.Forms.Button btnIME;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.PictureBox pbDevice;
+        private System.Windows.Forms.TextBox txtDevice;
+        private System.Windows.Forms.Label lbDevice;
     }
 }

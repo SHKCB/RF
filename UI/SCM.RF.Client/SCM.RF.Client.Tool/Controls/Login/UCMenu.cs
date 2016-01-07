@@ -45,8 +45,17 @@ namespace SCM.RF.Client.Tool.Controls.Login
         /// </summary>
         public void LoadData()
         {
-            this.panelMenu.Controls.Clear();
+            //this.panelMenu.Controls.Clear();
 
+            this._Hashtable = new Hashtable(0);
+
+            this._Hashtable.Add(1, null);
+            this._Hashtable.Add(2, null);
+            this._Hashtable.Add(3, null);
+            this._Hashtable.Add(4, null);
+            this._Hashtable.Add(5, null);
+
+            /*
             if (base.UserView.ItemList == null)
             {
                 this._Hashtable = new Hashtable(0);
@@ -93,6 +102,8 @@ namespace SCM.RF.Client.Tool.Controls.Login
 
                 #endregion
             }
+
+            */
         }
 
         #endregion
@@ -133,20 +144,22 @@ namespace SCM.RF.Client.Tool.Controls.Login
 
                     if (keyvalue > -1)
                     {
-                        IEnumerator iEnum = this.panelMenu.Controls.GetEnumerator();
+                        //IEnumerator iEnum = this.panelMenu.Controls.GetEnumerator();
 
-                        while (iEnum.MoveNext())
-                        {
-                            if (iEnum.Current is Label)
-                            {
-                                Label lable = iEnum.Current as Label;
+                        //while (iEnum.MoveNext())
+                        //{
+                        //    if (iEnum.Current is Label)
+                        //    {
+                        //        Label lable = iEnum.Current as Label;
 
-                                if (lable != null && lable.Tag != null && int.Parse(lable.Tag.ToString()) == keyvalue)
-                                {
-                                    GetModel(int.Parse(lable.Tag.ToString()));
-                                }
-                            }
-                        }
+                        //        if (lable != null && lable.Tag != null && int.Parse(lable.Tag.ToString()) == keyvalue)
+                        //        {
+                        //            GetModel(int.Parse(lable.Tag.ToString()));
+                        //        }
+                        //    }
+                        //}
+
+                        GetModel(int.Parse(txt));
                     }
                     else
                     {
@@ -238,54 +251,54 @@ namespace SCM.RF.Client.Tool.Controls.Login
                         return -1;
                     }
 
-                case "6":
-                    if (_Hashtable.ContainsKey("6"))
-                    {
-                        return 6;
-                    }
-                    else
-                    {
-                        return -1;
-                    }
+                //case "6":
+                //    if (_Hashtable.ContainsKey("6"))
+                //    {
+                //        return 6;
+                //    }
+                //    else
+                //    {
+                //        return -1;
+                //    }
 
-                case "7":
-                    if (_Hashtable.ContainsKey("7"))
-                    {
-                        return 7;
-                    }
-                    else
-                    {
-                        return -1;
-                    }
+                //case "7":
+                //    if (_Hashtable.ContainsKey("7"))
+                //    {
+                //        return 7;
+                //    }
+                //    else
+                //    {
+                //        return -1;
+                //    }
 
-                case "8":
-                    if (_Hashtable.ContainsKey("8"))
-                    {
-                        return 8;
-                    }
-                    else
-                    {
-                        return -1;
-                    }
+                //case "8":
+                //    if (_Hashtable.ContainsKey("8"))
+                //    {
+                //        return 8;
+                //    }
+                //    else
+                //    {
+                //        return -1;
+                //    }
 
-                case "9":
-                    if (_Hashtable.ContainsKey("9"))
-                    {
-                        return 9;
-                    }
-                    else
-                    {
-                        return -1;
-                    }
-                case "0":
-                    if (_Hashtable.ContainsKey("0"))
-                    {
-                        return 0;
-                    }
-                    else
-                    {
-                        return -1;
-                    }
+                //case "9":
+                //    if (_Hashtable.ContainsKey("9"))
+                //    {
+                //        return 9;
+                //    }
+                //    else
+                //    {
+                //        return -1;
+                //    }
+                //case "0":
+                //    if (_Hashtable.ContainsKey("0"))
+                //    {
+                //        return 0;
+                //    }
+                //    else
+                //    {
+                //        return -1;
+                //    }
 
                 default: return -1;
             }
@@ -302,17 +315,15 @@ namespace SCM.RF.Client.Tool.Controls.Login
             switch (key)
             {
 
-                case 3: PutAway();
+                case 1: PutAway();
                     break;
-                case 4: Transfer();
+                case 2: Transfer();
                     break;
-  
-                case 6: Picking();
+                case 3: Picking();
                     break;
-
-                case 8: Pal();
+                case 4: Pal();
                     break;
-                case 9: PalByCell();
+                case 5: PalByCell();
                     break;
                 case 0: HandOver();
                     break;
@@ -320,9 +331,9 @@ namespace SCM.RF.Client.Tool.Controls.Login
             }
         }
 
-        
-        
-        #region 3上架
+
+
+        #region 1收货
 
         private void PutAway()
         {
@@ -330,23 +341,21 @@ namespace SCM.RF.Client.Tool.Controls.Login
         }
 
         #endregion
-        #region 4移库
+        #region 2移库
 
         private void Transfer()
         {
             //base.RF.ShowTransfer();
         }
 
-        #endregion
-        
-        #region 6拣货
+        #endregion        
+        #region 3拣货
         private void Picking()
         {
             //base.RF.ShowPicking1();
         }
-        #endregion
-        
-        #region 8库存查询
+        #endregion        
+        #region 4库存查询
 
         private void Pal()
         {
@@ -354,7 +363,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
         }
 
         #endregion
-        #region 9库存查询2
+        #region 5库存查询2
         private void PalByCell()
         {
             //base.RF.ShowCellPalByCell(null, EnPalType.D);
@@ -394,11 +403,11 @@ namespace SCM.RF.Client.Tool.Controls.Login
         {
             this.btnExit.Enabled = false;
 
-            base.UserView.ItemList = null;
+            //base.UserView.ItemList = null;
 
             base.UserView = new SCM.RF.Client.BizProcess.Login.LoginBP().LoginOut(base.UserView, base.RemoteServer);
 
-            this.panelMenu.Controls.Clear();
+            //this.panelMenu.Controls.Clear();
 
             this.btnExit.Enabled = true;
 

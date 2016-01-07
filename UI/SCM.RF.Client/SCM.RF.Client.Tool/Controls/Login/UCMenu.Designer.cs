@@ -10,7 +10,6 @@
         private System.Windows.Forms.Label lbMenu;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.PictureBox pbMenu;
-        private System.Windows.Forms.Panel panelMenu;
 
         /// <summary> 
         /// 清理所有正在使用的资源。
@@ -37,7 +36,11 @@
             this.lbMenu = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.pbMenu = new System.Windows.Forms.PictureBox();
-            this.panelMenu = new System.Windows.Forms.Panel();
+            this.lbSH = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtMenu
@@ -88,30 +91,78 @@
             this.pbMenu.Size = new System.Drawing.Size(10, 2);
             this.pbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             // 
-            // panelMenu
+            // lbSH
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.Black;
-            this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(300, 230);
+            this.lbSH.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
+            this.lbSH.ForeColor = System.Drawing.Color.White;
+            this.lbSH.Location = new System.Drawing.Point(10, 2);
+            this.lbSH.Name = "lbSH";
+            this.lbSH.Size = new System.Drawing.Size(100, 20);
+            this.lbSH.Text = "1、收货";
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(10, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 20);
+            this.label1.Text = "2、定位";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(10, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 20);
+            this.label2.Text = "3、上架";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(10, 77);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 20);
+            this.label3.Text = "4、拣货";
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(10, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 20);
+            this.label4.Text = "5、移库";
             // 
             // UCMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbSH);
             this.Controls.Add(this.pbMenu);
-            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.txtMenu);
             this.Controls.Add(this.lbMenu);
             this.Controls.Add(this.btnExit);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "UCMenu";
-            this.Size = new System.Drawing.Size(300, 260);
+            this.Size = new System.Drawing.Size(220, 260);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lbSH;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

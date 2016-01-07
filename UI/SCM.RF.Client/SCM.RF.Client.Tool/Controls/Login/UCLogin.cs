@@ -183,16 +183,18 @@ namespace SCM.RF.Client.Tool.Controls.Login
             IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
             IPAddress ip = ipHost.AddressList[0];
 
-            RemoteServer param = new RemoteServer(SCM.RF.Client.BizProcess.Sys.InstanceBP.SystemInstance.ServerIp, int.Parse(username) + 3000);
+            RemoteServer param = new RemoteServer(SCM.RF.Client.BizProcess.Sys.InstanceBP.SystemInstance.ServerIp, SCM.RF.Client.BizProcess.Sys.InstanceBP.SystemInstance.ServerPort);
             param.Connect();
 
             if (param.Connected)
             {
                 UserViewEntity entity = new UserViewEntity();
-                entity.ApplicationID = SCM.RF.Client.BizProcess.Sys.InstanceBP.SystemInstance.ApplicationID;
-                entity.WkNo = username;
+
+                entity.UserID = username;
                 entity.Password = password;
                 entity.LocalIP = ip.ToString();
+                entity.Device = SCM.RF.Client.BizProcess.Sys.InstanceBP.SystemInstance.Device;
+                entity.CID = SCM.RF.Client.BizProcess.Sys.InstanceBP.SystemInstance.CID;
 
                 entity = new SCM.RF.Client.BizProcess.Login.LoginBP().LoginIn(entity, param);
 

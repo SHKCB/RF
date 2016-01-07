@@ -20,9 +20,14 @@ namespace SCM.RF.Client.BizEntities.Sys
         public int ServerPort { get; set; }
 
         /// <summary>
-        /// 系统编号
+        /// 设备
         /// </summary>
-        public string ApplicationID { get; set; }
+        public string Device { get; set; }
+
+        /// <summary>
+        /// 仓库号
+        /// </summary>
+        public string CID { get; set; }
 
         /// <summary>
         /// 最后更新时间

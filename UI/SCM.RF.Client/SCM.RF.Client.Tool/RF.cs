@@ -51,7 +51,7 @@ namespace SCM.RF.Client.Tool
         /// <summary>
         /// 热键
         /// </summary>
-        private HookKeyHelper HookKeyHelper = new HookKeyHelper();
+        //private HookKeyHelper HookKeyHelper = new HookKeyHelper();
 
         /// <summary>
         /// 热键类型
@@ -148,11 +148,11 @@ namespace SCM.RF.Client.Tool
         {
             if (ok)
             {
-                this.soundOK.Play();
+                //this.soundOK.Play();
             }
             else
             {
-                this.soundError.Play();
+                //this.soundError.Play();
             }
         }
 
@@ -340,12 +340,12 @@ namespace SCM.RF.Client.Tool
         {
             this.KeepAlive = false;
 
-            HookKeyHelper.KeyEvent += new HookKeyHelper.KeyEventHandler(HookKeyHelper_KeyEvent);
+            //HookKeyHelper.KeyEvent += new HookKeyHelper.KeyEventHandler(HookKeyHelper_KeyEvent);
 
             //隐藏窗体边框
-            this.FormBorderStyle = FormBorderStyle.None;
+            //this.FormBorderStyle = FormBorderStyle.None;
 
-            WinceHelper.HoldTaskBar();
+           // WinceHelper.HoldTaskBar();
 
             this.ShowLogin();
         }
@@ -949,12 +949,12 @@ namespace SCM.RF.Client.Tool
 
         private void myTimer_Tick(object sender, EventArgs e)
         {
-            this.lbPower.Text = string.Format("{0:D}%", WinceHelper.GetBattery());
+            //this.lbPower.Text = string.Format("{0:D}%", WinceHelper.GetBattery());
 
             if (KeepAlive)
             {
                 ///保持心跳
-                new KeepAliveBP().KeepAlive(new KeepAliveEntity() { UserName = this.UserViewEntity.UserName, Message = "", Success = false }, this.RemoteServer);
+                //new KeepAliveBP().KeepAlive(new KeepAliveEntity() { UserName = this.UserViewEntity.UserName, Message = "", Success = false }, this.RemoteServer);
             }
         }
 

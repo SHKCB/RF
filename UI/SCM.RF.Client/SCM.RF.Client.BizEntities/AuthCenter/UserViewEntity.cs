@@ -8,13 +8,10 @@ namespace SCM.RF.Client.BizEntities.AuthCenter
         /// </summary>
         public UserViewEntity() { }
 
-
-        public int UserID { get; set; }
-
         /// <summary>
-        /// 登录名
+        /// 用户帐号
         /// </summary>
-        public string WkNo { get; set; }
+        public string UserID { get; set; }
 
         /// <summary>
         /// 密码
@@ -22,7 +19,7 @@ namespace SCM.RF.Client.BizEntities.AuthCenter
         public string Password { get; set; }
 
         /// <summary>
-        /// 用户名
+        /// 用户真名
         /// </summary>
         public string UserName { get; set; }
 
@@ -34,16 +31,16 @@ namespace SCM.RF.Client.BizEntities.AuthCenter
         /// <summary>
         /// 系统号
         /// </summary>
-        public string ApplicationID { get; set; }
+        public string CID { get; set; }
+
+        /// <summary>
+        /// 设备
+        /// </summary>
+        public string Device { get; set; }
 
         /// <summary>
         /// 当前登录状态
         /// </summary>
         public bool IsLoggedIn { get; set; }
-
-        /// <summary>
-        /// 权限列表
-        /// </summary>
-        public UserRightViewEntity[] ItemList { get; set; }
     }
 }
