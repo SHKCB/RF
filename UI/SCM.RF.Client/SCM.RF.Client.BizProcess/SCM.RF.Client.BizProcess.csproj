@@ -56,18 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseData\CELLPAL\CellPalBP.cs" />
-    <Compile Include="BaseData\Cell\CellBP.cs" />
-    <Compile Include="BaseData\Pal\PalBP.cs" />
-    <Compile Include="BaseData\Product\ProductBP.cs" />
-    <Compile Include="HandOver\HOBP.cs" />
-    <Compile Include="HandOver\SchemeBP.cs" />
     <Compile Include="Login\LoginBP.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Picking\LabelBP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Putaway\PutawayBP.cs" />
     <Compile Include="Sys\InstanceBP.cs" />
     <Compile Include="Sys\KeepAliveBP.cs" />
   </ItemGroup>

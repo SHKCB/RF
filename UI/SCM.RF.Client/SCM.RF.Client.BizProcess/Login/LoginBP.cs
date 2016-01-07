@@ -1,5 +1,6 @@
 using SCM.RF.Client.BizEntities.Sys;
 using SCM.RF.Client.Framework.Core;
+using SCM.RF.Client.BizEntities.AuthCenter;
 
 namespace SCM.RF.Client.BizProcess.Login
 {

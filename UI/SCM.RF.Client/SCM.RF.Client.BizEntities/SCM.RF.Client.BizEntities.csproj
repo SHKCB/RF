@@ -56,28 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicData\CellPal\CellPalViewEntity.cs" />
-    <Compile Include="BasicData\CellPal\ProductPALViewEntity.cs" />
-    <Compile Include="BasicData\Cell\CellViewEntity.cs" />
-    <Compile Include="BasicData\Pal\PalViewEntity.cs" />
-    <Compile Include="BasicData\Product\ProductViewEntity.cs" />
-    <Compile Include="BasicData\SN\SNViewEntity.cs" />
-    <Compile Include="BasicData\XPal\XPalViewEntity.cs" />
-    <Compile Include="HandOver\HOItemViewEntity.cs" />
-    <Compile Include="HandOver\HOViewEntity.cs" />
-    <Compile Include="HandOver\SchemeItemViewEntity.cs" />
-    <Compile Include="HandOver\SchemeViewEntity.cs" />
-    <Compile Include="Picking\BadViewEntity.cs" />
-    <Compile Include="Picking\LabelViewEntity.cs" />
-    <Compile Include="Picking\MulViewEntity.cs" />
-    <Compile Include="Picking\OTSViewEntity.cs" />
+    <Compile Include="AuthCenter\UserRightViewEntity.cs" />
+    <Compile Include="AuthCenter\UserViewEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Putaway\PutawayViewEntity.cs" />
-    <Compile Include="Putaway\PutawayItemViewEntity.cs" />
     <Compile Include="Sys\KeepAliveEntity.cs" />
     <Compile Include="Sys\SystemViewEntity.cs" />
-    <Compile Include="Sys\UserViewEntity.cs" />
-    <Compile Include="Sys\UserRightViewEntity.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>

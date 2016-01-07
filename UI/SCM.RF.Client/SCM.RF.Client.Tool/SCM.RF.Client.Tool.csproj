@@ -65,36 +65,6 @@
     <Compile Include="Controls\Common\UCBasicControl.Designer.cs">
       <DependentUpon>UCBasicControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Common\UCCellPal.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\UCCellPal.Designer.cs">
-      <DependentUpon>UCCellPal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Common\UCCellPalByCell.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\UCCellPalByCell.Designer.cs">
-      <DependentUpon>UCCellPalByCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\HandOver\UCHandOver1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\HandOver\UCHandOver1.Designer.cs">
-      <DependentUpon>UCHandOver1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\HandOver\UCHandOver2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\HandOver\UCHandOver2.Designer.cs">
-      <DependentUpon>UCHandOver2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\HandOver\UCHandOver3.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\HandOver\UCHandOver3.Designer.cs">
-      <DependentUpon>UCHandOver3.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\Common\UCMessageBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -119,67 +89,10 @@
     <Compile Include="Controls\Login\UCSetting.Designer.cs">
       <DependentUpon>UCSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Picking\UCPicking1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Picking\UCPicking1.Designer.cs">
-      <DependentUpon>UCPicking1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Picking\UCPicking2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Picking\UCPicking2.Designer.cs">
-      <DependentUpon>UCPicking2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Picking\UCPicking3.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Picking\UCPicking3.Designer.cs">
-      <DependentUpon>UCPicking3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\PutAway\UCPutaway1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\PutAway\UCPutaway1.Designer.cs">
-      <DependentUpon>UCPutaway1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\PutAway\UCPutaway2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\PutAway\UCPutaway2.Designer.cs">
-      <DependentUpon>UCPutaway2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\PutAway\UCPutaway3.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\PutAway\UCPutaway3.Designer.cs">
-      <DependentUpon>UCPutaway3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\PutAway\UCPutawayLog.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\PutAway\UCPutawayLog.Designer.cs">
-      <DependentUpon>UCPutawayLog.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\Common\UCBasicControl.resx">
       <DependentUpon>UCBasicControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Common\UCCellPal.resx">
-      <DependentUpon>UCCellPal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Common\UCCellPalByCell.resx">
-      <DependentUpon>UCCellPalByCell.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\HandOver\UCHandOver1.resx">
-      <DependentUpon>UCHandOver1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\HandOver\UCHandOver2.resx">
-      <DependentUpon>UCHandOver2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\HandOver\UCHandOver3.resx">
-      <DependentUpon>UCHandOver3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Common\UCMessageBox.resx">
       <DependentUpon>UCMessageBox.cs</DependentUpon>
@@ -192,27 +105,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Login\UCSetting.resx">
       <DependentUpon>UCSetting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Picking\UCPicking1.resx">
-      <DependentUpon>UCPicking1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Picking\UCPicking2.resx">
-      <DependentUpon>UCPicking2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Picking\UCPicking3.resx">
-      <DependentUpon>UCPicking3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PutAway\UCPutaway1.resx">
-      <DependentUpon>UCPutaway1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PutAway\UCPutaway2.resx">
-      <DependentUpon>UCPutaway2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PutAway\UCPutaway3.resx">
-      <DependentUpon>UCPutaway3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PutAway\UCPutawayLog.resx">
-      <DependentUpon>UCPutawayLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -236,9 +128,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Justyle.WMS.RF.Client.AutoUpdate.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\ok.wav">

@@ -1,6 +1,7 @@
 ﻿using System.Windows.Forms;
 using SCM.RF.Client.BizEntities.Sys;
 using SCM.RF.Client.Framework.Core;
+using SCM.RF.Client.BizEntities.AuthCenter;
 
 namespace SCM.RF.Client.Tool.Controls.Common
 {
@@ -59,7 +60,7 @@ namespace SCM.RF.Client.Tool.Controls.Common
         /// <summary>
         /// 用户实体
         /// </summary>
-        public UserViewEntity UserViewEntity
+        public UserViewEntity UserView
         {
             get { return this._UserViewEntity; }
             set { this._UserViewEntity = value; }

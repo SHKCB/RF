@@ -1,7 +1,5 @@
-﻿using System;
-using SCM.RF.Client.BizEntities.BasicData.Product;
-
-namespace SCM.RF.Client.BizEntities.Sys
+﻿
+namespace SCM.RF.Client.BizEntities.AuthCenter
 {
     public class UserViewEntity
     {
@@ -9,6 +7,8 @@ namespace SCM.RF.Client.BizEntities.Sys
         /// 构造
         /// </summary>
         public UserViewEntity() { }
+
+        public int UserID { get; set; }
 
         /// <summary>
         /// 登录名

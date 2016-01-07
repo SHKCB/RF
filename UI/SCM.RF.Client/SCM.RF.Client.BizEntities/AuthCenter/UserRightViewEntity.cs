@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SCM.RF.Client.BizEntities.Sys
+namespace SCM.RF.Client.BizEntities.AuthCenter
 {
     public class UserRightViewEntity
     {

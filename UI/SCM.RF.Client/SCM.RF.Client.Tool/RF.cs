@@ -3,14 +3,19 @@ using System.Collections;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
-using SCM.RF.Client.BizEntities.HandOver;
-using SCM.RF.Client.BizEntities.Picking;
-using SCM.RF.Client.BizEntities.Sys;
-using SCM.RF.Client.BizProcess.Sys;
 using SCM.RF.Client.Framework.Core;
-using SCM.RF.Client.Tool.Controls.PutAway;
+using SCM.RF.Client.BizEntities.AuthCenter;
 using SCM.RF.Client.Utility;
-using Justyle.WMS.RF.Server.BizEntities.Putaway;
+using SCM.RF.Client.BizProcess.Sys;
+using SCM.RF.Client.BizEntities.Sys;
+//using SCM.RF.Client.BizEntities.HandOver;
+//using SCM.RF.Client.BizEntities.Picking;
+//using SCM.RF.Client.BizEntities.Sys;
+//using SCM.RF.Client.BizProcess.Sys;
+//using SCM.RF.Client.Framework.Core;
+//using SCM.RF.Client.Tool.Controls.PutAway;
+//using SCM.RF.Client.Utility;
+//using Justyle.WMS.RF.Server.BizEntities.Putaway;
 
 namespace SCM.RF.Client.Tool
 {
@@ -21,18 +26,18 @@ namespace SCM.RF.Client.Tool
         private SCM.RF.Client.Tool.Controls.Login.UCLogin ucLogin;
         private SCM.RF.Client.Tool.Controls.Login.UCSetting ucSetting;
         private SCM.RF.Client.Tool.Controls.Login.UCMenu ucMenu;
-        private SCM.RF.Client.Tool.Controls.PutAway.UCPutaway1 ucPutaway1;
-        private SCM.RF.Client.Tool.Controls.PutAway.UCPutaway2 ucPutaway2;
-        private SCM.RF.Client.Tool.Controls.PutAway.UCPutaway3 ucPutaway3;
-        private SCM.RF.Client.Tool.Controls.Picking.UCPicking1 ucPicking1;
-        private SCM.RF.Client.Tool.Controls.Picking.UCPicking2 ucPicking2;
-        private SCM.RF.Client.Tool.Controls.Picking.UCPicking3 ucPicking3;
-        private SCM.RF.Client.Tool.Controls.Common.UCCellPal ucCellPal;
-        private SCM.RF.Client.Tool.Controls.Common.UCCellPalByCell ucCellPalByCell;
-        private SCM.RF.Client.Tool.Controls.HandOver.UCHandOver1 ucHandOver1;
-        private SCM.RF.Client.Tool.Controls.HandOver.UCHandOver2 ucHandOver2;
-        private SCM.RF.Client.Tool.Controls.PutAway.UCPutawayLog ucPutawayLog;
-        private SCM.RF.Client.Tool.Controls.HandOver.UCHandOver3 ucHandOver3;
+        //private SCM.RF.Client.Tool.Controls.PutAway.UCPutaway1 ucPutaway1;
+        //private SCM.RF.Client.Tool.Controls.PutAway.UCPutaway2 ucPutaway2;
+        //private SCM.RF.Client.Tool.Controls.PutAway.UCPutaway3 ucPutaway3;
+        //private SCM.RF.Client.Tool.Controls.Picking.UCPicking1 ucPicking1;
+        //private SCM.RF.Client.Tool.Controls.Picking.UCPicking2 ucPicking2;
+        //private SCM.RF.Client.Tool.Controls.Picking.UCPicking3 ucPicking3;
+        //private SCM.RF.Client.Tool.Controls.Common.UCCellPal ucCellPal;
+        //private SCM.RF.Client.Tool.Controls.Common.UCCellPalByCell ucCellPalByCell;
+        //private SCM.RF.Client.Tool.Controls.HandOver.UCHandOver1 ucHandOver1;
+        //private SCM.RF.Client.Tool.Controls.HandOver.UCHandOver2 ucHandOver2;
+        //private SCM.RF.Client.Tool.Controls.PutAway.UCPutawayLog ucPutawayLog;
+        //private SCM.RF.Client.Tool.Controls.HandOver.UCHandOver3 ucHandOver3;
 
         #endregion
 
@@ -153,79 +158,7 @@ namespace SCM.RF.Client.Tool
 
         #endregion
 
-        #region 库存查询界面
-
-        /// <summary>
-        /// 显示库存查询界面
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="choise"></param>
-        public void ShowCellPal(object uc, EnPalType type)
-        {
-            if (this.Controls.IndexOf(this.ucCellPal) < 0)
-            {
-                this.ucCellPal = new SCM.RF.Client.Tool.Controls.Common.UCCellPal(this);
-                this.ucCellPal.Location = new System.Drawing.Point(10, 30);
-                this.ucCellPal.Name = "ucCellPal";
-                this.ucCellPal.Size = new System.Drawing.Size(300, 260);
-                this.ucCellPal.TabIndex = 18;
-                this.ucCellPal.TabStop = false;
-                this.Controls.Add(this.ucCellPal);
-            }
-
-            this.ucCellPal.Visible = true;
-            this.ucCellPal.BringToFront();
-            this.ucCellPal.Init(this.RemoteServer, this.UserViewEntity);
-            this.ucCellPal.Init(EnHookType.Y);
-            this.ucCellPal.LoadData(uc, type);
-            this.ucCellPal.Init();
-        }
-
-        /// <summary>
-        /// 隐藏库存查询界面
-        /// </summary>
-        public void HideCellPal()
-        {
-            if (this.ucCellPal != null && this.Controls.IndexOf(this.ucCellPal) > -1)
-            {
-                this.ucCellPal.Visible = false;
-                this.ucCellPal = null;
-                this.Controls.Remove(this.ucCellPal);
-            }
-        }
-
-        public void ShowCellPalByCell(object uc, EnPalType type)
-        {
-            if (this.Controls.IndexOf(this.ucCellPalByCell) < 0)
-            {
-                this.ucCellPalByCell = new SCM.RF.Client.Tool.Controls.Common.UCCellPalByCell(this);
-                this.ucCellPalByCell.Location = new System.Drawing.Point(10, 30);
-                this.ucCellPalByCell.Name = "ucCellPal";
-                this.ucCellPalByCell.Size = new System.Drawing.Size(300, 260);
-                this.ucCellPalByCell.TabIndex = 18;
-                this.ucCellPalByCell.TabStop = false;
-                this.Controls.Add(this.ucCellPalByCell);
-            }
-
-            this.ucCellPalByCell.Visible = true;
-            this.ucCellPalByCell.BringToFront();
-            this.ucCellPalByCell.Init(this.RemoteServer, this.UserViewEntity);
-            this.ucCellPalByCell.Init(EnHookType.X);
-            this.ucCellPalByCell.LoadData(uc, type);
-            this.ucCellPalByCell.Init();
-        }
-
-        public void HideCellPalByCell()
-        {
-            if (this.ucCellPalByCell != null && this.Controls.IndexOf(this.ucCellPalByCell) > -1)
-            {
-                this.ucCellPalByCell.Visible = false;
-                this.ucCellPalByCell = null;
-                this.Controls.Remove(this.ucCellPalByCell);
-            }
-        }
-
-        #endregion
+        
 
         #region 登录框
 
@@ -347,329 +280,9 @@ namespace SCM.RF.Client.Tool
             }
         }
 
-        #endregion      
+        #endregion            
 
-        #region 上架
-
-        #region 上架1
-
-        /// <summary>
-        /// 显示上架1
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="choise"></param>
-        public void ShowPutaway1()
-        {
-            if (this.Controls.IndexOf(this.ucPutaway1) < 0)
-            {
-                this.ucPutaway1 = new SCM.RF.Client.Tool.Controls.PutAway.UCPutaway1(this);
-                this.ucPutaway1.Location = new System.Drawing.Point(10, 30);
-                this.ucPutaway1.Name = "ucPutaway1";
-                this.ucPutaway1.Size = new System.Drawing.Size(300, 260);
-                this.ucPutaway1.TabIndex = 12;
-                this.ucPutaway1.TabStop = false;
-                this.Controls.Add(this.ucPutaway1);
-            }
-            this.ucPutaway1.Visible = true;
-            this.ucPutaway1.BringToFront();
-            this.ucPutaway1.Init(this.RemoteServer, this.UserViewEntity);
-            this.ucPutaway1.Init(EnHookType.F1);
-            this.ucPutaway1.Init();
-        }
-
-        /// <summary>
-        /// 隐藏上架1
-        /// </summary>
-        public void HidePutaway1()
-        {
-            if (this.ucPutaway1 != null && this.Controls.IndexOf(this.ucPutaway1) > -1)
-            {
-                this.ucPutaway1.Visible = false;
-                this.ucPutaway1 = null;
-                this.Controls.Remove(this.ucPutaway1);
-            }
-        }
-
-        #endregion
-
-        #region 上架2
-
-        /// <summary>
-        /// 显示上架2
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="choise"></param>
-        public void ShowPutaway2(PutawayViewEntity entity)
-        {
-            if (this.Controls.IndexOf(this.ucPutaway2) < 0)
-            {
-                this.ucPutaway2 = new SCM.RF.Client.Tool.Controls.PutAway.UCPutaway2(this);
-                this.ucPutaway2.Location = new System.Drawing.Point(10, 30);
-                this.ucPutaway2.Name = "ucPutaway2";
-                this.ucPutaway2.Size = new System.Drawing.Size(300, 260);
-                this.ucPutaway2.TabIndex = 13;
-                this.ucPutaway2.TabStop = false;
-                this.Controls.Add(this.ucPutaway2);
-            }
-            this.ucPutaway2.Visible = true;
-            this.ucPutaway2.BringToFront();
-            this.ucPutaway2.Init(this.RemoteServer, this.UserViewEntity);
-            this.ucPutaway2.Init(EnHookType.F2);
-            this.ucPutaway2.LoadData(entity);
-            this.ucPutaway2.Init();
-        }
-
-        /// <summary>
-        /// 隐藏上架2
-        /// </summary>
-        public void HidePutaway2()
-        {
-            if (this.ucPutaway2 != null && this.Controls.IndexOf(this.ucPutaway2) > -1)
-            {
-                this.ucPutaway2.Visible = false;
-                this.ucPutaway2 = null;
-                this.Controls.Remove(this.ucPutaway2);
-            }
-        }
-
-        #endregion
-
-        #region 上架3
-
-        /// <summary>
-        /// 显示上架3
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="choise"></param>
-        //public void ShowPutaway3(PutawayViewEntity entity)
-        //{
-        //    if (this.Controls.IndexOf(this.ucPutaway3) < 0)
-        //    {
-        //        this.ucPutaway3 = new SCM.RF.Client.Tool.Controls.PutAway.UCPutaway3(this);
-        //        this.ucPutaway3.Location = new System.Drawing.Point(10, 30);
-        //        this.ucPutaway3.Name = "ucPutaway3";
-        //        this.ucPutaway3.Size = new System.Drawing.Size(300, 260);
-        //        this.ucPutaway3.TabIndex = 14;
-        //        this.ucPutaway3.TabStop = false;
-        //        this.Controls.Add(this.ucPutaway3);
-        //    }
-        //    this.ucPutaway3.Visible = true;
-        //    this.ucPutaway3.BringToFront();
-        //    this.ucPutaway3.Init(this.RemoteServer, this.UserViewEntity);
-        //    this.ucPutaway3.Init(EnHookType.F3);
-        //    this.ucPutaway3.LoadData(entity);
-        //    this.ucPutaway3.Init();
-        //}
-
-        /// <summary>
-        /// 显示上架3
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="choise"></param>
-        public void ShowPutaway3(PutawayViewEntity entity, EnImpType impType)
-        {
-            if (this.Controls.IndexOf(this.ucPutaway3) < 0)
-            {
-                this.ucPutaway3 = new SCM.RF.Client.Tool.Controls.PutAway.UCPutaway3(this);
-                this.ucPutaway3.Location = new System.Drawing.Point(10, 30);
-                this.ucPutaway3.Name = "ucPutaway3";
-                this.ucPutaway3.Size = new System.Drawing.Size(300, 260);
-                this.ucPutaway3.TabIndex = 14;
-                this.ucPutaway3.TabStop = false;
-                this.Controls.Add(this.ucPutaway3);
-            }
-            this.ucPutaway3.Visible = true;
-            this.ucPutaway3.BringToFront();
-            this.ucPutaway3.Init(this.RemoteServer, this.UserViewEntity);
-            this.ucPutaway3.Init(EnHookType.F3);
-            this.ucPutaway3.LoadData(entity, impType);
-            this.ucPutaway3.Init();
-        }
-
-        /// <summary>
-        /// 隐藏上架3
-        /// </summary>
-        public void HidePutaway3()
-        {
-            if (this.ucPutaway3 != null && this.Controls.IndexOf(this.ucPutaway3) > -1)
-            {
-                this.ucPutaway3.Visible = false;
-                this.ucPutaway3 = null;
-                this.Controls.Remove(this.ucPutaway3);
-            }
-        }
-
-        /// <summary>
-        /// 显示
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="choise"></param>
-        public void ShowPutawayLog(Hashtable ht, UCPutaway3 uc)
-        {
-            if (this.Controls.IndexOf(this.ucPutawayLog) < 0)
-            {
-                this.ucPutawayLog = new SCM.RF.Client.Tool.Controls.PutAway.UCPutawayLog(this);
-                this.ucPutawayLog.Location = new System.Drawing.Point(10, 30);
-                this.ucPutawayLog.Name = "ucPutawayLog";
-                this.ucPutawayLog.Size = new System.Drawing.Size(300, 260);
-                this.ucPutawayLog.TabIndex = 38;
-                this.ucPutawayLog.TabStop = false;
-                this.Controls.Add(this.ucPutawayLog);
-            }
-
-            this.ucPutawayLog.Visible = true;
-            this.ucPutawayLog.BringToFront();
-            this.ucPutawayLog.Init(this.RemoteServer, this.UserViewEntity);
-            this.ucPutawayLog.Init(EnHookType.F4);
-            this.ucPutawayLog.LoadData(ht, uc);
-            this.ucPutawayLog.Init();
-        }
-
-        /// <summary>
-        /// 隐藏
-        /// </summary>
-        public void HidePutawayLog()
-        {
-            if (this.ucPutawayLog != null && this.Controls.IndexOf(this.ucPutawayLog) > -1)
-            {
-                this.ucPutawayLog.Visible = false;
-                this.ucPutawayLog = null;
-                this.Controls.Remove(this.ucPutawayLog);
-            }
-        }
-
-        #endregion
-
-        #endregion
-
-        #region 拣货
-
-        #region 拣货1
-
-        /// <summary>
-        /// 显示拣货1
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="choise"></param>
-        public void ShowPicking1()
-        {
-            if (this.Controls.IndexOf(this.ucPicking1) < 0)
-            {
-                this.ucPicking1 = new SCM.RF.Client.Tool.Controls.Picking.UCPicking1(this);
-                this.ucPicking1.Location = new System.Drawing.Point(10, 30);
-                this.ucPicking1.Name = "ucPicking1";
-                this.ucPicking1.Size = new System.Drawing.Size(300, 260);
-                this.ucPicking1.TabIndex = 15;
-                this.ucPicking1.TabStop = false;
-                this.Controls.Add(this.ucPicking1);
-            }
-            this.ucPicking1.Visible = true;
-            this.ucPicking1.BringToFront();
-            this.ucPicking1.Init(this.RemoteServer, this.UserViewEntity);
-            this.ucPicking1.Init(EnHookType.G1);
-            this.ucPicking1.Init();
-        }
-
-        /// <summary>
-        /// 隐藏拣货1
-        /// </summary>
-        public void HidePicking1()
-        {
-            if (this.ucPicking1 != null && this.Controls.IndexOf(this.ucPicking1) > -1)
-            {
-                this.ucPicking1.Visible = false;
-                this.ucPicking1 = null;
-                this.Controls.Remove(this.ucPicking1);
-            }
-        }
-
-        #endregion
-
-        #region 拣货2
-
-        /// <summary>
-        /// 显示拣货2
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="choise"></param>
-        public void ShowPicking2(LabelViewEntity entity)
-        {
-            if (this.Controls.IndexOf(this.ucPicking2) < 0)
-            {
-                this.ucPicking2 = new SCM.RF.Client.Tool.Controls.Picking.UCPicking2(this);
-                this.ucPicking2.Location = new System.Drawing.Point(10, 30);
-                this.ucPicking2.Name = "ucPicking2";
-                this.ucPicking2.Size = new System.Drawing.Size(300, 260);
-                this.ucPicking2.TabIndex = 16;
-                this.ucPicking2.TabStop = false;
-                this.Controls.Add(this.ucPicking2);
-            }
-            this.ucPicking2.Visible = true;
-            this.ucPicking2.BringToFront();
-            this.ucPicking2.Init(this.RemoteServer, this.UserViewEntity);
-            this.ucPicking2.Init(EnHookType.G2);
-            this.ucPicking2.LoadData(entity);
-            this.ucPicking2.Init();
-        }
-
-        /// <summary>
-        /// 隐藏拣货2
-        /// </summary>
-        public void HidePicking2()
-        {
-            if (this.ucPicking2 != null && this.Controls.IndexOf(this.ucPicking2) > -1)
-            {
-                this.ucPicking2.Visible = false;
-                this.ucPicking2 = null;
-                this.Controls.Remove(this.ucPicking2);
-            }
-        }
-
-        #endregion
-
-        #region 拣货3
-
-        /// <summary>
-        /// 显示拣货3
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="choise"></param>
-        public void ShowPicking3(LabelViewEntity label, MulViewEntity mul, SCM.RF.Client.Tool.Controls.Picking.UCPicking2 uc)
-        {
-            if (this.Controls.IndexOf(this.ucPicking3) < 0)
-            {
-                this.ucPicking3 = new SCM.RF.Client.Tool.Controls.Picking.UCPicking3(this);
-                this.ucPicking3.Location = new System.Drawing.Point(10, 30);
-                this.ucPicking3.Name = "ucPicking3";
-                this.ucPicking3.Size = new System.Drawing.Size(300, 260);
-                this.ucPicking3.TabIndex = 17;
-                this.ucPicking3.TabStop = false;
-                this.Controls.Add(this.ucPicking3);
-            }
-            this.ucPicking3.Visible = true;
-            this.ucPicking3.BringToFront();
-            this.ucPicking3.Init(this.RemoteServer, this.UserViewEntity);
-            this.ucPicking3.Init(EnHookType.G3);
-            this.ucPicking3.LoadData(label, mul, uc);
-            this.ucPicking3.Init();
-        }
-
-        /// <summary>
-        /// 隐藏拣货3
-        /// </summary>
-        public void HidePicking3()
-        {
-            if (this.ucPicking3 != null && this.Controls.IndexOf(this.ucPicking3) > -1)
-            {
-                this.ucPicking3.Visible = false;
-                this.ucPicking3 = null;
-                this.Controls.Remove(this.ucPicking3);
-            }
-        }
-
-        #endregion
-
-        #endregion          
+        
 
         #region 返回
 
@@ -723,153 +336,7 @@ namespace SCM.RF.Client.Tool
 
         #endregion
 
-        #region 交接
-
-        /// <summary>
-        /// 显示交接
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="choise"></param>
-        public void ShowHandOver1()
-        {
-            if (this.Controls.IndexOf(this.ucHandOver1) < 0)
-            {
-                this.ucHandOver1 = new SCM.RF.Client.Tool.Controls.HandOver.UCHandOver1(this);
-                this.ucHandOver1.Location = new System.Drawing.Point(10, 30);
-                this.ucHandOver1.Name = "ucHandOver1";
-                this.ucHandOver1.Size = new System.Drawing.Size(300, 260);
-                this.ucHandOver1.TabIndex = 36;
-                this.ucHandOver1.TabStop = false;
-                this.Controls.Add(this.ucHandOver1);
-            }
-
-            this.ucHandOver1.Visible = true;
-            this.ucHandOver1.BringToFront();
-            this.ucHandOver1.Init(this.RemoteServer, this.UserViewEntity);
-            this.ucHandOver1.Init(EnHookType.K1);
-            this.ucHandOver1.LoadData();
-            this.ucHandOver1.Init();
-        }
-
-        /// <summary>
-        /// 隐藏交接
-        /// </summary>
-        public void HideHandOver1()
-        {
-            if (this.ucHandOver1 != null && this.Controls.IndexOf(this.ucHandOver1) > -1)
-            {
-                this.ucHandOver1.Visible = false;
-                this.ucHandOver1 = null;
-                this.Controls.Remove(this.ucHandOver1);
-            }
-        }
-
-        /// <summary>
-        /// 显示交接
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="choise"></param>
-        public void ShowHandOver2(HOViewEntity entity)
-        {
-            if (this.Controls.IndexOf(this.ucHandOver2) < 0)
-            {
-                this.ucHandOver2 = new SCM.RF.Client.Tool.Controls.HandOver.UCHandOver2(this);
-                this.ucHandOver2.Location = new System.Drawing.Point(10, 30);
-                this.ucHandOver2.Name = "ucHandOver2";
-                this.ucHandOver2.Size = new System.Drawing.Size(300, 260);
-                this.ucHandOver2.TabIndex = 37;
-                this.ucHandOver2.TabStop = false;
-                this.Controls.Add(this.ucHandOver2);
-            }
-
-            this.ucHandOver2.Visible = true;
-            this.ucHandOver2.BringToFront();
-            this.ucHandOver2.Init(this.RemoteServer, this.UserViewEntity);
-            this.ucHandOver2.Init(EnHookType.K2);
-            this.ucHandOver2.LoadData(entity);
-            this.ucHandOver2.Init();
-        }
-
-        /// <summary>
-        /// 隐藏交接
-        /// </summary>
-        public void HideHandOver2()
-        {
-            if (this.ucHandOver2 != null && this.Controls.IndexOf(this.ucHandOver2) > -1)
-            {
-                this.ucHandOver2.Visible = false;
-                this.ucHandOver2 = null;
-                this.Controls.Remove(this.ucHandOver2);
-            }
-
-            this.ucHandOver1.Visible = true;
-            this.ucHandOver1.BringToFront();
-            this.ucHandOver1.Init(EnHookType.K1);
-            this.ucHandOver1.Init();
-        }
-
-        public void HideHandOver22()
-        {
-            if (this.ucHandOver2 != null && this.Controls.IndexOf(this.ucHandOver2) > -1)
-            {
-                this.ucHandOver2.Visible = false;
-                this.ucHandOver2 = null;
-                this.Controls.Remove(this.ucHandOver2);
-            }
-
-            if (this.ucHandOver3 != null && this.Controls.IndexOf(this.ucHandOver3) > -1)
-            {
-                this.ucHandOver3.Visible = false;
-                this.ucHandOver3 = null;
-                this.Controls.Remove(this.ucHandOver3);
-            }
-        }
-
-        /// <summary>
-        /// 显示交接3
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="choise"></param>
-        public void ShowHandOver3(HOViewEntity entity)
-        {
-            if (this.Controls.IndexOf(this.ucHandOver3) < 0)
-            {
-                this.ucHandOver3 = new SCM.RF.Client.Tool.Controls.HandOver.UCHandOver3(this);
-                this.ucHandOver3.Location = new System.Drawing.Point(10, 30);
-                this.ucHandOver3.Name = "ucHandOver3";
-                this.ucHandOver3.Size = new System.Drawing.Size(300, 260);
-                this.ucHandOver3.TabIndex = 39;
-                this.ucHandOver3.TabStop = false;
-                this.Controls.Add(this.ucHandOver3);
-            }
-
-            this.ucHandOver3.Visible = true;
-            this.ucHandOver3.BringToFront();
-            this.ucHandOver3.Init(this.RemoteServer, this.UserViewEntity);
-            this.ucHandOver3.Init(EnHookType.K3);
-            this.ucHandOver3.LoadData(entity);
-            this.ucHandOver3.Init();
-        }
-
-        /// <summary>
-        /// 隐藏交接
-        /// </summary>
-        public void HideHandOver3()
-        {
-            if (this.ucHandOver3 != null && this.Controls.IndexOf(this.ucHandOver3) > -1)
-            {
-                this.ucHandOver3.Visible = false;
-                this.ucHandOver3 = null;
-                this.Controls.Remove(this.ucHandOver3);
-            }
-
-            this.ucHandOver1.Visible = true;
-            this.ucHandOver1.BringToFront();
-            this.ucHandOver1.Init(EnHookType.K1);
-            this.ucHandOver1.Init();
-        }
-
-        #endregion
+        
 
         #endregion
 
@@ -1079,7 +546,7 @@ namespace SCM.RF.Client.Tool
                 {
                     #region 快捷键
 
-                    case 112: this.ucPutaway1.HookExit(); break;//F1
+                    //case 112: this.ucPutaway1.HookExit(); break;//F1
                     default: break;
 
                     #endregion
@@ -1093,7 +560,7 @@ namespace SCM.RF.Client.Tool
                 {
                     #region 快捷键
 
-                    case 112: this.ucPutaway2.HookExit(); break;//F1
+                    //case 112: this.ucPutaway2.HookExit(); break;//F1
                     default: break;
 
                     #endregion
@@ -1107,7 +574,7 @@ namespace SCM.RF.Client.Tool
                 {
                     #region 快捷键
 
-                    case 112: this.ucPutaway3.HookExit(); break;//F1
+                    //case 112: this.ucPutaway3.HookExit(); break;//F1
                     //case 121: this.ucPutaway3.HookSave(); break;//F10
                     default: break;
 
@@ -1122,7 +589,7 @@ namespace SCM.RF.Client.Tool
                 {
                     #region 快捷键
 
-                    case 112: this.ucPicking1.HookExit(); break;//F1
+                    //case 112: this.ucPicking1.HookExit(); break;//F1
                     default: break;
 
                     #endregion
@@ -1136,12 +603,12 @@ namespace SCM.RF.Client.Tool
                 {
                     #region 快捷键
 
-                    case 112: this.ucPicking2.HookExit(); break;//F1
-                    case 113: this.ucPicking2.HookProv(); break;//F2
-                    case 114: this.ucPicking2.HookNext(); break;//F3
-                    case 115: this.ucPicking2.HookDad(); break;//F4
-                    case 116: this.ucPicking2.HookDetail(); break;//F5
-                    case 121: this.ucPicking2.HookSave(); break;//F10
+                    //case 112: this.ucPicking2.HookExit(); break;//F1
+                    //case 113: this.ucPicking2.HookProv(); break;//F2
+                    //case 114: this.ucPicking2.HookNext(); break;//F3
+                    //case 115: this.ucPicking2.HookDad(); break;//F4
+                    //case 116: this.ucPicking2.HookDetail(); break;//F5
+                    //case 121: this.ucPicking2.HookSave(); break;//F10
                     default: break;
 
                     #endregion
@@ -1154,11 +621,11 @@ namespace SCM.RF.Client.Tool
                 switch (KeyValue)
                 {
                     #region 快捷键
-                    case 112: this.ucPicking3.HookExit(); break;//F1
-                    case 114: this.ucPicking3.HookReset(); break;//F3
-                    case 116: this.ucPicking3.HookDetail(); break;//F5
-                    case 117: this.ucPicking3.HookSearch(); break;//F6
-                    case 121: this.ucPicking3.HookBad(); break;//F10
+                    //case 112: this.ucPicking3.HookExit(); break;//F1
+                    //case 114: this.ucPicking3.HookReset(); break;//F3
+                    //case 116: this.ucPicking3.HookDetail(); break;//F5
+                    //case 117: this.ucPicking3.HookSearch(); break;//F6
+                    //case 121: this.ucPicking3.HookBad(); break;//F10
                     default: break;
 
                     #endregion
@@ -1426,9 +893,9 @@ namespace SCM.RF.Client.Tool
                 switch (KeyValue)
                 {
                     #region 快捷键
-                    case 112: this.ucHandOver1.HookExit(); break;//F1
-                    case 121: this.ucHandOver1.HookStart(); break;//F0
-                    case 117: this.ucHandOver1.HookOld(); break;//F6
+                    //case 112: this.ucHandOver1.HookExit(); break;//F1
+                    //case 121: this.ucHandOver1.HookStart(); break;//F0
+                    //case 117: this.ucHandOver1.HookOld(); break;//F6
                     default: break;
 
                     #endregion
@@ -1439,7 +906,7 @@ namespace SCM.RF.Client.Tool
                 switch (KeyValue)
                 {
                     #region 快捷键
-                    case 112: this.ucHandOver2.HookExit(); break;//F1
+                    //case 112: this.ucHandOver2.HookExit(); break;//F1
                     default: break;
 
                     #endregion
@@ -1450,7 +917,7 @@ namespace SCM.RF.Client.Tool
                 switch (KeyValue)
                 {
                     #region 快捷键
-                    case 112: this.ucHandOver3.HookExit(); break;//F1
+                    //case 112: this.ucHandOver3.HookExit(); break;//F1
                     default: break;
 
                     #endregion
@@ -1462,9 +929,9 @@ namespace SCM.RF.Client.Tool
                 switch (KeyValue)
                 {
                     #region 快捷键
-                    case 112: this.ucCellPalByCell.HookExit(); break;//F1
-                    case 113: this.ucCellPalByCell.HookProv(); break;//F2
-                    case 114: this.ucCellPalByCell.HookNext(); break;//F3 
+                    //case 112: this.ucCellPalByCell.HookExit(); break;//F1
+                    //case 113: this.ucCellPalByCell.HookProv(); break;//F2
+                    //case 114: this.ucCellPalByCell.HookNext(); break;//F3 
                     default: break;
 
                     #endregion
@@ -1476,9 +943,9 @@ namespace SCM.RF.Client.Tool
                 switch (KeyValue)
                 {
                     #region 快捷键
-                    case 112: this.ucCellPal.HookExit(); break;//F1
-                    case 113: this.ucCellPal.HookProv(); break;//F2
-                    case 114: this.ucCellPal.HookNext(); break;//F3 
+                    //case 112: this.ucCellPal.HookExit(); break;//F1
+                    //case 113: this.ucCellPal.HookProv(); break;//F2
+                    //case 114: this.ucCellPal.HookNext(); break;//F3 
                     default: break;
 
                     #endregion
@@ -1522,17 +989,17 @@ namespace SCM.RF.Client.Tool
 
             //HideProduct();
 
-            HidePutaway1();
+            //HidePutaway1();
 
-            HidePutaway2();
+            //HidePutaway2();
 
-            HidePutaway3();
+            //HidePutaway3();
 
-            HidePicking1();
+            //HidePicking1();
 
-            HidePicking2();
+            //HidePicking2();
 
-            HidePicking3();
+            //HidePicking3();
 
             //HideStocktaking();
 
@@ -1564,13 +1031,13 @@ namespace SCM.RF.Client.Tool
 
             //HideXTransferMenu();
 
-            HideHandOver1();
+            //HideHandOver1();
 
-            HideHandOver22();
+            //HideHandOver22();
 
-            HideCellPalByCell();
+            //HideCellPalByCell();
 
-            HidePutawayLog();
+            //HidePutawayLog();
         }
 
         #endregion

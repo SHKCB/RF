@@ -47,7 +47,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
         {
             this.panelMenu.Controls.Clear();
 
-            if (base.UserViewEntity.ItemList == null)
+            if (base.UserView.ItemList == null)
             {
                 this._Hashtable = new Hashtable(0);
             }
@@ -55,7 +55,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
             {
                 #region 加载 权限
 
-                int count = base.UserViewEntity.ItemList.Length;
+                int count = base.UserView.ItemList.Length;
 
                 this._Hashtable = new Hashtable(count);
 
@@ -65,7 +65,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
 
                 for (int i = 0; i < count; i++)
                 {
-                    if (this._Hashtable.ContainsKey(base.UserViewEntity.ItemList[i].Description))
+                    if (this._Hashtable.ContainsKey(base.UserView.ItemList[i].Description))
                     {
                         continue;
                     }
@@ -81,14 +81,14 @@ namespace SCM.RF.Client.Tool.Controls.Login
                     lable.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
                     lable.ForeColor = System.Drawing.Color.White;
                     lable.Location = new System.Drawing.Point(X, Y);
-                    lable.Name = "lb" + base.UserViewEntity.ItemList[i].Description;
+                    lable.Name = "lb" + base.UserView.ItemList[i].Description;
                     lable.Size = new System.Drawing.Size(300, 25);
-                    lable.Text = string.Format(LineTxt, base.UserViewEntity.ItemList[i].Description, base.UserViewEntity.ItemList[i].Category);
-                    lable.Tag = base.UserViewEntity.ItemList[i].Description;
+                    lable.Text = string.Format(LineTxt, base.UserView.ItemList[i].Description, base.UserView.ItemList[i].Category);
+                    lable.Tag = base.UserView.ItemList[i].Description;
                     lable.BringToFront();
                     this.panelMenu.Controls.Add(lable);
                     index++;
-                    this._Hashtable.Add(base.UserViewEntity.ItemList[i].Description, null);
+                    this._Hashtable.Add(base.UserView.ItemList[i].Description, null);
                 }
 
                 #endregion
@@ -326,7 +326,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
 
         private void PutAway()
         {
-            base.RF.ShowPutaway1();
+            //base.RF.ShowPutaway1();
         }
 
         #endregion
@@ -342,7 +342,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
         #region 6拣货
         private void Picking()
         {
-            base.RF.ShowPicking1();
+            //base.RF.ShowPicking1();
         }
         #endregion
         
@@ -350,21 +350,21 @@ namespace SCM.RF.Client.Tool.Controls.Login
 
         private void Pal()
         {
-            base.RF.ShowCellPal(null, EnPalType.D);
+            //base.RF.ShowCellPal(null, EnPalType.D);
         }
 
         #endregion
         #region 9库存查询2
         private void PalByCell()
         {
-            base.RF.ShowCellPalByCell(null, EnPalType.D);
+            //base.RF.ShowCellPalByCell(null, EnPalType.D);
         }
 
         #endregion
         #region 0交接
         private void HandOver()
         {
-            base.RF.ShowHandOver1();
+            //base.RF.ShowHandOver1();
         }
 
         #endregion
@@ -394,9 +394,9 @@ namespace SCM.RF.Client.Tool.Controls.Login
         {
             this.btnExit.Enabled = false;
 
-            base.UserViewEntity.ItemList = null;
+            base.UserView.ItemList = null;
 
-            base.UserViewEntity = new SCM.RF.Client.BizProcess.Login.LoginBP().LoginOut(base.UserViewEntity, base.RemoteServer);
+            base.UserView = new SCM.RF.Client.BizProcess.Login.LoginBP().LoginOut(base.UserView, base.RemoteServer);
 
             this.panelMenu.Controls.Clear();
 
