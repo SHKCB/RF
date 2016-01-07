@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <wsurl>http://demo.kucangbao.com/kcb-1.0/cxf/webWarehouse?wsdl</wsurl>
+
+  <!--日志路径-->
+  <logpath>D:\O2J\Log\</logpath>
+
+  <!--服务器IP-->
+  <serverip>127.0.0.1</serverip>
+
+  <!--端口号-->
+  <port>7777</port>
+</root>
