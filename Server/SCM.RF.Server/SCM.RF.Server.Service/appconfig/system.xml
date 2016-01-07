@@ -6,7 +6,7 @@
   <logpath>D:\O2J\Log\</logpath>
 
   <!--服务器IP-->
-  <serverip>127.0.0.1</serverip>
+  <serverip>192.168.1.145</serverip>
 
   <!--端口号-->
   <port>7777</port>

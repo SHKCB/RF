@@ -3,6 +3,7 @@ using SCM.RF.Server.Utility;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Xml;
 
 /*
  * 登录
@@ -30,12 +31,19 @@ namespace SCM.RF.Server.DataAccess.Login
                                 <tid>" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + @"</tid>
                                 <uname>" + entity.UserID + @"</uname>
                                 <pwd>" + entity.Password + @"</pwd>
-                                <device>0</device>
+                                <device>" + entity.Device + @"</device>
+                                <cid>" + entity.CID + @"</cid>
                                 </rt>";
 
             string result = service.login(param);
 
-            return 0;
+            //<rc>0000</rc><rm>成功</rm><?xml version="1.0" encoding="UTF-8"?><rt><tid>20160107192619929</tid></rt>
+
+            //XmlDocument xml = new XmlDocument();
+
+            //xml.LoadXml(result);
+
+            return 1;
 
 
             //SQLHelper sqlLocal = new Utility.SQLHelper(SystemDA.SystemEntityInstance.authcenter);
@@ -98,7 +106,7 @@ namespace SCM.RF.Server.DataAccess.Login
             { 
                 new SqlParameter("@UserName", entity.UserName), 
                 new SqlParameter("@PassWord", entity.Password),
-                new SqlParameter("@WKNo", entity.WkNo), 
+                new SqlParameter("@UserID", entity.UserID), 
                 new SqlParameter("@IP", entity.LocalIP==null?"":entity.LocalIP),
                 new SqlParameter("@InDate", DateTime.Now),
                 new SqlParameter("@IsLoggedIn", entity.IsLoggedIn) 
