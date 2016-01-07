@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<app>
+  <ServerIp>10.20.2.15</ServerIp>
+  <ServerPort>7777</ServerPort>
+  <ApplicationID>33096c24-490d-4fd4-8f1f-540b00c26840</ApplicationID>
+  <UpDate>2012-12-1 0:00:00</UpDate>
+  <UpUrl>http://10.3.1.19:8081/RF/</UpUrl>
+  <UpExe>SCM.RF.Client.AutoUpdate.exe</UpExe>
+</app>

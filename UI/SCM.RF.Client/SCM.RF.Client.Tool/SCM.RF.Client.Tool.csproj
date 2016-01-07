@@ -1,0 +1,293 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E35C289D-201A-452B-BEE8-595398C79FE0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCM.RF.Client.Tool</RootNamespace>
+    <AssemblyName>SCM.RF.Client.Tool</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>WindowsCE</PlatformFamilyName>
+    <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
+    <OSVersion>5.0</OSVersion>
+    <DeployDirSuffix>Justyle.WMS.RF.Client.Tool</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows CE</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+    <ApplicationIcon>Resources\rf.ico</ApplicationIcon>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\Common\UCBasicControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\UCBasicControl.Designer.cs">
+      <DependentUpon>UCBasicControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\UCCellPal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\UCCellPal.Designer.cs">
+      <DependentUpon>UCCellPal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\UCCellPalByCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\UCCellPalByCell.Designer.cs">
+      <DependentUpon>UCCellPalByCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HandOver\UCHandOver1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HandOver\UCHandOver1.Designer.cs">
+      <DependentUpon>UCHandOver1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HandOver\UCHandOver2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HandOver\UCHandOver2.Designer.cs">
+      <DependentUpon>UCHandOver2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HandOver\UCHandOver3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HandOver\UCHandOver3.Designer.cs">
+      <DependentUpon>UCHandOver3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\UCMessageBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\UCMessageBox.Designer.cs">
+      <DependentUpon>UCMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Login\UCLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Login\UCLogin.designer.cs">
+      <DependentUpon>UCLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Login\UCMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Login\UCMenu.Designer.cs">
+      <DependentUpon>UCMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Login\UCSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Login\UCSetting.Designer.cs">
+      <DependentUpon>UCSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Picking\UCPicking1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Picking\UCPicking1.Designer.cs">
+      <DependentUpon>UCPicking1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Picking\UCPicking2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Picking\UCPicking2.Designer.cs">
+      <DependentUpon>UCPicking2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Picking\UCPicking3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Picking\UCPicking3.Designer.cs">
+      <DependentUpon>UCPicking3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PutAway\UCPutaway1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PutAway\UCPutaway1.Designer.cs">
+      <DependentUpon>UCPutaway1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PutAway\UCPutaway2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PutAway\UCPutaway2.Designer.cs">
+      <DependentUpon>UCPutaway2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PutAway\UCPutaway3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PutAway\UCPutaway3.Designer.cs">
+      <DependentUpon>UCPutaway3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PutAway\UCPutawayLog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PutAway\UCPutawayLog.Designer.cs">
+      <DependentUpon>UCPutawayLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\Common\UCBasicControl.resx">
+      <DependentUpon>UCBasicControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Common\UCCellPal.resx">
+      <DependentUpon>UCCellPal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Common\UCCellPalByCell.resx">
+      <DependentUpon>UCCellPalByCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HandOver\UCHandOver1.resx">
+      <DependentUpon>UCHandOver1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HandOver\UCHandOver2.resx">
+      <DependentUpon>UCHandOver2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HandOver\UCHandOver3.resx">
+      <DependentUpon>UCHandOver3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Common\UCMessageBox.resx">
+      <DependentUpon>UCMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Login\UCLogin.resx">
+      <DependentUpon>UCLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Login\UCMenu.resx">
+      <DependentUpon>UCMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Login\UCSetting.resx">
+      <DependentUpon>UCSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Picking\UCPicking1.resx">
+      <DependentUpon>UCPicking1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Picking\UCPicking2.resx">
+      <DependentUpon>UCPicking2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Picking\UCPicking3.resx">
+      <DependentUpon>UCPicking3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PutAway\UCPutaway1.resx">
+      <DependentUpon>UCPutaway1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PutAway\UCPutaway2.resx">
+      <DependentUpon>UCPutaway2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PutAway\UCPutaway3.resx">
+      <DependentUpon>UCPutaway3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PutAway\UCPutawayLog.resx">
+      <DependentUpon>UCPutawayLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RF.resx">
+      <DependentUpon>RF.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RF.Designer.cs">
+      <DependentUpon>RF.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Justyle.WMS.RF.Client.AutoUpdate.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ok.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\bg.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\error.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\rf.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SCANWEDGE.EXE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCM.RF.Client.BizEntities\SCM.RF.Client.BizEntities.csproj">
+      <Project>{EA59440F-0606-4DA0-BCE9-A8ACE042EB1C}</Project>
+      <Name>SCM.RF.Client.BizEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCM.RF.Client.BizProcess\SCM.RF.Client.BizProcess.csproj">
+      <Project>{B3798DAC-54D0-4EFA-AD60-BE7587DF1677}</Project>
+      <Name>SCM.RF.Client.BizProcess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCM.RF.Client.Framework\SCM.RF.Client.Framework.csproj">
+      <Project>{F43F1997-DE1D-4AB9-B8EA-FC2EACF03B95}</Project>
+      <Name>SCM.RF.Client.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCM.RF.Client.Utility\SCM.RF.Client.Utility.csproj">
+      <Project>{FDE25855-F729-4EF0-BDF7-3F572FC00293}</Project>
+      <Name>SCM.RF.Client.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

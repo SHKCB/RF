@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCM.RF.Client.AutoUpdate", "SCM.RF.Client.AutoUpdate\SCM.RF.Client.AutoUpdate.csproj", "{02F4FF57-A7D2-467E-A0EC-650976C4F417}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCM.RF.Client.BizEntities", "SCM.RF.Client.BizEntities\SCM.RF.Client.BizEntities.csproj", "{EA59440F-0606-4DA0-BCE9-A8ACE042EB1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCM.RF.Client.BizProcess", "SCM.RF.Client.BizProcess\SCM.RF.Client.BizProcess.csproj", "{B3798DAC-54D0-4EFA-AD60-BE7587DF1677}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCM.RF.Client.Framework", "SCM.RF.Client.Framework\SCM.RF.Client.Framework.csproj", "{F43F1997-DE1D-4AB9-B8EA-FC2EACF03B95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCM.RF.Client.Tool", "SCM.RF.Client.Tool\SCM.RF.Client.Tool.csproj", "{E35C289D-201A-452B-BEE8-595398C79FE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCM.RF.Client.Utility", "SCM.RF.Client.Utility\SCM.RF.Client.Utility.csproj", "{FDE25855-F729-4EF0-BDF7-3F572FC00293}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02F4FF57-A7D2-467E-A0EC-650976C4F417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F4FF57-A7D2-467E-A0EC-650976C4F417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F4FF57-A7D2-467E-A0EC-650976C4F417}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{02F4FF57-A7D2-467E-A0EC-650976C4F417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F4FF57-A7D2-467E-A0EC-650976C4F417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02F4FF57-A7D2-467E-A0EC-650976C4F417}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EA59440F-0606-4DA0-BCE9-A8ACE042EB1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA59440F-0606-4DA0-BCE9-A8ACE042EB1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA59440F-0606-4DA0-BCE9-A8ACE042EB1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA59440F-0606-4DA0-BCE9-A8ACE042EB1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3798DAC-54D0-4EFA-AD60-BE7587DF1677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3798DAC-54D0-4EFA-AD60-BE7587DF1677}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3798DAC-54D0-4EFA-AD60-BE7587DF1677}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3798DAC-54D0-4EFA-AD60-BE7587DF1677}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F43F1997-DE1D-4AB9-B8EA-FC2EACF03B95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F43F1997-DE1D-4AB9-B8EA-FC2EACF03B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F43F1997-DE1D-4AB9-B8EA-FC2EACF03B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F43F1997-DE1D-4AB9-B8EA-FC2EACF03B95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E35C289D-201A-452B-BEE8-595398C79FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35C289D-201A-452B-BEE8-595398C79FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E35C289D-201A-452B-BEE8-595398C79FE0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E35C289D-201A-452B-BEE8-595398C79FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E35C289D-201A-452B-BEE8-595398C79FE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E35C289D-201A-452B-BEE8-595398C79FE0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FDE25855-F729-4EF0-BDF7-3F572FC00293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDE25855-F729-4EF0-BDF7-3F572FC00293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDE25855-F729-4EF0-BDF7-3F572FC00293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDE25855-F729-4EF0-BDF7-3F572FC00293}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
