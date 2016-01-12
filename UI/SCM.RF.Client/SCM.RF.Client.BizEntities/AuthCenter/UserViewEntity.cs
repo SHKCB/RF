@@ -1,7 +1,8 @@
 ﻿
+using SCM.RF.Client.BizEntities.Sys;
 namespace SCM.RF.Client.BizEntities.AuthCenter
 {
-    public class UserViewEntity
+    public class UserViewEntity:BaseViewEntity
     {
         /// <summary>
         /// 构造
@@ -27,11 +28,6 @@ namespace SCM.RF.Client.BizEntities.AuthCenter
         /// 客户端IP地址
         /// </summary>
         public string LocalIP { get; set; }
-
-        /// <summary>
-        /// 系统号
-        /// </summary>
-        public string CID { get; set; }
 
         /// <summary>
         /// 设备
