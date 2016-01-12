@@ -1,6 +1,7 @@
 ﻿using System;
 using SCM.RF.Client.Tool;
 using SCM.RF.Client.Tool.Controls.Common;
+using System.Drawing;
 
 namespace SCM.RF.Client.Tool.Controls.Picking
 {
@@ -49,6 +50,16 @@ namespace SCM.RF.Client.Tool.Controls.Picking
         {
             this.txtMenu.Text = string.Empty;
             this.txtMenu.Focus();
+        }
+
+        private void txtMenu_GotFocus(object sender, EventArgs e)
+        {
+            this.pbMenu.BackColor = Color.Yellow;
+        }
+
+        private void txtMenu_LostFocus(object sender, EventArgs e)
+        {
+            this.pbMenu.BackColor = Color.White;
         }
 
         #endregion

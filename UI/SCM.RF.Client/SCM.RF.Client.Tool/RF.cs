@@ -229,7 +229,8 @@ namespace SCM.RF.Client.Tool
             this.ucReceive.Visible = true;
             this.ucReceive.BringToFront();
             this.ucReceive.Init(EnHookType.D1);
-            this.ucReceive.Init(this.RemoteServer,this.UserViewEntity);
+            this.ucReceive.Init(this.RemoteServer, this.UserViewEntity);
+            this.ucReceive.Init();
         }
 
         /// <summary>
@@ -277,6 +278,7 @@ namespace SCM.RF.Client.Tool
             this.ucPicking1.Visible = true;
             this.ucPicking1.BringToFront();
             this.ucPicking1.Init(EnHookType.G1);
+            this.ucReceive.Init(this.RemoteServer, this.UserViewEntity);
             this.ucPicking1.Init();
         }
 

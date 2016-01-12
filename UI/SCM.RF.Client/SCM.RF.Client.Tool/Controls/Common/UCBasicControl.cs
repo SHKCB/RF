@@ -82,7 +82,7 @@ namespace SCM.RF.Client.Tool.Controls.Common
         #region PUBLIC FUNCTION
 
         /// <summary>
-        /// 初始化
+        /// 初始化数据通讯
         /// </summary>
         /// <param name="server"></param>
         /// <param name="user"></param>
@@ -93,13 +93,16 @@ namespace SCM.RF.Client.Tool.Controls.Common
             this._UserViewEntity = user;
         }
 
+        /// <summary>
+        /// 自定义初始化
+        /// </summary>
         public virtual void Init()
         {
 
         }
 
         /// <summary>
-        /// 重载页面
+        /// 初始化快捷键类型
         /// </summary>
         public virtual void Init(EnHookType hookType)
         {

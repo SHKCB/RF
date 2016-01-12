@@ -100,6 +100,8 @@
             this.txtMenu.TabIndex = 1;
             this.txtMenu.TabStop = false;
             this.txtMenu.Tag = "True";
+            this.txtMenu.GotFocus += new System.EventHandler(this.txtMenu_GotFocus);
+            this.txtMenu.LostFocus += new System.EventHandler(this.txtMenu_LostFocus);
             // 
             // lbMenu
             // 

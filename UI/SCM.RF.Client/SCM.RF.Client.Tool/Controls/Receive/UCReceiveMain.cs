@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
-using SCM.RF.Client.BizEntities.AuthCenter;
 using SCM.RF.Client.BizEntities.Receive;
 using SCM.RF.Client.BizProcess.Receive;
-using SCM.RF.Client.Framework.Core;
 using SCM.RF.Client.Tool.Controls.Common;
+using SCM.RF.Client.Utility;
+using System.Drawing;
 
 namespace SCM.RF.Client.Tool.Controls.Receive
 {
     public partial class UCReceiveMain : UCBasicControl
     {
-        private UserViewEntity _user;
-        private RemoteServer _server;
-
         #region LoadFunction
 
         public UCReceiveMain(RF rf)
@@ -21,48 +18,63 @@ namespace SCM.RF.Client.Tool.Controls.Receive
             InitializeComponent();
         }
 
+        #endregion
+
+        #region 重载 override
+
         public override void Init()
         {
             base.SetTitle("收货");
+
+            this.FocusReceiveNo();
         }
 
-        public override void Init(RemoteServer server, UserViewEntity user)
+        public override void Proc(EnMessageType type)
         {
-            base.Init(server, user);
-            this._user = user;
-            this._server = server;
+            this.FocusReceiveNo();
         }
 
         #endregion
 
-        #region ClickFunction
+        #region Click Function
 
         /// <summary>
         /// 收货单号文本框 回车键执行具体方法
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void txtReceiveNo_KeyDown(object sender, KeyPressEventArgs e)
+        private void txtReceiveNo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                CheckReceiveNo();
+                e.Handled = true;
+
+                string txtRec = this.txtReceiveNo.Text.Trim().ToUpper();
+
+                if (txtRec.Length > 0)
+                {
+                    if (StringHelper.ISStringInt32(txtRec))
+                    {
+                        CheckReceiveNo();
+                    }
+                    else
+                    {
+                        base.ShowMessage("单号格式错误！", false, EnMessageType.A, false);
+                    }
+                }
             }
         }
 
-        /// <summary>
-        /// 确定按钮事件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnOk_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            CheckReceiveNo();
+            this.btnCancel.Enabled = false;
+            base.Cancel();
+            this.btnCancel.Enabled = true;
         }
 
         #endregion
 
-        #region PrivateFunction
+        #region Private Function
 
         /// <summary>
         /// 具体检查收货单号的方法
@@ -77,9 +89,9 @@ namespace SCM.RF.Client.Tool.Controls.Receive
             entity.CID = SCM.RF.Client.BizProcess.Sys.InstanceBP.SystemInstance.CID;
             entity.Instockcode = ReceiveNo;
             entity.TID = DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            entity.WareHouseId = _user.WareHouseId;
-            entity.UName = _user.UserID;
-            entity.PWD = _user.Password;
+            entity.WareHouseId = base.UserView.WareHouseId;
+            entity.UName = base.UserView.UserID;
+            entity.PWD = base.UserView.Password;
 
             entity = new ReceiveBP().GetReceiveDetail(entity, this.RF.RemoteServer);
 
@@ -97,11 +109,37 @@ namespace SCM.RF.Client.Tool.Controls.Receive
             }
         }
 
+        private void FocusReceiveNo()
+        {
+            this.txtReceiveNo.Text = string.Empty;
+            this.txtReceiveNo.Focus();
+        }
+
         #endregion
 
+        #region FOCUS
+        private void txtReceiveNo_GotFocus(object sender, EventArgs e)
+        {
+            this.pbReceiveNo.BackColor = Color.Yellow;
+        }
 
+        private void txtReceiveNo_LostFocus(object sender, EventArgs e)
+        {
+            this.pbReceiveNo.BackColor = Color.White;
+        }
 
+        #endregion
 
+        #region 供快捷键调用 本级页面
 
+        /// <summary>
+        /// 退出快捷键
+        /// </summary>
+        public void HookExit()
+        {
+            btnCancel_Click(null, null);
+        }
+
+        #endregion
     }
 }
