@@ -1,6 +1,8 @@
 ﻿using SCM.RF.Client.BizEntities.AuthCenter;
+using SCM.RF.Server.BizEntities.Receive;
 using SCM.RF.Server.BizEntities.Sys;
 using SCM.RF.Server.BizProcess.Login;
+using SCM.RF.Server.BizProcess.Receive;
 using SCM.RF.Server.Framework.Net;
 using SCM.RF.Server.Utility;
 
@@ -44,14 +46,15 @@ namespace SCM.RF.Server.Framework.Commond
                 string action = item.Substring(0, 4);
                 string content = item.Substring(4);
 
+                //登录
                 if (action == "0000")
                 {
                     result = LoginIn(content);
                 }
-                //else if (action == "0001")
-                //{
-                //    result = SelectSN(content);
-                //}
+                else if (action == "1001")
+                {
+                    result = GetReceiveDetail(content);
+                }
                 //else if (action == "0002")
                 //{
                 //    result = CellSelect(content);
@@ -301,6 +304,22 @@ namespace SCM.RF.Server.Framework.Commond
 
             return result;
         }
+        #endregion
+
+        #region 收货
+
+        private string GetReceiveDetail(string receive)
+        {
+            ReceiveHeaderViewEntity param = SerializeHelper.Deserialize<ReceiveHeaderViewEntity>(receive);
+
+            ReceiveHeaderViewEntity entity = new ReceiveBP().GetReceiveDetail(param);
+
+            string result = SerializeHelper.Serialize(entity);
+
+            return result;
+        }
+
+
         #endregion
 
         #region 退出系统

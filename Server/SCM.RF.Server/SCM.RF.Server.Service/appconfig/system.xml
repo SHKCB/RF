@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
-  <wsurl>http://demo.kucangbao.com/kcb-1.0/cxf/webWarehouse?wsdl</wsurl>
+  <wsurl>http://demo.kucangbao.com:80/kcb-1.0/cxf/webWarehouseQYB?wsdl</wsurl>
 
   <!--日志路径-->
   <logpath>D:\O2J\Log\</logpath>

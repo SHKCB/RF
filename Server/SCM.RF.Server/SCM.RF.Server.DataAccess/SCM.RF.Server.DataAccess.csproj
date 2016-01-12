@@ -51,6 +51,7 @@
     <Compile Include="Common\UniqueDA.cs" />
     <Compile Include="Login\LoginDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receive\ReceiveDA.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SCM.RF.Server.Adapt\SCM.RF.Server.Adapt.csproj">
