@@ -10,5 +10,23 @@ namespace SCM.RF.Server.BizEntities.Sys
         public string UName { get; set; }
 
         public string PWD { get; set; }
+
+        /// <summary>
+        /// 返回值
+        /// </summary>
+        public bool Success
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 返回值对应的信息
+        /// </summary>
+        public string Message
+        {
+            get;
+            set;
+        }
     }
 }

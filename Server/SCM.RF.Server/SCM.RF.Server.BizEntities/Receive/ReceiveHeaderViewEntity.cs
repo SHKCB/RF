@@ -12,6 +12,6 @@ namespace SCM.RF.Server.BizEntities.Receive
 
         public string Instockcode { get; set; }
         public string WareHouseId { get; set; }
-        public List<ReceiveDetailViewEntity> Detail { get; set; }
+        public ReceiveDetailViewEntity[] Detail { get; set; }
     }
 }

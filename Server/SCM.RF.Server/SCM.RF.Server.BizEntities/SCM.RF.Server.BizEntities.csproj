@@ -50,6 +50,9 @@
     <Compile Include="AuthCenter\UserRightViewEntity.cs" />
     <Compile Include="AuthCenter\UserViewEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receive\ReceiveDetailViewEntity.cs" />
+    <Compile Include="Receive\ReceiveHeaderViewEntity.cs" />
+    <Compile Include="Sys\BaseViewEntity.cs" />
     <Compile Include="Sys\KeepAliveEntity.cs" />
     <Compile Include="Sys\SystemEntity.cs" />
     <Compile Include="Sys\SystemInstance.cs" />
@@ -64,7 +67,6 @@
     <Folder Include="Location\" />
     <Folder Include="Pick\" />
     <Folder Include="PutAway\" />
-    <Folder Include="Receive\" />
     <Folder Include="Transfer\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
