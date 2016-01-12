@@ -1,4 +1,5 @@
 ﻿using SCM.RF.Client.BizEntities.Sys;
+using System.Collections.Generic;
 
 namespace SCM.RF.Client.BizEntities.Receive
 {
@@ -14,6 +15,6 @@ namespace SCM.RF.Client.BizEntities.Receive
 
        public string WareHouseId { get; set; }
 
-       public List<ReceiveDetailViewEntity> Detail { get; set; }
+       public ReceiveDetailViewEntity[] Detail { get; set; }
     }
 }

@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using SCM.RF.Client.Tool.Controls.Common;
 using SCM.RF.Client.BizEntities.AuthCenter;
 using SCM.RF.Client.BizEntities.Receive;
+using SCM.RF.Client.BizProcess.Receive;
+using SCM.RF.Client.Framework.Core;
 
 namespace SCM.RF.Client.Tool.Controls.Receive
 {
@@ -26,10 +28,10 @@ namespace SCM.RF.Client.Tool.Controls.Receive
 
         public override void Init()
         {
-            base.SetTitle("收货");           
+            base.SetTitle("收货");
         }
 
-        public UCReceiveMain(UserViewEntity user) 
+        public UCReceiveMain(UserViewEntity user)
         {
             InitializeComponent();
             this._user = user;
@@ -59,7 +61,7 @@ namespace SCM.RF.Client.Tool.Controls.Receive
         /// <param name="e"></param>
         private void btnOk_Click(object sender, EventArgs e)
         {
-
+            CheckReceiveNo();
         }
 
         #endregion
@@ -72,6 +74,7 @@ namespace SCM.RF.Client.Tool.Controls.Receive
         private void CheckReceiveNo()
         {
             string ReceiveNo = txtReceiveNo.Text.Trim();
+            if (ReceiveNo == "" || ReceiveNo == null) { return; }
 
             ReceiveHeaderViewEntity entity = new ReceiveHeaderViewEntity();
 
@@ -82,13 +85,25 @@ namespace SCM.RF.Client.Tool.Controls.Receive
             entity.UName = _user.UserName;
             entity.PWD = _user.Password;
 
+            entity = new ReceiveBP().GetReceiveDetail(entity, this.RF.RemoteServer);
 
-
+            if (entity != null)
+            {
+                if (entity.Success)
+                {
+                    // 跳转新页面 详细信息
+                }
+                else { base.ShowMessage(entity.Message, false, EnMessageType.A, false); }
+            }
+            else
+            {
+                base.ShowMessage("通讯错误，请重新登录!", false, EnMessageType.A, false);
+            }
         }
 
         #endregion
 
-     
+
 
     }
 }

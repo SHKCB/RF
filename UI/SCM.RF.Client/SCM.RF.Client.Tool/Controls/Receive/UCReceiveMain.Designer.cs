@@ -71,15 +71,15 @@
             // btnOk
             // 
             this.btnOk.BackColor = System.Drawing.Color.Black;
-            this.btnOk.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular);
+            this.btnOk.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
             this.btnOk.ForeColor = System.Drawing.Color.White;
-            this.btnOk.Location = new System.Drawing.Point(10, 215);
+            this.btnOk.Location = new System.Drawing.Point(10, 235);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(60, 25);
+            this.btnOk.Size = new System.Drawing.Size(80, 25);
             this.btnOk.TabIndex = 4;
             this.btnOk.TabStop = false;
             this.btnOk.Tag = "True";
-            this.btnOk.Text = "确定";
+            this.btnOk.Text = "确定[&F1]";
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btncancel
@@ -87,13 +87,13 @@
             this.btncancel.BackColor = System.Drawing.Color.Black;
             this.btncancel.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular);
             this.btncancel.ForeColor = System.Drawing.Color.White;
-            this.btncancel.Location = new System.Drawing.Point(150, 215);
+            this.btncancel.Location = new System.Drawing.Point(135, 235);
             this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(60, 25);
+            this.btncancel.Size = new System.Drawing.Size(80, 25);
             this.btncancel.TabIndex = 5;
             this.btncancel.TabStop = false;
             this.btncancel.Tag = "True";
-            this.btncancel.Text = "返回";
+            this.btncancel.Text = "返回[&F4]";
             // 
             // UCReceiveMain
             // 

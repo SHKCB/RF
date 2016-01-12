@@ -26,6 +26,7 @@ namespace SCM.RF.Client.Tool
         private SCM.RF.Client.Tool.Controls.Login.UCLogin ucLogin;
         private SCM.RF.Client.Tool.Controls.Login.UCSetting ucSetting;
         private SCM.RF.Client.Tool.Controls.Login.UCMenu ucMenu;
+        private SCM.RF.Client.Tool.Controls.Receive.UCReceiveMain ucReceive;
         //private SCM.RF.Client.Tool.Controls.PutAway.UCPutaway1 ucPutaway1;
         //private SCM.RF.Client.Tool.Controls.PutAway.UCPutaway2 ucPutaway2;
         //private SCM.RF.Client.Tool.Controls.PutAway.UCPutaway3 ucPutaway3;
@@ -198,6 +199,46 @@ namespace SCM.RF.Client.Tool
 
         #endregion
 
+        #region 收货
+
+        /// <summary>
+        /// 显示收货框
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="choise"></param>
+        public void ShowReceive()
+        {
+            if (this.Controls.IndexOf(this.ucReceive) < 0)
+            {
+                this.ucReceive = new SCM.RF.Client.Tool.Controls.Receive.UCReceiveMain(this);
+                this.ucReceive.Location = new System.Drawing.Point(10, 30);
+                this.ucReceive.Name = "ucReceive";
+                this.ucReceive.Size = new System.Drawing.Size(300, 260);
+                this.ucReceive.TabIndex = 1;
+                this.ucReceive.TabStop = false;
+                this.Controls.Add(this.ucReceive);
+            }
+            this.ucReceive.Visible = true;
+            this.ucReceive.BringToFront();
+            this.ucReceive.Init(EnHookType.A);
+            this.ucReceive.Init();
+        }
+
+        /// <summary>
+        /// 隐藏收货框
+        /// </summary>
+        public void HideReceive()
+        {
+            if (this.ucReceive != null && this.Controls.IndexOf(this.ucReceive) > -1)
+            {
+                this.ucReceive.Visible = false;
+                this.ucReceive = null;
+                this.Controls.Remove(this.ucReceive);
+            }
+        }
+
+        #endregion
+
         #region 设置
 
         /// <summary>
@@ -345,7 +386,7 @@ namespace SCM.RF.Client.Tool
             //隐藏窗体边框
             //this.FormBorderStyle = FormBorderStyle.None;
 
-           // WinceHelper.HoldTaskBar();
+            // WinceHelper.HoldTaskBar();
 
             this.ShowLogin();
         }

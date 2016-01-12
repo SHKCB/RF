@@ -315,7 +315,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
             switch (key)
             {
 
-                case 1: PutAway();
+                case 1: Receive();
                     break;
                 case 2: Transfer();
                     break;
@@ -335,9 +335,9 @@ namespace SCM.RF.Client.Tool.Controls.Login
 
         #region 1收货
 
-        private void PutAway()
+        private void Receive()
         {
-            //base.RF.ShowPutaway1();
+            base.RF.ShowReceive();
         }
 
         #endregion
