@@ -190,8 +190,8 @@ namespace SCM.RF.Client.Tool.Controls.Login
             {
                 UserViewEntity entity = new UserViewEntity();
 
-                entity.UserID = username;
-                entity.Password = password;
+                entity.UName = username;
+                entity.PWD = password;
                 entity.LocalIP = ip.ToString();
                 entity.Device = SCM.RF.Client.BizProcess.Sys.InstanceBP.SystemInstance.Device;
                 entity.CID = SCM.RF.Client.BizProcess.Sys.InstanceBP.SystemInstance.CID;
@@ -208,7 +208,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
 
                     this.btnLogin.Enabled = true;
 
-                    base.RF.SetUser(entity.UserName);
+                    base.RF.SetUser(entity.UName);
                 }
                 else
                 {
@@ -246,7 +246,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
 
             this.txtPassWord.Text = string.Empty;
 
-            FocusUserName();
+            this.FocusUserName();
         }
 
         public override void Proc(EnMessageType type)

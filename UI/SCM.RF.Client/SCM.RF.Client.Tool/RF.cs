@@ -498,7 +498,7 @@ namespace SCM.RF.Client.Tool
                 {
                     #region 快捷键
 
-                    case 115: this.ucMenu.HookExit(); break;//F4
+                    case 112: this.ucMenu.HookExit(); break;//F1
                     default: break;
 
                     #endregion
@@ -512,7 +512,7 @@ namespace SCM.RF.Client.Tool
                 {
                     #region 快捷键
 
-                    //case 112: this.ucReceive1.HookExit(); break;//F1
+                    case 115: this.ucReceive.HookExit(); break;//F4
                     //case 116: this.ucReceive1.HookSearch(); break;//F5
                     //case 117: this.ucReceive1.HookReceive(); break;//F6
                     default: break;

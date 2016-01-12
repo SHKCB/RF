@@ -84,14 +84,14 @@ namespace SCM.RF.Client.Tool.Controls.Receive
             string ReceiveNo = txtReceiveNo.Text.Trim();
             if (ReceiveNo == "" || ReceiveNo == null) { return; }
 
-            ReceiveHeaderViewEntity entity = new ReceiveHeaderViewEntity();
+            ReceiveHeaderViewEntity entity = new ReceiveHeaderViewEntity(base.UserView);
+            //entity.CID = SCM.RF.Client.BizProcess.Sys.InstanceBP.SystemInstance.CID;
+            //entity.TID = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            //entity.WareHouseId = base.UserView.WareHouseId;
+            //entity.UName = base.UserView.UserID;
+            //entity.PWD = base.UserView.Password;
 
-            entity.CID = SCM.RF.Client.BizProcess.Sys.InstanceBP.SystemInstance.CID;
             entity.Instockcode = ReceiveNo;
-            entity.TID = DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            entity.WareHouseId = base.UserView.WareHouseId;
-            entity.UName = base.UserView.UserID;
-            entity.PWD = base.UserView.Password;
 
             entity = new ReceiveBP().GetReceiveDetail(entity, this.RF.RemoteServer);
 
