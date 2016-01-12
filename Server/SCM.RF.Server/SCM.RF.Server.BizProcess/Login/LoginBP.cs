@@ -24,40 +24,25 @@ namespace SCM.RF.Server.BizProcess.Login
 
             if (sysno > 0)
             {
+                entity.UserName = entity.UserID;
+
                 entity.IsLoggedIn = true;
             }
 
-            //if (sysno > 0)
-            //{
-            //    //A.SysNo,A.[Key],A.Name
-            //    DataSet ds = LoginDA.GetList(sysno, entity.ApplicationID);
+            return entity;
+        }
 
-            //    if (ds.Tables.Count > 0)
-            //    {
-            //        DataTable dt = ds.Tables[0];
+        public UserViewEntity LoginOut(UserViewEntity entity)
+        {
+            entity.IsLoggedIn = true;
 
-            //        int count = dt.Rows.Count;
+            int sysno = LoginDA.LointOut(ref entity);
 
-            //        UserRightViewEntity[] array = new UserRightViewEntity[count];
+            if (sysno > 0)
+            {
+                entity.IsLoggedIn = false;
+            }
 
-            //        UserRightViewEntity right = null;
-
-            //        for (int i = 0; i < count; i++)
-            //        {
-            //            //A.Description,A.Name AS Category,C.Name AS [Page],C.[Key]
-            //            right = new UserRightViewEntity();
-            //            right.Description = dt.Rows[i][0].ToString().Trim().Replace(System.Environment.NewLine, "");
-            //            right.Category = dt.Rows[i][1].ToString().Trim().Replace(System.Environment.NewLine, "");
-            //            right.Page = dt.Rows[i][2].ToString().Trim().Replace(System.Environment.NewLine, "");
-            //            right.Key = dt.Rows[i][3].ToString().Trim().Replace(System.Environment.NewLine, "");
-            //            array[i] = right;
-            //        }
-
-            //        entity.IsLoggedIn = true;
-            //        entity.ItemList = array;
-            //    }
-            //}
-            //LoginDA.LoginLog(entity);
             return entity;
         }
     }

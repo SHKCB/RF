@@ -50,6 +50,7 @@
     <Compile Include="AuthCenter\UserBP.cs" />
     <Compile Include="Common\UniqueBP.cs" />
     <Compile Include="Login\LoginBP.cs" />
+    <Compile Include="Pick\PickBP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

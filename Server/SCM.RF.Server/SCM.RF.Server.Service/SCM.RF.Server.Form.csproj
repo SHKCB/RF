@@ -94,6 +94,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="appconfig\errorcode.xml" />
     <Content Include="appconfig\system.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>

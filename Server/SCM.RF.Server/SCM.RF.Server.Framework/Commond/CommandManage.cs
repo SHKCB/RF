@@ -307,15 +307,23 @@ namespace SCM.RF.Server.Framework.Commond
 
         private string LoginOut(string receive)
         {
-            UserViewEntity entity = SerializeHelper.Deserialize<UserViewEntity>(receive);
+            UserViewEntity param = SerializeHelper.Deserialize<UserViewEntity>(receive);
 
-            entity.IsLoggedIn = false;
-
-            _CloseUser = true;
+            UserViewEntity entity = new LoginBP().LoginOut(param);
 
             string result = SerializeHelper.Serialize(entity);
 
             return result;
+
+            //UserViewEntity entity = SerializeHelper.Deserialize<UserViewEntity>(receive);
+
+            //entity.IsLoggedIn = false;
+
+            //_CloseUser = true;
+
+            //string result = SerializeHelper.Serialize(entity);
+
+            //return result;
         }
 
         #endregion

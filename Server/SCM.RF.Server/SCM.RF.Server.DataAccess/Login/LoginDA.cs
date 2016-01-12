@@ -37,38 +37,61 @@ namespace SCM.RF.Server.DataAccess.Login
 
             string result = service.login(param);
 
+            if (result.IndexOf("<rc>0000</rc>") >= 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+
+            /*
+<?xml version="1.0" encoding="UTF-8"?>
+<rt>
+<tid>20140318155513001</tid>
+<rc>0000</rc>
+<rm>成功</rm>
+</rt>
+             */
+
             //<rc>0000</rc><rm>成功</rm><?xml version="1.0" encoding="UTF-8"?><rt><tid>20160107192619929</tid></rt>
 
             //XmlDocument xml = new XmlDocument();
 
             //xml.LoadXml(result);
 
-            return 1;
+            //return 1;
+        }
 
+        /// <summary>
+        /// 退出系统
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public static int LointOut(ref UserViewEntity entity)
+        {
+            SCM.RF.Server.Adapt.IWebWarehouseServiceService service = new Adapt.IWebWarehouseServiceService();
 
-            //SQLHelper sqlLocal = new Utility.SQLHelper(SystemDA.SystemEntityInstance.authcenter);
+            string param = @"<?xml version='1.0' encoding='UTF-8'?>
+                                <rt>
+                                <tid>" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + @"</tid>
+                                <uname>" + entity.UserID + @"</uname>
+                                <pwd>" + entity.Password + @"</pwd>
+                                <device>" + entity.Device + @"</device>
+                                <cid>" + entity.CID + @"</cid>
+                                </rt>";
 
-            //string sql = "SELECT [SysNo],[DisplayName] FROM [AuthCenter].[dbo].[Sys_User] AS U WITH(NOLOCK) WHERE U.Name = @Name AND U.Password = @Password";
+            string result = service.loginout(param);
 
-            //SqlParameter[] sqlParams = new SqlParameter[2] 
-            //{ 
-            //    new SqlParameter("@Name", entity.WkNo), 
-            //    new SqlParameter("@Password", entity.Password) 
-            //};
-
-            //DataSet ds = sqlLocal.Query(sql, sqlParams);
-
-            //if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
-            //{
-            //    string username = ds.Tables[0].Rows[0][1].ToString();
-            //    string sysno = ds.Tables[0].Rows[0][0].ToString();
-
-            //    entity.UserName = username;
-
-            //    return int.Parse(sysno);
-            //}
-
-            //return 0;
+            if (result.IndexOf("<rc>0000</rc>") >= 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         /// <summary>
