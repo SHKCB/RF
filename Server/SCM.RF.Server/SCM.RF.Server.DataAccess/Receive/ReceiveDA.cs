@@ -12,8 +12,8 @@ namespace SCM.RF.Server.DataAccess.Receive
 
         public static ReceiveHeaderViewEntity GetReceiveDetail(ReceiveHeaderViewEntity entity)
         {
-           
-            SCM.RF.Server.Adapt.IWebWarehouseServiceService service = new Adapt.IWebWarehouseServiceService();
+
+            SCM.RF.Server.Adapt.IWebWarehouseServiceQYBService service = new Adapt.IWebWarehouseServiceQYBService();
 
             string param = @"<?xml version=\'1.0\' encoding=\'UTF-8\'?>
                                 <rt>
@@ -25,7 +25,7 @@ namespace SCM.RF.Server.DataAccess.Receive
                                 <fromcode>" + entity.Instockcode + @"</fromcode>
                             </rt>";
 
-            string xmlstring = service.getInstockdOfCheck(param);
+            string xmlstring = service.getInstockDetail(param);
 
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(xmlstring);

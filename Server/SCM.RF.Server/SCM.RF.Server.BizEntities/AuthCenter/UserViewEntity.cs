@@ -1,7 +1,8 @@
 ﻿
+using SCM.RF.Server.BizEntities.Sys;
 namespace SCM.RF.Client.BizEntities.AuthCenter
 {
-    public class UserViewEntity
+    public class UserViewEntity:BaseViewEntity
     {
         /// <summary>
         /// 构造
@@ -29,11 +30,6 @@ namespace SCM.RF.Client.BizEntities.AuthCenter
         public string LocalIP { get; set; }
 
         /// <summary>
-        /// 系统号
-        /// </summary>
-        public string CID { get; set; }
-
-        /// <summary>
         /// 设备
         /// </summary>
         public string Device { get; set; }
@@ -42,5 +38,12 @@ namespace SCM.RF.Client.BizEntities.AuthCenter
         /// 当前登录状态
         /// </summary>
         public bool IsLoggedIn { get; set; }
+
+        /// <summary>
+        /// 登录返回信息
+        /// </summary>
+        public string WareHouseId { get; set; }
+
+
     }
 }

@@ -22,9 +22,9 @@ namespace SCM.RF.Server.DataAccess.Login
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public static int Login(ref UserViewEntity entity)
+        public static UserViewEntity Login(ref UserViewEntity entity)
         {
-            SCM.RF.Server.Adapt.IWebWarehouseServiceService service = new Adapt.IWebWarehouseServiceService();
+            SCM.RF.Server.Adapt.IWebWarehouseServiceQYBService service = new Adapt.IWebWarehouseServiceQYBService();
 
             string param = @"<?xml version='1.0' encoding='UTF-8'?>
                                 <rt>
@@ -36,32 +36,36 @@ namespace SCM.RF.Server.DataAccess.Login
                                 </rt>";
 
             string result = service.login(param);
-
-            if (result.IndexOf("<rc>0000</rc>") >= 0)
-            {
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
-
+         
             /*
-<?xml version="1.0" encoding="UTF-8"?>
-<rt>
-<tid>20140318155513001</tid>
-<rc>0000</rc>
-<rm>成功</rm>
-</rt>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <rt>
+                <tid>20160112161900199</tid>
+                <warehouseid>47a7377d4a9e42e3a665af0894946e21</warehouseid>
+                <rc>0000</rc>
+                <rm>成功</rm>
+                </rt>
              */
 
-            //<rc>0000</rc><rm>成功</rm><?xml version="1.0" encoding="UTF-8"?><rt><tid>20160107192619929</tid></rt>
+            XmlDocument xml = new XmlDocument();
 
-            //XmlDocument xml = new XmlDocument();
+            xml.LoadXml(result);
 
-            //xml.LoadXml(result);
+            string returncode = xml.SelectSingleNode("rt/rc").InnerText;
 
-            //return 1;
+            if (returncode == "0000")
+            {
+                entity.WareHouseId = xml.SelectSingleNode("rt/warehouseid").InnerText;
+                entity.Success = true;
+                entity.IsLoggedIn = true;
+            }
+            else 
+            {
+                entity.Success = false;
+                entity.Message = xml.SelectSingleNode("rt/rm").InnerText;
+                entity.IsLoggedIn = false;
+            }
+            return entity;
         }
 
         /// <summary>
@@ -71,7 +75,7 @@ namespace SCM.RF.Server.DataAccess.Login
         /// <returns></returns>
         public static int LointOut(ref UserViewEntity entity)
         {
-            SCM.RF.Server.Adapt.IWebWarehouseServiceService service = new Adapt.IWebWarehouseServiceService();
+            SCM.RF.Server.Adapt.IWebWarehouseServiceQYBService service = new Adapt.IWebWarehouseServiceQYBService();
 
             string param = @"<?xml version='1.0' encoding='UTF-8'?>
                                 <rt>

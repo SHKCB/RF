@@ -17,18 +17,9 @@ namespace SCM.RF.Server.BizProcess.Login
         /// <param name="entity"></param>
         /// <returns></returns>
         public UserViewEntity Login(UserViewEntity entity)
-        {
-            entity.IsLoggedIn = false;
-
-            int sysno = LoginDA.Login(ref entity);
-
-            if (sysno > 0)
-            {
-                entity.UserName = entity.UserID;
-
-                entity.IsLoggedIn = true;
-            }
-
+        {          
+            entity = LoginDA.Login(ref entity);
+        
             return entity;
         }
 
