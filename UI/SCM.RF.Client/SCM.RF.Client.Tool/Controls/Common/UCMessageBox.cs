@@ -25,13 +25,13 @@ namespace SCM.RF.Client.Tool.Controls.Common
         {
             if (choise)
             {
-                this.btnOK.Location = new System.Drawing.Point(35, 216);
+                this.btnOK.Location = new System.Drawing.Point(75, 216);
 
                 this.btnCancel.Visible = true;
             }
             else
             {
-                this.btnOK.Location = new System.Drawing.Point(80, 216);
+                this.btnOK.Location = new System.Drawing.Point(120, 216);
 
                 this.btnCancel.Visible = false;
             }

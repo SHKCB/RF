@@ -37,7 +37,7 @@
             // 
             this.ucMessageBox.Location = new System.Drawing.Point(0, 0);
             this.ucMessageBox.Name = "ucMessageBox";
-            this.ucMessageBox.Size = new System.Drawing.Size(220, 260);
+            this.ucMessageBox.Size = new System.Drawing.Size(300, 260);
             this.ucMessageBox.TabIndex = 1;
             this.ucMessageBox.TabStop = false;
             this.ucMessageBox.Visible = false;
@@ -50,7 +50,7 @@
             this.Controls.Add(this.ucMessageBox);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "UCBasicControl";
-            this.Size = new System.Drawing.Size(220, 260);
+            this.Size = new System.Drawing.Size(300, 260);
             this.ResumeLayout(false);
 
         }

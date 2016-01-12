@@ -55,11 +55,11 @@
             // btnSetting
             // 
             this.btnSetting.BackColor = System.Drawing.Color.Black;
-            this.btnSetting.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular);
+            this.btnSetting.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
             this.btnSetting.ForeColor = System.Drawing.Color.White;
-            this.btnSetting.Location = new System.Drawing.Point(150, 215);
+            this.btnSetting.Location = new System.Drawing.Point(206, 215);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(60, 25);
+            this.btnSetting.Size = new System.Drawing.Size(80, 25);
             this.btnSetting.TabIndex = 5;
             this.btnSetting.TabStop = false;
             this.btnSetting.Tag = "True";
@@ -69,11 +69,11 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Black;
-            this.btnLogin.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular);
+            this.btnLogin.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(10, 215);
+            this.btnLogin.Location = new System.Drawing.Point(14, 215);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(60, 25);
+            this.btnLogin.Size = new System.Drawing.Size(80, 25);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.TabStop = false;
             this.btnLogin.Tag = "True";
@@ -86,11 +86,11 @@
             this.txtPassWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassWord.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
             this.txtPassWord.ForeColor = System.Drawing.Color.White;
-            this.txtPassWord.Location = new System.Drawing.Point(90, 152);
-            this.txtPassWord.MaxLength = 11;
+            this.txtPassWord.Location = new System.Drawing.Point(110, 152);
+            this.txtPassWord.MaxLength = 20;
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.PasswordChar = '*';
-            this.txtPassWord.Size = new System.Drawing.Size(100, 25);
+            this.txtPassWord.Size = new System.Drawing.Size(140, 25);
             this.txtPassWord.TabIndex = 2;
             this.txtPassWord.TabStop = false;
             this.txtPassWord.Tag = "True";
@@ -102,9 +102,9 @@
             // pbPassWord
             // 
             this.pbPassWord.BackColor = System.Drawing.Color.White;
-            this.pbPassWord.Location = new System.Drawing.Point(90, 172);
+            this.pbPassWord.Location = new System.Drawing.Point(110, 172);
             this.pbPassWord.Name = "pbPassWord";
-            this.pbPassWord.Size = new System.Drawing.Size(100, 2);
+            this.pbPassWord.Size = new System.Drawing.Size(140, 2);
             this.pbPassWord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             // 
             // txtUserName
@@ -113,10 +113,10 @@
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
             this.txtUserName.ForeColor = System.Drawing.Color.White;
-            this.txtUserName.Location = new System.Drawing.Point(90, 108);
-            this.txtUserName.MaxLength = 11;
+            this.txtUserName.Location = new System.Drawing.Point(110, 108);
+            this.txtUserName.MaxLength = 20;
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(100, 25);
+            this.txtUserName.Size = new System.Drawing.Size(140, 25);
             this.txtUserName.TabIndex = 1;
             this.txtUserName.TabStop = false;
             this.txtUserName.Tag = "True";
@@ -128,16 +128,16 @@
             // pbUserName
             // 
             this.pbUserName.BackColor = System.Drawing.Color.White;
-            this.pbUserName.Location = new System.Drawing.Point(90, 128);
+            this.pbUserName.Location = new System.Drawing.Point(110, 128);
             this.pbUserName.Name = "pbUserName";
-            this.pbUserName.Size = new System.Drawing.Size(100, 2);
+            this.pbUserName.Size = new System.Drawing.Size(140, 2);
             this.pbUserName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             // 
             // lbPassWord
             // 
             this.lbPassWord.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
             this.lbPassWord.ForeColor = System.Drawing.Color.White;
-            this.lbPassWord.Location = new System.Drawing.Point(30, 150);
+            this.lbPassWord.Location = new System.Drawing.Point(50, 150);
             this.lbPassWord.Name = "lbPassWord";
             this.lbPassWord.Size = new System.Drawing.Size(60, 25);
             this.lbPassWord.Text = "密码：";
@@ -146,7 +146,7 @@
             // 
             this.lbUserName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
             this.lbUserName.ForeColor = System.Drawing.Color.White;
-            this.lbUserName.Location = new System.Drawing.Point(30, 110);
+            this.lbUserName.Location = new System.Drawing.Point(50, 110);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(60, 25);
             this.lbUserName.Text = "帐号：";
@@ -155,7 +155,7 @@
             // 
             this.lbTitle.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
             this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(50, 17);
+            this.lbTitle.Location = new System.Drawing.Point(90, 17);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(120, 28);
             this.lbTitle.Text = "酷 仓 宝";
@@ -164,7 +164,7 @@
             // 
             this.lbRF.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.lbRF.ForeColor = System.Drawing.Color.White;
-            this.lbRF.Location = new System.Drawing.Point(30, 60);
+            this.lbRF.Location = new System.Drawing.Point(70, 60);
             this.lbRF.Name = "lbRF";
             this.lbRF.Size = new System.Drawing.Size(160, 22);
             this.lbRF.Text = "无线仓储管理系统";
@@ -172,11 +172,11 @@
             // btnReset
             // 
             this.btnReset.BackColor = System.Drawing.Color.Black;
-            this.btnReset.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular);
+            this.btnReset.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(80, 215);
+            this.btnReset.Location = new System.Drawing.Point(110, 215);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(60, 25);
+            this.btnReset.Size = new System.Drawing.Size(80, 25);
             this.btnReset.TabIndex = 4;
             this.btnReset.TabStop = false;
             this.btnReset.Tag = "True";
@@ -201,7 +201,7 @@
             this.Controls.Add(this.lbUserName);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "UCLogin";
-            this.Size = new System.Drawing.Size(220, 260);
+            this.Size = new System.Drawing.Size(300, 260);
             this.ResumeLayout(false);
 
         }

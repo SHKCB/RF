@@ -152,7 +152,7 @@
             this.Controls.Add(this.btnExit);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "UCMenu";
-            this.Size = new System.Drawing.Size(220, 260);
+            this.Size = new System.Drawing.Size(300, 260);
             this.ResumeLayout(false);
 
         }

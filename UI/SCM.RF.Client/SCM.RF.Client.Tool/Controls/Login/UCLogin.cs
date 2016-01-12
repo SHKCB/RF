@@ -158,7 +158,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
                 return;
             }
 
-            bool hasError = false;
+            //bool hasError = false;
 
             //bool needUpdate = SCM.RF.Client.BizProcess.Sys.InstanceBP.NeedUpdate(out hasError);
 

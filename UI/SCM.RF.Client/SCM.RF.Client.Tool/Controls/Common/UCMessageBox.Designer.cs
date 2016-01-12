@@ -50,7 +50,7 @@
             this.lbMsg.ForeColor = System.Drawing.Color.White;
             this.lbMsg.Location = new System.Drawing.Point(10, 10);
             this.lbMsg.Name = "lbMsg";
-            this.lbMsg.Size = new System.Drawing.Size(200, 190);
+            this.lbMsg.Size = new System.Drawing.Size(280, 190);
             this.lbMsg.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnCancel
@@ -58,7 +58,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCancel.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(125, 216);
+            this.btnCancel.Location = new System.Drawing.Point(166, 216);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(60, 25);
             this.btnCancel.TabIndex = 1;
@@ -91,7 +91,7 @@
             // plRight
             // 
             this.plRight.BackColor = System.Drawing.Color.Yellow;
-            this.plRight.Location = new System.Drawing.Point(218, 0);
+            this.plRight.Location = new System.Drawing.Point(298, 0);
             this.plRight.Name = "plRight";
             this.plRight.Size = new System.Drawing.Size(2, 260);
             // 
@@ -100,7 +100,7 @@
             this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnOK.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
             this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(35, 216);
+            this.btnOK.Location = new System.Drawing.Point(75, 216);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(60, 25);
             this.btnOK.TabIndex = 2;
@@ -124,7 +124,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "UCMessageBox";
-            this.Size = new System.Drawing.Size(220, 260);
+            this.Size = new System.Drawing.Size(300, 260);
             this.ResumeLayout(false);
 
         }
