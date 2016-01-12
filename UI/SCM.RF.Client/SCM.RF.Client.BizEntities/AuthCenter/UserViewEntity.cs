@@ -42,5 +42,10 @@ namespace SCM.RF.Client.BizEntities.AuthCenter
         /// 当前登录状态
         /// </summary>
         public bool IsLoggedIn { get; set; }
+
+        /// <summary>
+        /// 登录返回信息
+        /// </summary>
+        public string WareHouseId { get; set; }
     }
 }

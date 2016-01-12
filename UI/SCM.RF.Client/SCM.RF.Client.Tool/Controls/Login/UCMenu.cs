@@ -288,6 +288,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
 
         private void Receive()
         {
+            base.RF.HideMenu();
             base.RF.ShowReceive();
         }
 

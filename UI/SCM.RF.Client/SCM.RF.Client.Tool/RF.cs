@@ -228,8 +228,8 @@ namespace SCM.RF.Client.Tool
             }
             this.ucReceive.Visible = true;
             this.ucReceive.BringToFront();
-            this.ucReceive.Init(EnHookType.A);
-            this.ucReceive.Init();
+            this.ucReceive.Init(EnHookType.D1);
+            this.ucReceive.Init(this.RemoteServer,this.UserViewEntity);
         }
 
         /// <summary>

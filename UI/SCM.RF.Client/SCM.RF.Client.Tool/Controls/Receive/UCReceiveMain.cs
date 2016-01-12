@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Text;
 using System.Windows.Forms;
-using SCM.RF.Client.Tool.Controls.Common;
 using SCM.RF.Client.BizEntities.AuthCenter;
 using SCM.RF.Client.BizEntities.Receive;
 using SCM.RF.Client.BizProcess.Receive;
 using SCM.RF.Client.Framework.Core;
+using SCM.RF.Client.Tool.Controls.Common;
 
 namespace SCM.RF.Client.Tool.Controls.Receive
 {
     public partial class UCReceiveMain : UCBasicControl
     {
         private UserViewEntity _user;
+        private RemoteServer _server;
 
         #region LoadFunction
 
@@ -31,10 +26,11 @@ namespace SCM.RF.Client.Tool.Controls.Receive
             base.SetTitle("收货");
         }
 
-        public UCReceiveMain(UserViewEntity user)
+        public override void Init(RemoteServer server, UserViewEntity user)
         {
-            InitializeComponent();
+            base.Init(server, user);
             this._user = user;
+            this._server = server;
         }
 
         #endregion
@@ -46,9 +42,9 @@ namespace SCM.RF.Client.Tool.Controls.Receive
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void txtReceiveNo_KeyDown(object sender, KeyEventArgs e)
+        private void txtReceiveNo_KeyDown(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 CheckReceiveNo();
             }
@@ -81,8 +77,8 @@ namespace SCM.RF.Client.Tool.Controls.Receive
             entity.CID = SCM.RF.Client.BizProcess.Sys.InstanceBP.SystemInstance.CID;
             entity.Instockcode = ReceiveNo;
             entity.TID = DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            entity.WareHouseId = SCM.RF.Client.BizProcess.Sys.InstanceBP.SystemInstance.CID;
-            entity.UName = _user.UserName;
+            entity.WareHouseId = _user.WareHouseId;
+            entity.UName = _user.UserID;
             entity.PWD = _user.Password;
 
             entity = new ReceiveBP().GetReceiveDetail(entity, this.RF.RemoteServer);
@@ -91,7 +87,7 @@ namespace SCM.RF.Client.Tool.Controls.Receive
             {
                 if (entity.Success)
                 {
-                    // 跳转新页面 详细信息
+                    //跳转新页面 详细信息
                 }
                 else { base.ShowMessage(entity.Message, false, EnMessageType.A, false); }
             }
@@ -102,6 +98,8 @@ namespace SCM.RF.Client.Tool.Controls.Receive
         }
 
         #endregion
+
+
 
 
 

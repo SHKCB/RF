@@ -59,14 +59,14 @@
             this.txtReceiveNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
             this.txtReceiveNo.ForeColor = System.Drawing.Color.White;
             this.txtReceiveNo.Location = new System.Drawing.Point(10, 83);
-            this.txtReceiveNo.MaxLength = 11;
+            this.txtReceiveNo.MaxLength = 20;
             this.txtReceiveNo.Name = "txtReceiveNo";
             this.txtReceiveNo.Size = new System.Drawing.Size(195, 25);
             this.txtReceiveNo.TabIndex = 2;
             this.txtReceiveNo.TabStop = false;
             this.txtReceiveNo.Tag = "True";
             this.txtReceiveNo.WordWrap = false;
-            this.txtReceiveNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReceiveNo_KeyDown);
+            this.txtReceiveNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceiveNo_KeyDown);
             // 
             // btnOk
             // 
