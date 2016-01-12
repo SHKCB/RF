@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using SCM.RF.Client.BizEntities.Sys;
-using System.Collections.Generic;
+﻿using SCM.RF.Client.BizEntities.Sys;
 
 namespace SCM.RF.Client.BizEntities.Receive
 {
@@ -11,10 +9,10 @@ namespace SCM.RF.Client.BizEntities.Receive
         /// </summary>
         public ReceiveHeaderViewEntity(BaseViewEntity entity)
         {
-            this.CID = base.CID;
-            this.UName = base.UName;
-            this.PWD = base.PWD;
-            this.WareHouseId = base.WareHouseId;
+            this.CID = entity.CID;
+            this.UName = entity.UName;
+            this.PWD = entity.PWD;
+            this.WareHouseId = entity.WareHouseId;
         }
 
         public string Instockcode { get; set; }

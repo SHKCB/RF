@@ -84,12 +84,7 @@ namespace SCM.RF.Client.Tool.Controls.Receive
             string ReceiveNo = txtReceiveNo.Text.Trim();
             if (ReceiveNo == "" || ReceiveNo == null) { return; }
 
-            ReceiveHeaderViewEntity entity = new ReceiveHeaderViewEntity(base.UserView);
-            //entity.CID = SCM.RF.Client.BizProcess.Sys.InstanceBP.SystemInstance.CID;
-            //entity.TID = DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            //entity.WareHouseId = base.UserView.WareHouseId;
-            //entity.UName = base.UserView.UserID;
-            //entity.PWD = base.UserView.Password;
+            ReceiveHeaderViewEntity entity = new ReceiveHeaderViewEntity(base.UserView);         
 
             entity.Instockcode = ReceiveNo;
 
@@ -143,3 +138,4 @@ namespace SCM.RF.Client.Tool.Controls.Receive
         #endregion
     }
 }
+

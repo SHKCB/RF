@@ -1,13 +1,20 @@
 ﻿
+using SCM.RF.Client.BizEntities.Sys;
 namespace SCM.RF.Client.BizEntities.Receive
 {
-    public class ReceiveDetailViewEntity
+    public class ReceiveDetailViewEntity:BaseViewEntity
     {
 
         /// <summary>
         /// 构造
         /// </summary>
-        public ReceiveDetailViewEntity() { }
+        public ReceiveDetailViewEntity(BaseViewEntity entity) 
+        {
+            this.CID = entity.CID;
+            this.UName = entity.UName;
+            this.PWD = entity.PWD;
+            this.WareHouseId = entity.WareHouseId;
+        }
 
         public string Did { get; set; }
 
