@@ -30,9 +30,9 @@
         private void InitializeComponent()
         {
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbSH = new System.Windows.Forms.Label();
+            this.lbDeliveryNO = new System.Windows.Forms.Label();
+            this.lbOrderID = new System.Windows.Forms.Label();
+            this.lbTask = new System.Windows.Forms.Label();
             this.pbMenu = new System.Windows.Forms.PictureBox();
             this.txtMenu = new System.Windows.Forms.TextBox();
             this.lbMenu = new System.Windows.Forms.Label();
@@ -52,32 +52,32 @@
             this.btnCancel.Text = "返回 [&F4]";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // label2
+            // lbDeliveryNO
             // 
-            this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(10, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 20);
-            this.label2.Text = "3、按 [运单号] - 拣货";
+            this.lbDeliveryNO.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
+            this.lbDeliveryNO.ForeColor = System.Drawing.Color.White;
+            this.lbDeliveryNO.Location = new System.Drawing.Point(10, 52);
+            this.lbDeliveryNO.Name = "lbDeliveryNO";
+            this.lbDeliveryNO.Size = new System.Drawing.Size(200, 20);
+            this.lbDeliveryNO.Text = "3、按 [运单号] - 拣货";
             // 
-            // label1
+            // lbOrderID
             // 
-            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(10, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 20);
-            this.label1.Text = "2、按 [订单号] - 拣货";
+            this.lbOrderID.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
+            this.lbOrderID.ForeColor = System.Drawing.Color.White;
+            this.lbOrderID.Location = new System.Drawing.Point(10, 27);
+            this.lbOrderID.Name = "lbOrderID";
+            this.lbOrderID.Size = new System.Drawing.Size(200, 20);
+            this.lbOrderID.Text = "2、按 [订单号] - 拣货";
             // 
-            // lbSH
+            // lbTask
             // 
-            this.lbSH.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
-            this.lbSH.ForeColor = System.Drawing.Color.White;
-            this.lbSH.Location = new System.Drawing.Point(10, 2);
-            this.lbSH.Name = "lbSH";
-            this.lbSH.Size = new System.Drawing.Size(200, 20);
-            this.lbSH.Text = "1、按 [任务号] - 拣货";
+            this.lbTask.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
+            this.lbTask.ForeColor = System.Drawing.Color.White;
+            this.lbTask.Location = new System.Drawing.Point(10, 2);
+            this.lbTask.Name = "lbTask";
+            this.lbTask.Size = new System.Drawing.Size(200, 20);
+            this.lbTask.Text = "1、按 [任务号] - 拣货";
             // 
             // pbMenu
             // 
@@ -97,7 +97,7 @@
             this.txtMenu.MaxLength = 1;
             this.txtMenu.Name = "txtMenu";
             this.txtMenu.Size = new System.Drawing.Size(10, 25);
-            this.txtMenu.TabIndex = 11;
+            this.txtMenu.TabIndex = 1;
             this.txtMenu.TabStop = false;
             this.txtMenu.Tag = "True";
             // 
@@ -118,9 +118,9 @@
             this.Controls.Add(this.pbMenu);
             this.Controls.Add(this.txtMenu);
             this.Controls.Add(this.lbMenu);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbSH);
+            this.Controls.Add(this.lbDeliveryNO);
+            this.Controls.Add(this.lbOrderID);
+            this.Controls.Add(this.lbTask);
             this.Controls.Add(this.btnCancel);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "UCPicking1";
@@ -131,9 +131,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbSH;
+        private System.Windows.Forms.Label lbDeliveryNO;
+        private System.Windows.Forms.Label lbOrderID;
+        private System.Windows.Forms.Label lbTask;
         private System.Windows.Forms.PictureBox pbMenu;
         private System.Windows.Forms.TextBox txtMenu;
         private System.Windows.Forms.Label lbMenu;

@@ -95,6 +95,12 @@
     <Compile Include="Controls\Picking\UCPicking1.designer.cs">
       <DependentUpon>UCPicking1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Picking\UCPickingByTaskID.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Picking\UCPickingByTaskID.designer.cs">
+      <DependentUpon>UCPickingByTaskID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Receive\UCReceiveMain.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Picking\UCPicking1.resx">
       <DependentUpon>UCPicking1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Picking\UCPickingByTaskID.resx">
+      <DependentUpon>UCPickingByTaskID.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Receive\UCReceiveMain.resx">
       <DependentUpon>UCReceiveMain.cs</DependentUpon>
