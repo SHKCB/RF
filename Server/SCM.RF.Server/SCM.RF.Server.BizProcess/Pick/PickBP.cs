@@ -6,6 +6,7 @@ namespace SCM.RF.Server.BizProcess.Pick
     {
         public PickEnity GetPick(PickEnity entity)
         {
+
             //entity.IsLoggedIn = false;
 
             //int sysno = LoginDA.Login(ref entity);

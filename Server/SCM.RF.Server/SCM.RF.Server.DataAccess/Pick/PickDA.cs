@@ -21,6 +21,7 @@ namespace SCM.RF.Server.DataAccess.Pick
 
              */
 
+
             string param = @"<?xml version=\'1.0\' encoding=\'UTF-8\'?>
                                 <rt>
                                 <tid>" + entity.TID + @"</tid>
