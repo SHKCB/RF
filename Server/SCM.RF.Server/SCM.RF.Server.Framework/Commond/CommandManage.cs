@@ -1,4 +1,5 @@
 ﻿using SCM.RF.Client.BizEntities.AuthCenter;
+using SCM.RF.Server.BizEntities.Pick;
 using SCM.RF.Server.BizEntities.Receive;
 using SCM.RF.Server.BizEntities.Sys;
 using SCM.RF.Server.BizProcess.Login;
@@ -135,10 +136,10 @@ namespace SCM.RF.Server.Framework.Commond
                 //{
                 //    result = PutawayInsert(content);
                 //}
-                //else if (action == "4001")
-                //{
-                //    result = TransferMasterInsert(content);
-                //}
+                else if (action == "4001")
+                {
+                    result = GetPick(content);
+                }
                 //else if (action == "4002")
                 //{
                 //    result = TransferItemInsert(content);
@@ -319,6 +320,23 @@ namespace SCM.RF.Server.Framework.Commond
             return result;
         }
 
+
+        #endregion
+
+        #region 拣货
+
+        private string GetPick(string receive)
+        {
+            //PickEnity param = SerializeHelper.Deserialize<PickEnity>(receive);
+
+            //PickEnity entity = new ReceiveBP().GetReceiveDetail(param);
+
+            //string result = SerializeHelper.Serialize(entity);
+
+            //return result;
+
+            return "";
+        }
 
         #endregion
 
