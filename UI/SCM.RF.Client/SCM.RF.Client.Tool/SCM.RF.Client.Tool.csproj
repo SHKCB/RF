@@ -89,6 +89,12 @@
     <Compile Include="Controls\Login\UCSetting.Designer.cs">
       <DependentUpon>UCSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Receive\UCReceiveMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Receive\UCReceiveMain.Designer.cs">
+      <DependentUpon>UCReceiveMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\Common\UCBasicControl.resx">
@@ -105,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Login\UCSetting.resx">
       <DependentUpon>UCSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Receive\UCReceiveMain.resx">
+      <DependentUpon>UCReceiveMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
