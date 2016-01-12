@@ -1,53 +1,73 @@
 ﻿using SCM.RF.Server.BizEntities.Sys;
-
 namespace SCM.RF.Server.Adapt
 {
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name = "IWebWarehouseServiceServiceSoapBinding", Namespace = "http://warehouse.cxf.kcb.com/")]
-    public partial class IWebWarehouseServiceService : System.Web.Services.Protocols.SoapHttpClientProtocol
+    [System.Web.Services.WebServiceBindingAttribute(Name = "IWebWarehouseServiceQYBServiceSoapBinding", Namespace = "http://warehouse.cxf.kcb.com/")]
+    public partial class IWebWarehouseServiceQYBService : System.Web.Services.Protocols.SoapHttpClientProtocol
     {
 
-        private System.Threading.SendOrPostCallback uploadPickgoodsInfoOperationCompleted;
+        private System.Threading.SendOrPostCallback getJhOutstockByIdOperationCompleted;
+
+        private System.Threading.SendOrPostCallback receiveGoodsOperationCompleted;
+
+        private System.Threading.SendOrPostCallback getSJGZRuleOperationCompleted;
 
         private System.Threading.SendOrPostCallback loginoutOperationCompleted;
 
-        private System.Threading.SendOrPostCallback getPickorderGoodsOperationCompleted;
+        private System.Threading.SendOrPostCallback CheckBarocdeUnitOperationCompleted;
 
-        private System.Threading.SendOrPostCallback getClientAddtoshelfListOperationCompleted;
+        private System.Threading.SendOrPostCallback saveMoveOperationCompleted;
 
-        private System.Threading.SendOrPostCallback wavePickFinishOperationCompleted;
+        private System.Threading.SendOrPostCallback cancelReceiveOperationCompleted;
 
-        private System.Threading.SendOrPostCallback getShiftTaskOrderOperationCompleted;
+        private System.Threading.SendOrPostCallback getUnitOperationCompleted;
 
-        private System.Threading.SendOrPostCallback getStockGoodsListOperationCompleted;
+        private System.Threading.SendOrPostCallback cancelLocationOperationCompleted;
 
-        private System.Threading.SendOrPostCallback uploadAddToShellInfoOperationCompleted;
-
-        private System.Threading.SendOrPostCallback confirmGoodsShiftOperationCompleted;
-
-        private System.Threading.SendOrPostCallback getClientAddtoshelfListDetailOperationCompleted;
-
-        private System.Threading.SendOrPostCallback getInstockOfCheckOperationCompleted;
-
-        private System.Threading.SendOrPostCallback getGoodsOnStockListOperationCompleted;
-
-        private System.Threading.SendOrPostCallback getInstockdOfCheckOperationCompleted;
-
-        private System.Threading.SendOrPostCallback uploadInstockdOfCheckOperationCompleted;
-
-        private System.Threading.SendOrPostCallback finishInstockOfCheckOperationCompleted;
+        private System.Threading.SendOrPostCallback confirmShelfTaskOperationCompleted;
 
         private System.Threading.SendOrPostCallback loginOperationCompleted;
+
+        private System.Threading.SendOrPostCallback getTaskDByIdsOperationCompleted;
+
+        private System.Threading.SendOrPostCallback getInstockreceOperationCompleted;
+
+        private System.Threading.SendOrPostCallback getTaskdInfoOperationCompleted;
+
+        private System.Threading.SendOrPostCallback checkSerialnumberOperationCompleted;
+
+        private System.Threading.SendOrPostCallback getInstockDetailOperationCompleted;
+
+        private System.Threading.SendOrPostCallback locationWhitemOperationCompleted;
+
+        private System.Threading.SendOrPostCallback getTaskByIdOperationCompleted;
+
+        private System.Threading.SendOrPostCallback completeTaskdOperationCompleted;
+
+        private System.Threading.SendOrPostCallback checkInWhitemOperationCompleted;
+
+        private System.Threading.SendOrPostCallback CheckReWhitemOperationCompleted;
+
+        private System.Threading.SendOrPostCallback checkItemBarcodeOperationCompleted;
+
+        private System.Threading.SendOrPostCallback getJhOutstockByDisOperationCompleted;
+
+        private System.Threading.SendOrPostCallback updateInstockreceOperationCompleted;
+
+        private System.Threading.SendOrPostCallback getStockinfoOperationCompleted;
+
+        private System.Threading.SendOrPostCallback checkOutWhitemOperationCompleted;
 
         private bool useDefaultCredentialsSetExplicitly;
 
         /// <remarks/>
-        public IWebWarehouseServiceService()
+        public IWebWarehouseServiceQYBService()
         {
-            this.Url = SystemInstance.SystemEntityInstance.wsurl; //global::SCM.RF.Server.Adapt.Properties.Settings.Default.SCM_RF_Server_Adapt_WebService_IWebWarehouseServiceService;
+            this.Url = SystemInstance.SystemEntityInstance.wsurl; ;//global::SCM.RF.Server.Adapt.Properties.Settings.Default.SCM_RF_Server_Adapt_com_kucangbao_demo_IWebWarehouseServiceQYBService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true))
             {
                 this.UseDefaultCredentials = true;
@@ -91,86 +111,188 @@ namespace SCM.RF.Server.Adapt
         }
 
         /// <remarks/>
-        public event uploadPickgoodsInfoCompletedEventHandler uploadPickgoodsInfoCompleted;
+        public event getJhOutstockByIdCompletedEventHandler getJhOutstockByIdCompleted;
+
+        /// <remarks/>
+        public event receiveGoodsCompletedEventHandler receiveGoodsCompleted;
+
+        /// <remarks/>
+        public event getSJGZRuleCompletedEventHandler getSJGZRuleCompleted;
 
         /// <remarks/>
         public event loginoutCompletedEventHandler loginoutCompleted;
 
         /// <remarks/>
-        public event getPickorderGoodsCompletedEventHandler getPickorderGoodsCompleted;
+        public event CheckBarocdeUnitCompletedEventHandler CheckBarocdeUnitCompleted;
 
         /// <remarks/>
-        public event getClientAddtoshelfListCompletedEventHandler getClientAddtoshelfListCompleted;
+        public event saveMoveCompletedEventHandler saveMoveCompleted;
 
         /// <remarks/>
-        public event wavePickFinishCompletedEventHandler wavePickFinishCompleted;
+        public event cancelReceiveCompletedEventHandler cancelReceiveCompleted;
 
         /// <remarks/>
-        public event getShiftTaskOrderCompletedEventHandler getShiftTaskOrderCompleted;
+        public event getUnitCompletedEventHandler getUnitCompleted;
 
         /// <remarks/>
-        public event getStockGoodsListCompletedEventHandler getStockGoodsListCompleted;
+        public event cancelLocationCompletedEventHandler cancelLocationCompleted;
 
         /// <remarks/>
-        public event uploadAddToShellInfoCompletedEventHandler uploadAddToShellInfoCompleted;
-
-        /// <remarks/>
-        public event confirmGoodsShiftCompletedEventHandler confirmGoodsShiftCompleted;
-
-        /// <remarks/>
-        public event getClientAddtoshelfListDetailCompletedEventHandler getClientAddtoshelfListDetailCompleted;
-
-        /// <remarks/>
-        public event getInstockOfCheckCompletedEventHandler getInstockOfCheckCompleted;
-
-        /// <remarks/>
-        public event getGoodsOnStockListCompletedEventHandler getGoodsOnStockListCompleted;
-
-        /// <remarks/>
-        public event getInstockdOfCheckCompletedEventHandler getInstockdOfCheckCompleted;
-
-        /// <remarks/>
-        public event uploadInstockdOfCheckCompletedEventHandler uploadInstockdOfCheckCompleted;
-
-        /// <remarks/>
-        public event finishInstockOfCheckCompletedEventHandler finishInstockOfCheckCompleted;
+        public event confirmShelfTaskCompletedEventHandler confirmShelfTaskCompleted;
 
         /// <remarks/>
         public event loginCompletedEventHandler loginCompleted;
 
         /// <remarks/>
+        public event getTaskDByIdsCompletedEventHandler getTaskDByIdsCompleted;
+
+        /// <remarks/>
+        public event getInstockreceCompletedEventHandler getInstockreceCompleted;
+
+        /// <remarks/>
+        public event getTaskdInfoCompletedEventHandler getTaskdInfoCompleted;
+
+        /// <remarks/>
+        public event checkSerialnumberCompletedEventHandler checkSerialnumberCompleted;
+
+        /// <remarks/>
+        public event getInstockDetailCompletedEventHandler getInstockDetailCompleted;
+
+        /// <remarks/>
+        public event locationWhitemCompletedEventHandler locationWhitemCompleted;
+
+        /// <remarks/>
+        public event getTaskByIdCompletedEventHandler getTaskByIdCompleted;
+
+        /// <remarks/>
+        public event completeTaskdCompletedEventHandler completeTaskdCompleted;
+
+        /// <remarks/>
+        public event checkInWhitemCompletedEventHandler checkInWhitemCompleted;
+
+        /// <remarks/>
+        public event CheckReWhitemCompletedEventHandler CheckReWhitemCompleted;
+
+        /// <remarks/>
+        public event checkItemBarcodeCompletedEventHandler checkItemBarcodeCompleted;
+
+        /// <remarks/>
+        public event getJhOutstockByDisCompletedEventHandler getJhOutstockByDisCompleted;
+
+        /// <remarks/>
+        public event updateInstockreceCompletedEventHandler updateInstockreceCompleted;
+
+        /// <remarks/>
+        public event getStockinfoCompletedEventHandler getStockinfoCompleted;
+
+        /// <remarks/>
+        public event checkOutWhitemCompletedEventHandler checkOutWhitemCompleted;
+
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string uploadPickgoodsInfo([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        public string getJhOutstockById([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
         {
-            object[] results = this.Invoke("uploadPickgoodsInfo", new object[] {
+            object[] results = this.Invoke("getJhOutstockById", new object[] {
                         arg0});
             return ((string)(results[0]));
         }
 
         /// <remarks/>
-        public void uploadPickgoodsInfoAsync(string arg0)
+        public void getJhOutstockByIdAsync(string arg0)
         {
-            this.uploadPickgoodsInfoAsync(arg0, null);
+            this.getJhOutstockByIdAsync(arg0, null);
         }
 
         /// <remarks/>
-        public void uploadPickgoodsInfoAsync(string arg0, object userState)
+        public void getJhOutstockByIdAsync(string arg0, object userState)
         {
-            if ((this.uploadPickgoodsInfoOperationCompleted == null))
+            if ((this.getJhOutstockByIdOperationCompleted == null))
             {
-                this.uploadPickgoodsInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnuploadPickgoodsInfoOperationCompleted);
+                this.getJhOutstockByIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetJhOutstockByIdOperationCompleted);
             }
-            this.InvokeAsync("uploadPickgoodsInfo", new object[] {
-                        arg0}, this.uploadPickgoodsInfoOperationCompleted, userState);
+            this.InvokeAsync("getJhOutstockById", new object[] {
+                        arg0}, this.getJhOutstockByIdOperationCompleted, userState);
         }
 
-        private void OnuploadPickgoodsInfoOperationCompleted(object arg)
+        private void OngetJhOutstockByIdOperationCompleted(object arg)
         {
-            if ((this.uploadPickgoodsInfoCompleted != null))
+            if ((this.getJhOutstockByIdCompleted != null))
             {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.uploadPickgoodsInfoCompleted(this, new uploadPickgoodsInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.getJhOutstockByIdCompleted(this, new getJhOutstockByIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string receiveGoods([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("receiveGoods", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void receiveGoodsAsync(string arg0)
+        {
+            this.receiveGoodsAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void receiveGoodsAsync(string arg0, object userState)
+        {
+            if ((this.receiveGoodsOperationCompleted == null))
+            {
+                this.receiveGoodsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnreceiveGoodsOperationCompleted);
+            }
+            this.InvokeAsync("receiveGoods", new object[] {
+                        arg0}, this.receiveGoodsOperationCompleted, userState);
+        }
+
+        private void OnreceiveGoodsOperationCompleted(object arg)
+        {
+            if ((this.receiveGoodsCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.receiveGoodsCompleted(this, new receiveGoodsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string getSJGZRule([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("getSJGZRule", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void getSJGZRuleAsync(string arg0)
+        {
+            this.getSJGZRuleAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void getSJGZRuleAsync(string arg0, object userState)
+        {
+            if ((this.getSJGZRuleOperationCompleted == null))
+            {
+                this.getSJGZRuleOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetSJGZRuleOperationCompleted);
+            }
+            this.InvokeAsync("getSJGZRule", new object[] {
+                        arg0}, this.getSJGZRuleOperationCompleted, userState);
+        }
+
+        private void OngetSJGZRuleOperationCompleted(object arg)
+        {
+            if ((this.getSJGZRuleCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getSJGZRuleCompleted(this, new getSJGZRuleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
 
@@ -213,468 +335,216 @@ namespace SCM.RF.Server.Adapt
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string getPickorderGoods([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        public string CheckBarocdeUnit([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
         {
-            object[] results = this.Invoke("getPickorderGoods", new object[] {
+            object[] results = this.Invoke("CheckBarocdeUnit", new object[] {
                         arg0});
             return ((string)(results[0]));
         }
 
         /// <remarks/>
-        public void getPickorderGoodsAsync(string arg0)
+        public void CheckBarocdeUnitAsync(string arg0)
         {
-            this.getPickorderGoodsAsync(arg0, null);
+            this.CheckBarocdeUnitAsync(arg0, null);
         }
 
         /// <remarks/>
-        public void getPickorderGoodsAsync(string arg0, object userState)
+        public void CheckBarocdeUnitAsync(string arg0, object userState)
         {
-            if ((this.getPickorderGoodsOperationCompleted == null))
+            if ((this.CheckBarocdeUnitOperationCompleted == null))
             {
-                this.getPickorderGoodsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetPickorderGoodsOperationCompleted);
+                this.CheckBarocdeUnitOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCheckBarocdeUnitOperationCompleted);
             }
-            this.InvokeAsync("getPickorderGoods", new object[] {
-                        arg0}, this.getPickorderGoodsOperationCompleted, userState);
+            this.InvokeAsync("CheckBarocdeUnit", new object[] {
+                        arg0}, this.CheckBarocdeUnitOperationCompleted, userState);
         }
 
-        private void OngetPickorderGoodsOperationCompleted(object arg)
+        private void OnCheckBarocdeUnitOperationCompleted(object arg)
         {
-            if ((this.getPickorderGoodsCompleted != null))
+            if ((this.CheckBarocdeUnitCompleted != null))
             {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getPickorderGoodsCompleted(this, new getPickorderGoodsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.CheckBarocdeUnitCompleted(this, new CheckBarocdeUnitCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
 
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string getClientAddtoshelfList([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        public string saveMove([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
         {
-            object[] results = this.Invoke("getClientAddtoshelfList", new object[] {
+            object[] results = this.Invoke("saveMove", new object[] {
                         arg0});
             return ((string)(results[0]));
         }
 
         /// <remarks/>
-        public void getClientAddtoshelfListAsync(string arg0)
+        public void saveMoveAsync(string arg0)
         {
-            this.getClientAddtoshelfListAsync(arg0, null);
+            this.saveMoveAsync(arg0, null);
         }
 
         /// <remarks/>
-        public void getClientAddtoshelfListAsync(string arg0, object userState)
+        public void saveMoveAsync(string arg0, object userState)
         {
-            if ((this.getClientAddtoshelfListOperationCompleted == null))
+            if ((this.saveMoveOperationCompleted == null))
             {
-                this.getClientAddtoshelfListOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetClientAddtoshelfListOperationCompleted);
+                this.saveMoveOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsaveMoveOperationCompleted);
             }
-            this.InvokeAsync("getClientAddtoshelfList", new object[] {
-                        arg0}, this.getClientAddtoshelfListOperationCompleted, userState);
+            this.InvokeAsync("saveMove", new object[] {
+                        arg0}, this.saveMoveOperationCompleted, userState);
         }
 
-        private void OngetClientAddtoshelfListOperationCompleted(object arg)
+        private void OnsaveMoveOperationCompleted(object arg)
         {
-            if ((this.getClientAddtoshelfListCompleted != null))
+            if ((this.saveMoveCompleted != null))
             {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getClientAddtoshelfListCompleted(this, new getClientAddtoshelfListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.saveMoveCompleted(this, new saveMoveCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
 
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string wavePickFinish([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        public string cancelReceive([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
         {
-            object[] results = this.Invoke("wavePickFinish", new object[] {
+            object[] results = this.Invoke("cancelReceive", new object[] {
                         arg0});
             return ((string)(results[0]));
         }
 
         /// <remarks/>
-        public void wavePickFinishAsync(string arg0)
+        public void cancelReceiveAsync(string arg0)
         {
-            this.wavePickFinishAsync(arg0, null);
+            this.cancelReceiveAsync(arg0, null);
         }
 
         /// <remarks/>
-        public void wavePickFinishAsync(string arg0, object userState)
+        public void cancelReceiveAsync(string arg0, object userState)
         {
-            if ((this.wavePickFinishOperationCompleted == null))
+            if ((this.cancelReceiveOperationCompleted == null))
             {
-                this.wavePickFinishOperationCompleted = new System.Threading.SendOrPostCallback(this.OnwavePickFinishOperationCompleted);
+                this.cancelReceiveOperationCompleted = new System.Threading.SendOrPostCallback(this.OncancelReceiveOperationCompleted);
             }
-            this.InvokeAsync("wavePickFinish", new object[] {
-                        arg0}, this.wavePickFinishOperationCompleted, userState);
+            this.InvokeAsync("cancelReceive", new object[] {
+                        arg0}, this.cancelReceiveOperationCompleted, userState);
         }
 
-        private void OnwavePickFinishOperationCompleted(object arg)
+        private void OncancelReceiveOperationCompleted(object arg)
         {
-            if ((this.wavePickFinishCompleted != null))
+            if ((this.cancelReceiveCompleted != null))
             {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.wavePickFinishCompleted(this, new wavePickFinishCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.cancelReceiveCompleted(this, new cancelReceiveCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
 
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string getShiftTaskOrder([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        public string getUnit([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
         {
-            object[] results = this.Invoke("getShiftTaskOrder", new object[] {
+            object[] results = this.Invoke("getUnit", new object[] {
                         arg0});
             return ((string)(results[0]));
         }
 
         /// <remarks/>
-        public void getShiftTaskOrderAsync(string arg0)
+        public void getUnitAsync(string arg0)
         {
-            this.getShiftTaskOrderAsync(arg0, null);
+            this.getUnitAsync(arg0, null);
         }
 
         /// <remarks/>
-        public void getShiftTaskOrderAsync(string arg0, object userState)
+        public void getUnitAsync(string arg0, object userState)
         {
-            if ((this.getShiftTaskOrderOperationCompleted == null))
+            if ((this.getUnitOperationCompleted == null))
             {
-                this.getShiftTaskOrderOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetShiftTaskOrderOperationCompleted);
+                this.getUnitOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetUnitOperationCompleted);
             }
-            this.InvokeAsync("getShiftTaskOrder", new object[] {
-                        arg0}, this.getShiftTaskOrderOperationCompleted, userState);
+            this.InvokeAsync("getUnit", new object[] {
+                        arg0}, this.getUnitOperationCompleted, userState);
         }
 
-        private void OngetShiftTaskOrderOperationCompleted(object arg)
+        private void OngetUnitOperationCompleted(object arg)
         {
-            if ((this.getShiftTaskOrderCompleted != null))
+            if ((this.getUnitCompleted != null))
             {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getShiftTaskOrderCompleted(this, new getShiftTaskOrderCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.getUnitCompleted(this, new getUnitCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
 
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string getStockGoodsList([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        public string cancelLocation([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
         {
-            object[] results = this.Invoke("getStockGoodsList", new object[] {
+            object[] results = this.Invoke("cancelLocation", new object[] {
                         arg0});
             return ((string)(results[0]));
         }
 
         /// <remarks/>
-        public void getStockGoodsListAsync(string arg0)
+        public void cancelLocationAsync(string arg0)
         {
-            this.getStockGoodsListAsync(arg0, null);
+            this.cancelLocationAsync(arg0, null);
         }
 
         /// <remarks/>
-        public void getStockGoodsListAsync(string arg0, object userState)
+        public void cancelLocationAsync(string arg0, object userState)
         {
-            if ((this.getStockGoodsListOperationCompleted == null))
+            if ((this.cancelLocationOperationCompleted == null))
             {
-                this.getStockGoodsListOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetStockGoodsListOperationCompleted);
+                this.cancelLocationOperationCompleted = new System.Threading.SendOrPostCallback(this.OncancelLocationOperationCompleted);
             }
-            this.InvokeAsync("getStockGoodsList", new object[] {
-                        arg0}, this.getStockGoodsListOperationCompleted, userState);
+            this.InvokeAsync("cancelLocation", new object[] {
+                        arg0}, this.cancelLocationOperationCompleted, userState);
         }
 
-        private void OngetStockGoodsListOperationCompleted(object arg)
+        private void OncancelLocationOperationCompleted(object arg)
         {
-            if ((this.getStockGoodsListCompleted != null))
+            if ((this.cancelLocationCompleted != null))
             {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getStockGoodsListCompleted(this, new getStockGoodsListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.cancelLocationCompleted(this, new cancelLocationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
 
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string uploadAddToShellInfo([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        public string confirmShelfTask([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
         {
-            object[] results = this.Invoke("uploadAddToShellInfo", new object[] {
+            object[] results = this.Invoke("confirmShelfTask", new object[] {
                         arg0});
             return ((string)(results[0]));
         }
 
         /// <remarks/>
-        public void uploadAddToShellInfoAsync(string arg0)
+        public void confirmShelfTaskAsync(string arg0)
         {
-            this.uploadAddToShellInfoAsync(arg0, null);
+            this.confirmShelfTaskAsync(arg0, null);
         }
 
         /// <remarks/>
-        public void uploadAddToShellInfoAsync(string arg0, object userState)
+        public void confirmShelfTaskAsync(string arg0, object userState)
         {
-            if ((this.uploadAddToShellInfoOperationCompleted == null))
+            if ((this.confirmShelfTaskOperationCompleted == null))
             {
-                this.uploadAddToShellInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnuploadAddToShellInfoOperationCompleted);
+                this.confirmShelfTaskOperationCompleted = new System.Threading.SendOrPostCallback(this.OnconfirmShelfTaskOperationCompleted);
             }
-            this.InvokeAsync("uploadAddToShellInfo", new object[] {
-                        arg0}, this.uploadAddToShellInfoOperationCompleted, userState);
+            this.InvokeAsync("confirmShelfTask", new object[] {
+                        arg0}, this.confirmShelfTaskOperationCompleted, userState);
         }
 
-        private void OnuploadAddToShellInfoOperationCompleted(object arg)
+        private void OnconfirmShelfTaskOperationCompleted(object arg)
         {
-            if ((this.uploadAddToShellInfoCompleted != null))
+            if ((this.confirmShelfTaskCompleted != null))
             {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.uploadAddToShellInfoCompleted(this, new uploadAddToShellInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string confirmGoodsShift([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
-        {
-            object[] results = this.Invoke("confirmGoodsShift", new object[] {
-                        arg0});
-            return ((string)(results[0]));
-        }
-
-        /// <remarks/>
-        public void confirmGoodsShiftAsync(string arg0)
-        {
-            this.confirmGoodsShiftAsync(arg0, null);
-        }
-
-        /// <remarks/>
-        public void confirmGoodsShiftAsync(string arg0, object userState)
-        {
-            if ((this.confirmGoodsShiftOperationCompleted == null))
-            {
-                this.confirmGoodsShiftOperationCompleted = new System.Threading.SendOrPostCallback(this.OnconfirmGoodsShiftOperationCompleted);
-            }
-            this.InvokeAsync("confirmGoodsShift", new object[] {
-                        arg0}, this.confirmGoodsShiftOperationCompleted, userState);
-        }
-
-        private void OnconfirmGoodsShiftOperationCompleted(object arg)
-        {
-            if ((this.confirmGoodsShiftCompleted != null))
-            {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.confirmGoodsShiftCompleted(this, new confirmGoodsShiftCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string getClientAddtoshelfListDetail([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
-        {
-            object[] results = this.Invoke("getClientAddtoshelfListDetail", new object[] {
-                        arg0});
-            return ((string)(results[0]));
-        }
-
-        /// <remarks/>
-        public void getClientAddtoshelfListDetailAsync(string arg0)
-        {
-            this.getClientAddtoshelfListDetailAsync(arg0, null);
-        }
-
-        /// <remarks/>
-        public void getClientAddtoshelfListDetailAsync(string arg0, object userState)
-        {
-            if ((this.getClientAddtoshelfListDetailOperationCompleted == null))
-            {
-                this.getClientAddtoshelfListDetailOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetClientAddtoshelfListDetailOperationCompleted);
-            }
-            this.InvokeAsync("getClientAddtoshelfListDetail", new object[] {
-                        arg0}, this.getClientAddtoshelfListDetailOperationCompleted, userState);
-        }
-
-        private void OngetClientAddtoshelfListDetailOperationCompleted(object arg)
-        {
-            if ((this.getClientAddtoshelfListDetailCompleted != null))
-            {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getClientAddtoshelfListDetailCompleted(this, new getClientAddtoshelfListDetailCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string getInstockOfCheck([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
-        {
-            object[] results = this.Invoke("getInstockOfCheck", new object[] {
-                        arg0});
-            return ((string)(results[0]));
-        }
-
-        /// <remarks/>
-        public void getInstockOfCheckAsync(string arg0)
-        {
-            this.getInstockOfCheckAsync(arg0, null);
-        }
-
-        /// <remarks/>
-        public void getInstockOfCheckAsync(string arg0, object userState)
-        {
-            if ((this.getInstockOfCheckOperationCompleted == null))
-            {
-                this.getInstockOfCheckOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetInstockOfCheckOperationCompleted);
-            }
-            this.InvokeAsync("getInstockOfCheck", new object[] {
-                        arg0}, this.getInstockOfCheckOperationCompleted, userState);
-        }
-
-        private void OngetInstockOfCheckOperationCompleted(object arg)
-        {
-            if ((this.getInstockOfCheckCompleted != null))
-            {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getInstockOfCheckCompleted(this, new getInstockOfCheckCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string getGoodsOnStockList([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
-        {
-            object[] results = this.Invoke("getGoodsOnStockList", new object[] {
-                        arg0});
-            return ((string)(results[0]));
-        }
-
-        /// <remarks/>
-        public void getGoodsOnStockListAsync(string arg0)
-        {
-            this.getGoodsOnStockListAsync(arg0, null);
-        }
-
-        /// <remarks/>
-        public void getGoodsOnStockListAsync(string arg0, object userState)
-        {
-            if ((this.getGoodsOnStockListOperationCompleted == null))
-            {
-                this.getGoodsOnStockListOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetGoodsOnStockListOperationCompleted);
-            }
-            this.InvokeAsync("getGoodsOnStockList", new object[] {
-                        arg0}, this.getGoodsOnStockListOperationCompleted, userState);
-        }
-
-        private void OngetGoodsOnStockListOperationCompleted(object arg)
-        {
-            if ((this.getGoodsOnStockListCompleted != null))
-            {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getGoodsOnStockListCompleted(this, new getGoodsOnStockListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string getInstockdOfCheck([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
-        {
-            object[] results = this.Invoke("getInstockdOfCheck", new object[] {
-                        arg0});
-            return ((string)(results[0]));
-        }
-
-        /// <remarks/>
-        public void getInstockdOfCheckAsync(string arg0)
-        {
-            this.getInstockdOfCheckAsync(arg0, null);
-        }
-
-        /// <remarks/>
-        public void getInstockdOfCheckAsync(string arg0, object userState)
-        {
-            if ((this.getInstockdOfCheckOperationCompleted == null))
-            {
-                this.getInstockdOfCheckOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetInstockdOfCheckOperationCompleted);
-            }
-            this.InvokeAsync("getInstockdOfCheck", new object[] {
-                        arg0}, this.getInstockdOfCheckOperationCompleted, userState);
-        }
-
-        private void OngetInstockdOfCheckOperationCompleted(object arg)
-        {
-            if ((this.getInstockdOfCheckCompleted != null))
-            {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getInstockdOfCheckCompleted(this, new getInstockdOfCheckCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string uploadInstockdOfCheck([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
-        {
-            object[] results = this.Invoke("uploadInstockdOfCheck", new object[] {
-                        arg0});
-            return ((string)(results[0]));
-        }
-
-        /// <remarks/>
-        public void uploadInstockdOfCheckAsync(string arg0)
-        {
-            this.uploadInstockdOfCheckAsync(arg0, null);
-        }
-
-        /// <remarks/>
-        public void uploadInstockdOfCheckAsync(string arg0, object userState)
-        {
-            if ((this.uploadInstockdOfCheckOperationCompleted == null))
-            {
-                this.uploadInstockdOfCheckOperationCompleted = new System.Threading.SendOrPostCallback(this.OnuploadInstockdOfCheckOperationCompleted);
-            }
-            this.InvokeAsync("uploadInstockdOfCheck", new object[] {
-                        arg0}, this.uploadInstockdOfCheckOperationCompleted, userState);
-        }
-
-        private void OnuploadInstockdOfCheckOperationCompleted(object arg)
-        {
-            if ((this.uploadInstockdOfCheckCompleted != null))
-            {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.uploadInstockdOfCheckCompleted(this, new uploadInstockdOfCheckCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string finishInstockOfCheck([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
-        {
-            object[] results = this.Invoke("finishInstockOfCheck", new object[] {
-                        arg0});
-            return ((string)(results[0]));
-        }
-
-        /// <remarks/>
-        public void finishInstockOfCheckAsync(string arg0)
-        {
-            this.finishInstockOfCheckAsync(arg0, null);
-        }
-
-        /// <remarks/>
-        public void finishInstockOfCheckAsync(string arg0, object userState)
-        {
-            if ((this.finishInstockOfCheckOperationCompleted == null))
-            {
-                this.finishInstockOfCheckOperationCompleted = new System.Threading.SendOrPostCallback(this.OnfinishInstockOfCheckOperationCompleted);
-            }
-            this.InvokeAsync("finishInstockOfCheck", new object[] {
-                        arg0}, this.finishInstockOfCheckOperationCompleted, userState);
-        }
-
-        private void OnfinishInstockOfCheckOperationCompleted(object arg)
-        {
-            if ((this.finishInstockOfCheckCompleted != null))
-            {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.finishInstockOfCheckCompleted(this, new finishInstockOfCheckCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.confirmShelfTaskCompleted(this, new confirmShelfTaskCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
 
@@ -715,6 +585,546 @@ namespace SCM.RF.Server.Adapt
         }
 
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string getTaskDByIds([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("getTaskDByIds", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void getTaskDByIdsAsync(string arg0)
+        {
+            this.getTaskDByIdsAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void getTaskDByIdsAsync(string arg0, object userState)
+        {
+            if ((this.getTaskDByIdsOperationCompleted == null))
+            {
+                this.getTaskDByIdsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetTaskDByIdsOperationCompleted);
+            }
+            this.InvokeAsync("getTaskDByIds", new object[] {
+                        arg0}, this.getTaskDByIdsOperationCompleted, userState);
+        }
+
+        private void OngetTaskDByIdsOperationCompleted(object arg)
+        {
+            if ((this.getTaskDByIdsCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getTaskDByIdsCompleted(this, new getTaskDByIdsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string getInstockrece([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("getInstockrece", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void getInstockreceAsync(string arg0)
+        {
+            this.getInstockreceAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void getInstockreceAsync(string arg0, object userState)
+        {
+            if ((this.getInstockreceOperationCompleted == null))
+            {
+                this.getInstockreceOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetInstockreceOperationCompleted);
+            }
+            this.InvokeAsync("getInstockrece", new object[] {
+                        arg0}, this.getInstockreceOperationCompleted, userState);
+        }
+
+        private void OngetInstockreceOperationCompleted(object arg)
+        {
+            if ((this.getInstockreceCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getInstockreceCompleted(this, new getInstockreceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string getTaskdInfo([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("getTaskdInfo", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void getTaskdInfoAsync(string arg0)
+        {
+            this.getTaskdInfoAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void getTaskdInfoAsync(string arg0, object userState)
+        {
+            if ((this.getTaskdInfoOperationCompleted == null))
+            {
+                this.getTaskdInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetTaskdInfoOperationCompleted);
+            }
+            this.InvokeAsync("getTaskdInfo", new object[] {
+                        arg0}, this.getTaskdInfoOperationCompleted, userState);
+        }
+
+        private void OngetTaskdInfoOperationCompleted(object arg)
+        {
+            if ((this.getTaskdInfoCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getTaskdInfoCompleted(this, new getTaskdInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string checkSerialnumber([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("checkSerialnumber", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void checkSerialnumberAsync(string arg0)
+        {
+            this.checkSerialnumberAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void checkSerialnumberAsync(string arg0, object userState)
+        {
+            if ((this.checkSerialnumberOperationCompleted == null))
+            {
+                this.checkSerialnumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OncheckSerialnumberOperationCompleted);
+            }
+            this.InvokeAsync("checkSerialnumber", new object[] {
+                        arg0}, this.checkSerialnumberOperationCompleted, userState);
+        }
+
+        private void OncheckSerialnumberOperationCompleted(object arg)
+        {
+            if ((this.checkSerialnumberCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.checkSerialnumberCompleted(this, new checkSerialnumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string getInstockDetail([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("getInstockDetail", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void getInstockDetailAsync(string arg0)
+        {
+            this.getInstockDetailAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void getInstockDetailAsync(string arg0, object userState)
+        {
+            if ((this.getInstockDetailOperationCompleted == null))
+            {
+                this.getInstockDetailOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetInstockDetailOperationCompleted);
+            }
+            this.InvokeAsync("getInstockDetail", new object[] {
+                        arg0}, this.getInstockDetailOperationCompleted, userState);
+        }
+
+        private void OngetInstockDetailOperationCompleted(object arg)
+        {
+            if ((this.getInstockDetailCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getInstockDetailCompleted(this, new getInstockDetailCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string locationWhitem([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("locationWhitem", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void locationWhitemAsync(string arg0)
+        {
+            this.locationWhitemAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void locationWhitemAsync(string arg0, object userState)
+        {
+            if ((this.locationWhitemOperationCompleted == null))
+            {
+                this.locationWhitemOperationCompleted = new System.Threading.SendOrPostCallback(this.OnlocationWhitemOperationCompleted);
+            }
+            this.InvokeAsync("locationWhitem", new object[] {
+                        arg0}, this.locationWhitemOperationCompleted, userState);
+        }
+
+        private void OnlocationWhitemOperationCompleted(object arg)
+        {
+            if ((this.locationWhitemCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.locationWhitemCompleted(this, new locationWhitemCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string getTaskById([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("getTaskById", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void getTaskByIdAsync(string arg0)
+        {
+            this.getTaskByIdAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void getTaskByIdAsync(string arg0, object userState)
+        {
+            if ((this.getTaskByIdOperationCompleted == null))
+            {
+                this.getTaskByIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetTaskByIdOperationCompleted);
+            }
+            this.InvokeAsync("getTaskById", new object[] {
+                        arg0}, this.getTaskByIdOperationCompleted, userState);
+        }
+
+        private void OngetTaskByIdOperationCompleted(object arg)
+        {
+            if ((this.getTaskByIdCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getTaskByIdCompleted(this, new getTaskByIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string completeTaskd([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("completeTaskd", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void completeTaskdAsync(string arg0)
+        {
+            this.completeTaskdAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void completeTaskdAsync(string arg0, object userState)
+        {
+            if ((this.completeTaskdOperationCompleted == null))
+            {
+                this.completeTaskdOperationCompleted = new System.Threading.SendOrPostCallback(this.OncompleteTaskdOperationCompleted);
+            }
+            this.InvokeAsync("completeTaskd", new object[] {
+                        arg0}, this.completeTaskdOperationCompleted, userState);
+        }
+
+        private void OncompleteTaskdOperationCompleted(object arg)
+        {
+            if ((this.completeTaskdCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.completeTaskdCompleted(this, new completeTaskdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string checkInWhitem([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("checkInWhitem", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void checkInWhitemAsync(string arg0)
+        {
+            this.checkInWhitemAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void checkInWhitemAsync(string arg0, object userState)
+        {
+            if ((this.checkInWhitemOperationCompleted == null))
+            {
+                this.checkInWhitemOperationCompleted = new System.Threading.SendOrPostCallback(this.OncheckInWhitemOperationCompleted);
+            }
+            this.InvokeAsync("checkInWhitem", new object[] {
+                        arg0}, this.checkInWhitemOperationCompleted, userState);
+        }
+
+        private void OncheckInWhitemOperationCompleted(object arg)
+        {
+            if ((this.checkInWhitemCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.checkInWhitemCompleted(this, new checkInWhitemCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string CheckReWhitem([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("CheckReWhitem", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void CheckReWhitemAsync(string arg0)
+        {
+            this.CheckReWhitemAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void CheckReWhitemAsync(string arg0, object userState)
+        {
+            if ((this.CheckReWhitemOperationCompleted == null))
+            {
+                this.CheckReWhitemOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCheckReWhitemOperationCompleted);
+            }
+            this.InvokeAsync("CheckReWhitem", new object[] {
+                        arg0}, this.CheckReWhitemOperationCompleted, userState);
+        }
+
+        private void OnCheckReWhitemOperationCompleted(object arg)
+        {
+            if ((this.CheckReWhitemCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CheckReWhitemCompleted(this, new CheckReWhitemCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string checkItemBarcode([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("checkItemBarcode", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void checkItemBarcodeAsync(string arg0)
+        {
+            this.checkItemBarcodeAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void checkItemBarcodeAsync(string arg0, object userState)
+        {
+            if ((this.checkItemBarcodeOperationCompleted == null))
+            {
+                this.checkItemBarcodeOperationCompleted = new System.Threading.SendOrPostCallback(this.OncheckItemBarcodeOperationCompleted);
+            }
+            this.InvokeAsync("checkItemBarcode", new object[] {
+                        arg0}, this.checkItemBarcodeOperationCompleted, userState);
+        }
+
+        private void OncheckItemBarcodeOperationCompleted(object arg)
+        {
+            if ((this.checkItemBarcodeCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.checkItemBarcodeCompleted(this, new checkItemBarcodeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string getJhOutstockByDis([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("getJhOutstockByDis", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void getJhOutstockByDisAsync(string arg0)
+        {
+            this.getJhOutstockByDisAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void getJhOutstockByDisAsync(string arg0, object userState)
+        {
+            if ((this.getJhOutstockByDisOperationCompleted == null))
+            {
+                this.getJhOutstockByDisOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetJhOutstockByDisOperationCompleted);
+            }
+            this.InvokeAsync("getJhOutstockByDis", new object[] {
+                        arg0}, this.getJhOutstockByDisOperationCompleted, userState);
+        }
+
+        private void OngetJhOutstockByDisOperationCompleted(object arg)
+        {
+            if ((this.getJhOutstockByDisCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getJhOutstockByDisCompleted(this, new getJhOutstockByDisCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string updateInstockrece([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("updateInstockrece", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void updateInstockreceAsync(string arg0)
+        {
+            this.updateInstockreceAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void updateInstockreceAsync(string arg0, object userState)
+        {
+            if ((this.updateInstockreceOperationCompleted == null))
+            {
+                this.updateInstockreceOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateInstockreceOperationCompleted);
+            }
+            this.InvokeAsync("updateInstockrece", new object[] {
+                        arg0}, this.updateInstockreceOperationCompleted, userState);
+        }
+
+        private void OnupdateInstockreceOperationCompleted(object arg)
+        {
+            if ((this.updateInstockreceCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.updateInstockreceCompleted(this, new updateInstockreceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string getStockinfo([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("getStockinfo", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void getStockinfoAsync(string arg0)
+        {
+            this.getStockinfoAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void getStockinfoAsync(string arg0, object userState)
+        {
+            if ((this.getStockinfoOperationCompleted == null))
+            {
+                this.getStockinfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetStockinfoOperationCompleted);
+            }
+            this.InvokeAsync("getStockinfo", new object[] {
+                        arg0}, this.getStockinfoOperationCompleted, userState);
+        }
+
+        private void OngetStockinfoOperationCompleted(object arg)
+        {
+            if ((this.getStockinfoCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getStockinfoCompleted(this, new getStockinfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://warehouse.cxf.kcb.com/", ResponseNamespace = "http://warehouse.cxf.kcb.com/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string checkOutWhitem([System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0)
+        {
+            object[] results = this.Invoke("checkOutWhitem", new object[] {
+                        arg0});
+            return ((string)(results[0]));
+        }
+
+        /// <remarks/>
+        public void checkOutWhitemAsync(string arg0)
+        {
+            this.checkOutWhitemAsync(arg0, null);
+        }
+
+        /// <remarks/>
+        public void checkOutWhitemAsync(string arg0, object userState)
+        {
+            if ((this.checkOutWhitemOperationCompleted == null))
+            {
+                this.checkOutWhitemOperationCompleted = new System.Threading.SendOrPostCallback(this.OncheckOutWhitemOperationCompleted);
+            }
+            this.InvokeAsync("checkOutWhitem", new object[] {
+                        arg0}, this.checkOutWhitemOperationCompleted, userState);
+        }
+
+        private void OncheckOutWhitemOperationCompleted(object arg)
+        {
+            if ((this.checkOutWhitemCompleted != null))
+            {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.checkOutWhitemCompleted(this, new checkOutWhitemCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+
+        /// <remarks/>
         public new void CancelAsync(object userState)
         {
             base.CancelAsync(userState);
@@ -739,18 +1149,78 @@ namespace SCM.RF.Server.Adapt
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    public delegate void uploadPickgoodsInfoCompletedEventHandler(object sender, uploadPickgoodsInfoCompletedEventArgs e);
+    public delegate void getJhOutstockByIdCompletedEventHandler(object sender, getJhOutstockByIdCompletedEventArgs e);
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class uploadPickgoodsInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    public partial class getJhOutstockByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
     {
 
         private object[] results;
 
-        internal uploadPickgoodsInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+        internal getJhOutstockByIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void receiveGoodsCompletedEventHandler(object sender, receiveGoodsCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class receiveGoodsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal receiveGoodsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void getSJGZRuleCompletedEventHandler(object sender, getSJGZRuleCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getSJGZRuleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal getSJGZRuleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
             base(exception, cancelled, userState)
         {
             this.results = results;
@@ -799,18 +1269,18 @@ namespace SCM.RF.Server.Adapt
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    public delegate void getPickorderGoodsCompletedEventHandler(object sender, getPickorderGoodsCompletedEventArgs e);
+    public delegate void CheckBarocdeUnitCompletedEventHandler(object sender, CheckBarocdeUnitCompletedEventArgs e);
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getPickorderGoodsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    public partial class CheckBarocdeUnitCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
     {
 
         private object[] results;
 
-        internal getPickorderGoodsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+        internal CheckBarocdeUnitCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
             base(exception, cancelled, userState)
         {
             this.results = results;
@@ -829,18 +1299,18 @@ namespace SCM.RF.Server.Adapt
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    public delegate void getClientAddtoshelfListCompletedEventHandler(object sender, getClientAddtoshelfListCompletedEventArgs e);
+    public delegate void saveMoveCompletedEventHandler(object sender, saveMoveCompletedEventArgs e);
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getClientAddtoshelfListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    public partial class saveMoveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
     {
 
         private object[] results;
 
-        internal getClientAddtoshelfListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+        internal saveMoveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
             base(exception, cancelled, userState)
         {
             this.results = results;
@@ -859,18 +1329,18 @@ namespace SCM.RF.Server.Adapt
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    public delegate void wavePickFinishCompletedEventHandler(object sender, wavePickFinishCompletedEventArgs e);
+    public delegate void cancelReceiveCompletedEventHandler(object sender, cancelReceiveCompletedEventArgs e);
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class wavePickFinishCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    public partial class cancelReceiveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
     {
 
         private object[] results;
 
-        internal wavePickFinishCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+        internal cancelReceiveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
             base(exception, cancelled, userState)
         {
             this.results = results;
@@ -889,18 +1359,18 @@ namespace SCM.RF.Server.Adapt
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    public delegate void getShiftTaskOrderCompletedEventHandler(object sender, getShiftTaskOrderCompletedEventArgs e);
+    public delegate void getUnitCompletedEventHandler(object sender, getUnitCompletedEventArgs e);
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getShiftTaskOrderCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    public partial class getUnitCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
     {
 
         private object[] results;
 
-        internal getShiftTaskOrderCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+        internal getUnitCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
             base(exception, cancelled, userState)
         {
             this.results = results;
@@ -919,18 +1389,18 @@ namespace SCM.RF.Server.Adapt
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    public delegate void getStockGoodsListCompletedEventHandler(object sender, getStockGoodsListCompletedEventArgs e);
+    public delegate void cancelLocationCompletedEventHandler(object sender, cancelLocationCompletedEventArgs e);
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getStockGoodsListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    public partial class cancelLocationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
     {
 
         private object[] results;
 
-        internal getStockGoodsListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+        internal cancelLocationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
             base(exception, cancelled, userState)
         {
             this.results = results;
@@ -949,228 +1419,18 @@ namespace SCM.RF.Server.Adapt
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    public delegate void uploadAddToShellInfoCompletedEventHandler(object sender, uploadAddToShellInfoCompletedEventArgs e);
+    public delegate void confirmShelfTaskCompletedEventHandler(object sender, confirmShelfTaskCompletedEventArgs e);
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class uploadAddToShellInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    public partial class confirmShelfTaskCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
     {
 
         private object[] results;
 
-        internal uploadAddToShellInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-            base(exception, cancelled, userState)
-        {
-            this.results = results;
-        }
-
-        /// <remarks/>
-        public string Result
-        {
-            get
-            {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    public delegate void confirmGoodsShiftCompletedEventHandler(object sender, confirmGoodsShiftCompletedEventArgs e);
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class confirmGoodsShiftCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-
-        private object[] results;
-
-        internal confirmGoodsShiftCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-            base(exception, cancelled, userState)
-        {
-            this.results = results;
-        }
-
-        /// <remarks/>
-        public string Result
-        {
-            get
-            {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    public delegate void getClientAddtoshelfListDetailCompletedEventHandler(object sender, getClientAddtoshelfListDetailCompletedEventArgs e);
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getClientAddtoshelfListDetailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-
-        private object[] results;
-
-        internal getClientAddtoshelfListDetailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-            base(exception, cancelled, userState)
-        {
-            this.results = results;
-        }
-
-        /// <remarks/>
-        public string Result
-        {
-            get
-            {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    public delegate void getInstockOfCheckCompletedEventHandler(object sender, getInstockOfCheckCompletedEventArgs e);
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getInstockOfCheckCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-
-        private object[] results;
-
-        internal getInstockOfCheckCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-            base(exception, cancelled, userState)
-        {
-            this.results = results;
-        }
-
-        /// <remarks/>
-        public string Result
-        {
-            get
-            {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    public delegate void getGoodsOnStockListCompletedEventHandler(object sender, getGoodsOnStockListCompletedEventArgs e);
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getGoodsOnStockListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-
-        private object[] results;
-
-        internal getGoodsOnStockListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-            base(exception, cancelled, userState)
-        {
-            this.results = results;
-        }
-
-        /// <remarks/>
-        public string Result
-        {
-            get
-            {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    public delegate void getInstockdOfCheckCompletedEventHandler(object sender, getInstockdOfCheckCompletedEventArgs e);
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getInstockdOfCheckCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-
-        private object[] results;
-
-        internal getInstockdOfCheckCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-            base(exception, cancelled, userState)
-        {
-            this.results = results;
-        }
-
-        /// <remarks/>
-        public string Result
-        {
-            get
-            {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    public delegate void uploadInstockdOfCheckCompletedEventHandler(object sender, uploadInstockdOfCheckCompletedEventArgs e);
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class uploadInstockdOfCheckCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-
-        private object[] results;
-
-        internal uploadInstockdOfCheckCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-            base(exception, cancelled, userState)
-        {
-            this.results = results;
-        }
-
-        /// <remarks/>
-        public string Result
-        {
-            get
-            {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    public delegate void finishInstockOfCheckCompletedEventHandler(object sender, finishInstockOfCheckCompletedEventArgs e);
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class finishInstockOfCheckCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-
-        private object[] results;
-
-        internal finishInstockOfCheckCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+        internal confirmShelfTaskCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
             base(exception, cancelled, userState)
         {
             this.results = results;
@@ -1201,6 +1461,456 @@ namespace SCM.RF.Server.Adapt
         private object[] results;
 
         internal loginCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void getTaskDByIdsCompletedEventHandler(object sender, getTaskDByIdsCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getTaskDByIdsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal getTaskDByIdsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void getInstockreceCompletedEventHandler(object sender, getInstockreceCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getInstockreceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal getInstockreceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void getTaskdInfoCompletedEventHandler(object sender, getTaskdInfoCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getTaskdInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal getTaskdInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void checkSerialnumberCompletedEventHandler(object sender, checkSerialnumberCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class checkSerialnumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal checkSerialnumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void getInstockDetailCompletedEventHandler(object sender, getInstockDetailCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getInstockDetailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal getInstockDetailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void locationWhitemCompletedEventHandler(object sender, locationWhitemCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class locationWhitemCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal locationWhitemCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void getTaskByIdCompletedEventHandler(object sender, getTaskByIdCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getTaskByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal getTaskByIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void completeTaskdCompletedEventHandler(object sender, completeTaskdCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class completeTaskdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal completeTaskdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void checkInWhitemCompletedEventHandler(object sender, checkInWhitemCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class checkInWhitemCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal checkInWhitemCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void CheckReWhitemCompletedEventHandler(object sender, CheckReWhitemCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CheckReWhitemCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal CheckReWhitemCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void checkItemBarcodeCompletedEventHandler(object sender, checkItemBarcodeCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class checkItemBarcodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal checkItemBarcodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void getJhOutstockByDisCompletedEventHandler(object sender, getJhOutstockByDisCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getJhOutstockByDisCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal getJhOutstockByDisCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void updateInstockreceCompletedEventHandler(object sender, updateInstockreceCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class updateInstockreceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal updateInstockreceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void getStockinfoCompletedEventHandler(object sender, getStockinfoCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getStockinfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal getStockinfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+        {
+            this.results = results;
+        }
+
+        /// <remarks/>
+        public string Result
+        {
+            get
+            {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void checkOutWhitemCompletedEventHandler(object sender, checkOutWhitemCompletedEventArgs e);
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class checkOutWhitemCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+    {
+
+        private object[] results;
+
+        internal checkOutWhitemCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
             base(exception, cancelled, userState)
         {
             this.results = results;
