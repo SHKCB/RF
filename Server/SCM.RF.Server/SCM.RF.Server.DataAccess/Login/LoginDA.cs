@@ -28,15 +28,15 @@ namespace SCM.RF.Server.DataAccess.Login
 
             string param = @"<?xml version='1.0' encoding='UTF-8'?>
                                 <rt>
-                                <tid>" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + @"</tid>
-                                <uname>" + entity.UserID + @"</uname>
-                                <pwd>" + entity.Password + @"</pwd>
+                                <tid>" + entity.TID + @"</tid>
+                                <uname>" + entity.UName + @"</uname>
+                                <pwd>" + entity.PWD + @"</pwd>
                                 <device>" + entity.Device + @"</device>
                                 <cid>" + entity.CID + @"</cid>
                                 </rt>";
 
             string result = service.login(param);
-         
+
             /*
                 <?xml version="1.0" encoding="UTF-8"?>
                 <rt>
@@ -59,7 +59,7 @@ namespace SCM.RF.Server.DataAccess.Login
                 entity.Success = true;
                 entity.IsLoggedIn = true;
             }
-            else 
+            else
             {
                 entity.Success = false;
                 entity.Message = xml.SelectSingleNode("rt/rm").InnerText;
@@ -79,9 +79,9 @@ namespace SCM.RF.Server.DataAccess.Login
 
             string param = @"<?xml version='1.0' encoding='UTF-8'?>
                                 <rt>
-                                <tid>" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + @"</tid>
-                                <uname>" + entity.UserID + @"</uname>
-                                <pwd>" + entity.Password + @"</pwd>
+                                <tid>" + entity.TID + @"</tid>
+                                <uname>" + entity.UName + @"</uname>
+                                <pwd>" + entity.PWD + @"</pwd>
                                 <device>" + entity.Device + @"</device>
                                 <cid>" + entity.CID + @"</cid>
                                 </rt>";
@@ -127,18 +127,20 @@ namespace SCM.RF.Server.DataAccess.Login
         /// <returns></returns>
         public static int LoginLog(UserViewEntity entity)
         {
-            SQLHelper sqlLocal = new Utility.SQLHelper("");
-            string sql = string.Format("INSERT INTO [{0}].[dbo].[LOGINLOG] ([UserName],[PassWord],[WKNo],[IP],[InDate],[IsLoggedIn])VALUES(@UserName,@PassWord,@WKNo,@IP,@InDate,@IsLoggedIn)", "");
-            SqlParameter[] sqlParams = new SqlParameter[6] 
-            { 
-                new SqlParameter("@UserName", entity.UserName), 
-                new SqlParameter("@PassWord", entity.Password),
-                new SqlParameter("@UserID", entity.UserID), 
-                new SqlParameter("@IP", entity.LocalIP==null?"":entity.LocalIP),
-                new SqlParameter("@InDate", DateTime.Now),
-                new SqlParameter("@IsLoggedIn", entity.IsLoggedIn) 
-            };
-            return sqlLocal.ExecuteSql(sql, sqlParams);
+            return 0;
+
+            //SQLHelper sqlLocal = new Utility.SQLHelper("");
+            //string sql = string.Format("INSERT INTO [{0}].[dbo].[LOGINLOG] ([UserName],[PassWord],[WKNo],[IP],[InDate],[IsLoggedIn])VALUES(@UserName,@PassWord,@WKNo,@IP,@InDate,@IsLoggedIn)", "");
+            //SqlParameter[] sqlParams = new SqlParameter[6] 
+            //{ 
+            //    new SqlParameter("@UserName", entity.UserName), 
+            //    new SqlParameter("@PassWord", entity.Password),
+            //    new SqlParameter("@UserID", entity.UserID), 
+            //    new SqlParameter("@IP", entity.LocalIP==null?"":entity.LocalIP),
+            //    new SqlParameter("@InDate", DateTime.Now),
+            //    new SqlParameter("@IsLoggedIn", entity.IsLoggedIn) 
+            //};
+            //return sqlLocal.ExecuteSql(sql, sqlParams);
         }
     }
 }

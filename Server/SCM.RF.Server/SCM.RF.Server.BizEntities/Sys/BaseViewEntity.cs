@@ -12,6 +12,16 @@ namespace SCM.RF.Server.BizEntities.Sys
         public string PWD { get; set; }
 
         /// <summary>
+        /// 设备号
+        /// </summary>
+        public string Device { get; set; }
+
+        /// <summary>
+        /// 仓库号
+        /// </summary>
+        public string WareHouseId { get; set; }
+
+        /// <summary>
         /// 返回值
         /// </summary>
         public bool Success
