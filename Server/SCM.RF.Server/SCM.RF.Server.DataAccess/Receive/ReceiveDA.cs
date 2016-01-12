@@ -1,18 +1,12 @@
 ﻿using SCM.RF.Server.BizEntities.Receive;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Xml;
 
 namespace SCM.RF.Server.DataAccess.Receive
 {
     public class ReceiveDA
     {
-
         public static ReceiveHeaderViewEntity GetReceiveDetail(ReceiveHeaderViewEntity entity)
         {
-
             SCM.RF.Server.Adapt.IWebWarehouseServiceQYBService service = new Adapt.IWebWarehouseServiceQYBService();
 
             string param = @"<?xml version=\'1.0\' encoding=\'UTF-8\'?>
@@ -28,6 +22,7 @@ namespace SCM.RF.Server.DataAccess.Receive
             string xmlstring = service.getInstockDetail(param);
 
             XmlDocument doc = new XmlDocument();
+
             doc.LoadXml(xmlstring);
 
             return entity;
