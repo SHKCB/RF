@@ -23,22 +23,30 @@ namespace SCM.RF.Client.Tool
     {
         #region 控件
 
+        /// <summary>
+        /// 登录
+        /// </summary>
         private SCM.RF.Client.Tool.Controls.Login.UCLogin ucLogin;
+        /// <summary>
+        /// 设置
+        /// </summary>
         private SCM.RF.Client.Tool.Controls.Login.UCSetting ucSetting;
+        /// <summary>
+        /// 目录
+        /// </summary>
         private SCM.RF.Client.Tool.Controls.Login.UCMenu ucMenu;
+        /// <summary>
+        /// 收货主界面
+        /// </summary>
         private SCM.RF.Client.Tool.Controls.Receive.UCReceiveMain ucReceive;
-        //private SCM.RF.Client.Tool.Controls.PutAway.UCPutaway1 ucPutaway1;
-        //private SCM.RF.Client.Tool.Controls.PutAway.UCPutaway2 ucPutaway2;
-        //private SCM.RF.Client.Tool.Controls.PutAway.UCPutaway3 ucPutaway3;
-        //private SCM.RF.Client.Tool.Controls.Picking.UCPicking1 ucPicking1;
+
+        /// <summary>
+        /// 拣货1级页面
+        /// </summary>
+        private SCM.RF.Client.Tool.Controls.Picking.UCPicking1 ucPicking1;
         //private SCM.RF.Client.Tool.Controls.Picking.UCPicking2 ucPicking2;
         //private SCM.RF.Client.Tool.Controls.Picking.UCPicking3 ucPicking3;
-        //private SCM.RF.Client.Tool.Controls.Common.UCCellPal ucCellPal;
-        //private SCM.RF.Client.Tool.Controls.Common.UCCellPalByCell ucCellPalByCell;
-        //private SCM.RF.Client.Tool.Controls.HandOver.UCHandOver1 ucHandOver1;
-        //private SCM.RF.Client.Tool.Controls.HandOver.UCHandOver2 ucHandOver2;
-        //private SCM.RF.Client.Tool.Controls.PutAway.UCPutawayLog ucPutawayLog;
-        //private SCM.RF.Client.Tool.Controls.HandOver.UCHandOver3 ucHandOver3;
+
 
         #endregion
 
@@ -199,7 +207,7 @@ namespace SCM.RF.Client.Tool
 
         #endregion
 
-        #region 收货
+        #region 1、收货
 
         /// <summary>
         /// 显示收货框
@@ -238,6 +246,59 @@ namespace SCM.RF.Client.Tool
         }
 
         #endregion
+
+        #region 2、定位
+
+        #endregion
+
+        #region 3、上架
+
+        #endregion
+
+        #region 4、拣货
+
+        /// <summary>
+        /// 显示拣货
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="choise"></param>
+        public void ShowPicking1()
+        {
+            if (this.Controls.IndexOf(this.ucPicking1) < 0)
+            {
+                this.ucPicking1 = new SCM.RF.Client.Tool.Controls.Picking.UCPicking1(this);
+                this.ucPicking1.Location = new System.Drawing.Point(10, 30);
+                this.ucPicking1.Name = "ucPicking1";
+                this.ucPicking1.Size = new System.Drawing.Size(300, 260);
+                this.ucPicking1.TabIndex = 1;
+                this.ucPicking1.TabStop = false;
+                this.Controls.Add(this.ucPicking1);
+            }
+            this.ucPicking1.Visible = true;
+            this.ucPicking1.BringToFront();
+            this.ucPicking1.Init(EnHookType.G1);
+            this.ucPicking1.Init();
+        }
+
+        /// <summary>
+        /// 隐藏拣货
+        /// </summary>
+        public void HidePicking1()
+        {
+            if (this.ucPicking1 != null && this.Controls.IndexOf(this.ucPicking1) > -1)
+            {
+                this.ucPicking1.Visible = false;
+                this.ucPicking1 = null;
+                this.Controls.Remove(this.ucPicking1);
+            }
+        }
+
+        #endregion
+
+        #region 5、移库
+
+        #endregion
+
 
         #region 设置
 

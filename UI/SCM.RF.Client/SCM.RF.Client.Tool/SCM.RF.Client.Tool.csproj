@@ -89,6 +89,12 @@
     <Compile Include="Controls\Login\UCSetting.Designer.cs">
       <DependentUpon>UCSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Picking\UCPicking1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Picking\UCPicking1.designer.cs">
+      <DependentUpon>UCPicking1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Receive\UCReceiveMain.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Login\UCSetting.resx">
       <DependentUpon>UCSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Picking\UCPicking1.resx">
+      <DependentUpon>UCPicking1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Receive\UCReceiveMain.resx">
       <DependentUpon>UCReceiveMain.cs</DependentUpon>

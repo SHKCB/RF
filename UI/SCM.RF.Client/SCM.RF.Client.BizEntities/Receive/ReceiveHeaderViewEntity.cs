@@ -1,4 +1,5 @@
-﻿using SCM.RF.Client.BizEntities.Sys;
+﻿using System.Collections.Generic;
+using SCM.RF.Client.BizEntities.Sys;
 using System.Collections.Generic;
 
 namespace SCM.RF.Client.BizEntities.Receive

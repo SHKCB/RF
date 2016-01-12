@@ -202,7 +202,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
             switch (txtValue)
             {
                 case "1":
-                    if (_Hashtable.ContainsKey("1"))
+                    if (_Hashtable.ContainsKey(1))
                     {
                         return 1;
                     }
@@ -212,7 +212,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
                     }
 
                 case "2":
-                    if (_Hashtable.ContainsKey("2"))
+                    if (_Hashtable.ContainsKey(2))
                     {
                         return 2;
                     }
@@ -222,7 +222,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
                     }
 
                 case "3":
-                    if (_Hashtable.ContainsKey("3"))
+                    if (_Hashtable.ContainsKey(3))
                     {
                         return 3;
                     }
@@ -232,7 +232,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
                     }
 
                 case "4":
-                    if (_Hashtable.ContainsKey("4"))
+                    if (_Hashtable.ContainsKey(4))
                     {
                         return 4;
                     }
@@ -242,7 +242,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
                     }
 
                 case "5":
-                    if (_Hashtable.ContainsKey("5"))
+                    if (_Hashtable.ContainsKey(5))
                     {
                         return 5;
                     }
@@ -250,55 +250,6 @@ namespace SCM.RF.Client.Tool.Controls.Login
                     {
                         return -1;
                     }
-
-                //case "6":
-                //    if (_Hashtable.ContainsKey("6"))
-                //    {
-                //        return 6;
-                //    }
-                //    else
-                //    {
-                //        return -1;
-                //    }
-
-                //case "7":
-                //    if (_Hashtable.ContainsKey("7"))
-                //    {
-                //        return 7;
-                //    }
-                //    else
-                //    {
-                //        return -1;
-                //    }
-
-                //case "8":
-                //    if (_Hashtable.ContainsKey("8"))
-                //    {
-                //        return 8;
-                //    }
-                //    else
-                //    {
-                //        return -1;
-                //    }
-
-                //case "9":
-                //    if (_Hashtable.ContainsKey("9"))
-                //    {
-                //        return 9;
-                //    }
-                //    else
-                //    {
-                //        return -1;
-                //    }
-                //case "0":
-                //    if (_Hashtable.ContainsKey("0"))
-                //    {
-                //        return 0;
-                //    }
-                //    else
-                //    {
-                //        return -1;
-                //    }
 
                 default: return -1;
             }
@@ -317,13 +268,13 @@ namespace SCM.RF.Client.Tool.Controls.Login
 
                 case 1: Receive();
                     break;
-                case 2: Transfer();
+                case 2: Location();
                     break;
-                case 3: Picking();
+                case 3: PutAway();
                     break;
-                case 4: Pal();
+                case 4: Pick();
                     break;
-                case 5: PalByCell();
+                case 5: Transfer();
                     break;
                 case 0: HandOver();
                     break;
@@ -341,30 +292,31 @@ namespace SCM.RF.Client.Tool.Controls.Login
         }
 
         #endregion
-        #region 2移库
 
-        private void Transfer()
+        #region 2定位
+
+        private void Location()
         {
             //base.RF.ShowTransfer();
         }
 
-        #endregion        
-        #region 3拣货
-        private void Picking()
+        #endregion
+        #region 3上架
+        private void PutAway()
         {
             //base.RF.ShowPicking1();
         }
-        #endregion        
-        #region 4库存查询
+        #endregion
+        #region 4拣货
 
-        private void Pal()
+        private void Pick()
         {
-            //base.RF.ShowCellPal(null, EnPalType.D);
+            base.RF.ShowPicking1();
         }
 
         #endregion
-        #region 5库存查询2
-        private void PalByCell()
+        #region 5移库
+        private void Transfer()
         {
             //base.RF.ShowCellPalByCell(null, EnPalType.D);
         }

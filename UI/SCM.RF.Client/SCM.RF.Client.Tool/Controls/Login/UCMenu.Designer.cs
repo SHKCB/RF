@@ -80,7 +80,7 @@
             this.btnExit.TabIndex = 2;
             this.btnExit.TabStop = false;
             this.btnExit.Tag = "True";
-            this.btnExit.Text = "退出 [&F4]";
+            this.btnExit.Text = "返回 [&F4]";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // pbMenu

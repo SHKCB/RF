@@ -65,6 +65,12 @@
     <Compile Include="Sys\KeepAliveEntity.cs" />
     <Compile Include="Sys\SystemViewEntity.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Location\" />
+    <Folder Include="Pick\" />
+    <Folder Include="PutAway\" />
+    <Folder Include="Transfer\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
