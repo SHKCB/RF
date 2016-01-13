@@ -8,6 +8,7 @@ using SCM.RF.Client.BizEntities.AuthCenter;
 using SCM.RF.Client.Utility;
 using SCM.RF.Client.BizProcess.Sys;
 using SCM.RF.Client.BizEntities.Sys;
+using SCM.RF.Client.BizEntities.Receive;
 //using SCM.RF.Client.BizEntities.HandOver;
 //using SCM.RF.Client.BizEntities.Picking;
 //using SCM.RF.Client.BizEntities.Sys;
@@ -39,6 +40,7 @@ namespace SCM.RF.Client.Tool
         /// 收货主界面
         /// </summary>
         private SCM.RF.Client.Tool.Controls.Receive.UCReceiveMain ucReceive;
+        private SCM.RF.Client.Tool.Controls.Receive.UCReceiveDetail_2 ucReceive2;
 
         /// <summary>
         /// 拣货1级页面
@@ -245,6 +247,45 @@ namespace SCM.RF.Client.Tool
                 this.Controls.Remove(this.ucReceive);
             }
         }
+
+        /// <summary>
+        /// 显示二级收货框
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="choise"></param>
+        public void ShowReceive2(ReceiveHeaderViewEntity entity)
+        {
+            if (this.Controls.IndexOf(this.ucReceive2) < 0)
+            {
+                this.ucReceive2 = new SCM.RF.Client.Tool.Controls.Receive.UCReceiveDetail_2(this);
+                this.ucReceive2.Location = new System.Drawing.Point(10, 30);
+                this.ucReceive2.Name = "ucReceive2";
+                this.ucReceive2.Size = new System.Drawing.Size(300, 260);
+                this.ucReceive2.TabIndex = 1;
+                this.ucReceive2.TabStop = false;
+                this.Controls.Add(this.ucReceive2);
+            }
+            this.ucReceive2.Visible = true;
+            this.ucReceive2.BringToFront();
+            this.ucReceive2.Init(EnHookType.D2);
+            this.ucReceive2.Init(this.RemoteServer, this.UserViewEntity);
+            this.ucReceive2.Init();
+            this.ucReceive2.LoadData(entity);
+        }
+
+        /// <summary>
+        /// 隐藏二级收货框
+        /// </summary>
+        public void HideReceive2()
+        {
+            if (this.ucReceive2 != null && this.Controls.IndexOf(this.ucReceive2) > -1)
+            {
+                this.ucReceive2.Visible = false;
+                this.ucReceive2 = null;
+                this.Controls.Remove(this.ucReceive2);
+            }
+        }
+
 
         #endregion
 

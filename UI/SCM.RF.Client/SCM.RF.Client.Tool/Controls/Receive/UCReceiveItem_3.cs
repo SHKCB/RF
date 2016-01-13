@@ -7,25 +7,17 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using SCM.RF.Client.Tool.Controls.Common;
-using SCM.RF.Client.BizEntities.Receive;
 
 namespace SCM.RF.Client.Tool.Controls.Receive
 {
-    public partial class UCReceiveDetail_2 : UCBasicControl
+    public partial class UCReceiveItem_3 : UCBasicControl
     {
-        private ReceiveHeaderViewEntity _header;
-
         #region LoadFunction
 
-        public UCReceiveDetail_2(RF rf)
+        public UCReceiveItem_3(RF rf)
             : base(rf)
         {
             InitializeComponent();
-        }
-
-        public void LoadData(ReceiveHeaderViewEntity header) 
-        {
-            this._header = header;
         }
 
         #endregion
@@ -34,9 +26,9 @@ namespace SCM.RF.Client.Tool.Controls.Receive
 
         public override void Init()
         {
-            base.SetTitle("收货详细");
+            base.SetTitle("收货-商品");
 
-            //this.FocusReceiveNo();
+           //this.FocusReceiveNo();
         }
 
         public override void Proc(EnMessageType type)
@@ -53,9 +45,24 @@ namespace SCM.RF.Client.Tool.Controls.Receive
         /// </summary>
         public void HookExit()
         {
-            //btnCancel_Click(null, null);
+           // btnCancel_Click(null, null);
         }
 
         #endregion
+
+        private void txtReceiveNo_GotFocus(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtReceiveNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtReceiveNo_LostFocus(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -4,6 +4,7 @@ namespace SCM.RF.Client.BizEntities.Receive
 {
     public class ReceiveDetailViewEntity:BaseViewEntity
     {
+        public ReceiveDetailViewEntity() { }
 
         /// <summary>
         /// 构造

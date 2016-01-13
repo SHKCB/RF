@@ -28,30 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.cbOutReceive = new System.Windows.Forms.CheckBox();
+            this.cbLPN = new System.Windows.Forms.CheckBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // checkBox1
+            // cbOutReceive
             // 
-            this.checkBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(63, 35);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(148, 20);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "允许超收";
+            this.cbOutReceive.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
+            this.cbOutReceive.ForeColor = System.Drawing.Color.White;
+            this.cbOutReceive.Location = new System.Drawing.Point(63, 35);
+            this.cbOutReceive.Name = "cbOutReceive";
+            this.cbOutReceive.Size = new System.Drawing.Size(148, 20);
+            this.cbOutReceive.TabIndex = 0;
+            this.cbOutReceive.Text = "允许超收";
             // 
-            // checkBox2
+            // cbLPN
             // 
-            this.checkBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
-            this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(63, 86);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(148, 20);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "自动生成LPN";
+            this.cbLPN.Checked = true;
+            this.cbLPN.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbLPN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
+            this.cbLPN.ForeColor = System.Drawing.Color.White;
+            this.cbLPN.Location = new System.Drawing.Point(63, 86);
+            this.cbLPN.Name = "cbLPN";
+            this.cbLPN.Size = new System.Drawing.Size(148, 20);
+            this.cbLPN.TabIndex = 1;
+            this.cbLPN.Text = "自动生成LPN";
             // 
             // btnCancel
             // 
@@ -72,8 +74,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Black;
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbLPN);
+            this.Controls.Add(this.cbOutReceive);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "UCReceiveSet";
             this.Size = new System.Drawing.Size(300, 260);
@@ -83,8 +85,8 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox cbOutReceive;
+        private System.Windows.Forms.CheckBox cbLPN;
         private System.Windows.Forms.Button btnCancel;
     }
 }

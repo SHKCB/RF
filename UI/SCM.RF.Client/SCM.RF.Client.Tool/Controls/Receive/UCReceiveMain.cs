@@ -95,6 +95,8 @@ namespace SCM.RF.Client.Tool.Controls.Receive
                 if (entity.Success)
                 {
                     //跳转新页面 详细信息
+                    base.RF.ShowReceive2(entity);
+                    base.RF.HideReceive();
                 }
                 else { base.ShowMessage(entity.Message, false, EnMessageType.A, false); }
             }

@@ -4,6 +4,9 @@ namespace SCM.RF.Client.BizEntities.Receive
 {
     public class ReceiveHeaderViewEntity : BaseViewEntity
     {
+
+        public ReceiveHeaderViewEntity() { }
+
         /// <summary>
         /// 构造
         /// </summary>

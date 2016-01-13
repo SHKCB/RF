@@ -119,6 +119,12 @@
     <Compile Include="Controls\Receive\UCReceiveDetail_2.Designer.cs">
       <DependentUpon>UCReceiveDetail_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Receive\UCReceiveItem_3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Receive\UCReceiveItem_3.Designer.cs">
+      <DependentUpon>UCReceiveItem_3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Receive\UCReceiveMain.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Receive\UCReceiveDetail_2.resx">
       <DependentUpon>UCReceiveDetail_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Receive\UCReceiveItem_3.resx">
+      <DependentUpon>UCReceiveItem_3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Receive\UCReceiveMain.resx">
       <DependentUpon>UCReceiveMain.cs</DependentUpon>

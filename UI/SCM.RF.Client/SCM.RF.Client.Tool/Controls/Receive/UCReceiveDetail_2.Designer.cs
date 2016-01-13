@@ -32,9 +32,6 @@
             this.pbReceiveNo = new System.Windows.Forms.PictureBox();
             this.txtReceiveNo = new System.Windows.Forms.TextBox();
             this.lvData = new System.Windows.Forms.ListView();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSet = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
             this.clBarCode = new System.Windows.Forms.ColumnHeader();
             this.clProduct = new System.Windows.Forms.ColumnHeader();
             this.clName = new System.Windows.Forms.ColumnHeader();
@@ -44,6 +41,9 @@
             this.clOpenCount = new System.Windows.Forms.ColumnHeader();
             this.clOpenBox = new System.Windows.Forms.ColumnHeader();
             this.clId = new System.Windows.Forms.ColumnHeader();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSet = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblBarcode
@@ -93,12 +93,57 @@
             this.lvData.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
             this.lvData.ForeColor = System.Drawing.Color.White;
             this.lvData.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvData.Location = new System.Drawing.Point(3, 26);
+            this.lvData.Location = new System.Drawing.Point(3, 29);
             this.lvData.Name = "lvData";
             this.lvData.Size = new System.Drawing.Size(294, 179);
             this.lvData.TabIndex = 2;
             this.lvData.Tag = "True";
             this.lvData.View = System.Windows.Forms.View.Details;
+            // 
+            // clBarCode
+            // 
+            this.clBarCode.Text = "商品条码";
+            this.clBarCode.Width = 83;
+            // 
+            // clProduct
+            // 
+            this.clProduct.Text = "商品编码";
+            this.clProduct.Width = 82;
+            // 
+            // clName
+            // 
+            this.clName.Text = "商品名称";
+            this.clName.Width = 81;
+            // 
+            // clSpec
+            // 
+            this.clSpec.Text = "规格";
+            this.clSpec.Width = 60;
+            // 
+            // clCount
+            // 
+            this.clCount.Text = "预到数";
+            this.clCount.Width = 60;
+            // 
+            // clBox
+            // 
+            this.clBox.Text = "预到数：托/箱";
+            this.clBox.Width = 60;
+            // 
+            // clOpenCount
+            // 
+            this.clOpenCount.Text = "未收数";
+            this.clOpenCount.Width = 60;
+            // 
+            // clOpenBox
+            // 
+            this.clOpenBox.Text = "未收数：托/箱";
+            this.clOpenBox.Width = 60;
+            // 
+            // clId
+            // 
+            this.clId.Text = "id";
+            this.clId.Width = 60;
             // 
             // btnCancel
             // 
@@ -138,51 +183,6 @@
             this.btnNext.TabStop = false;
             this.btnNext.Tag = "True";
             this.btnNext.Text = "下一步";
-            // 
-            // clBarCode
-            // 
-            this.clBarCode.Text = "商品条码";
-            this.clBarCode.Width = 60;
-            // 
-            // clProduct
-            // 
-            this.clProduct.Text = "商品编码";
-            this.clProduct.Width = 60;
-            // 
-            // clName
-            // 
-            this.clName.Text = "商品名称";
-            this.clName.Width = 60;
-            // 
-            // clSpec
-            // 
-            this.clSpec.Text = "规格";
-            this.clSpec.Width = 60;
-            // 
-            // clCount
-            // 
-            this.clCount.Text = "预到数";
-            this.clCount.Width = 60;
-            // 
-            // clBox
-            // 
-            this.clBox.Text = "预到数：托/箱";
-            this.clBox.Width = 60;
-            // 
-            // clOpenCount
-            // 
-            this.clOpenCount.Text = "未收数";
-            this.clOpenCount.Width = 60;
-            // 
-            // clOpenBox
-            // 
-            this.clOpenBox.Text = "未收数：托/箱";
-            this.clOpenBox.Width = 60;
-            // 
-            // clId
-            // 
-            this.clId.Text = "id";
-            this.clId.Width = 60;
             // 
             // UCReceiveDetail_2
             // 
