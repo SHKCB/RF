@@ -9,5 +9,5 @@
   <serverip>127.0.0.1</serverip>
 
   <!--端口号-->
-  <port>159</port>
+  <port>7777</port>
 </root>
