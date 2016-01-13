@@ -1,4 +1,5 @@
 ﻿using SCM.RF.Server.BizEntities.Pick;
+using SCM.RF.Server.DataAccess.Pick;
 
 namespace SCM.RF.Server.BizProcess.Pick
 {
@@ -6,17 +7,7 @@ namespace SCM.RF.Server.BizProcess.Pick
     {
         public PickEnity GetPick(PickEnity entity)
         {
-
-            //entity.IsLoggedIn = false;
-
-            //int sysno = LoginDA.Login(ref entity);
-
-            //if (sysno > 0)
-            //{
-            //    entity.UserName = entity.UserID;
-
-            //    entity.IsLoggedIn = true;
-            //}
+            entity = PickDA.GetPickByTaskID(ref entity);
 
             return entity;
         }

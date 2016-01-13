@@ -5,7 +5,7 @@ namespace SCM.RF.Server.DataAccess.Pick
 {
     public class PickDA
     {
-        public static PickEnity GetPickByTaskID(PickEnity entity)
+        public static PickEnity GetPickByTaskID(ref PickEnity entity)
         {
             SCM.RF.Server.Adapt.IWebWarehouseServiceQYBService service = new Adapt.IWebWarehouseServiceQYBService();
 
@@ -21,24 +21,37 @@ namespace SCM.RF.Server.DataAccess.Pick
 
              */
 
-
-            string param = @"<?xml version=\'1.0\' encoding=\'UTF-8\'?>
+            string param = @"<?xml version='1.0' encoding='UTF-8'?>
                                 <rt>
                                 <tid>" + entity.TID + @"</tid>
                                 <uname>" + entity.UName + @"</uname>
                                 <pwd>" + entity.PWD + @"</pwd>
+                                <device>" + entity.Device + @"</device>
                                 <cid>" + entity.CID + @"</cid>
+                                <warehouseid>" + entity.WareHouseId + @"</warehouseid>
                                 <code>" + entity.TaskNo + @"</code>
                             </rt>";
 
-            string xmlstring = service.getInstockDetail(param);
+            string result = service.getInstockDetail(param);
 
-            XmlDocument doc = new XmlDocument();
+            XmlDocument xml = new XmlDocument();
 
-            doc.LoadXml(xmlstring);
+            xml.LoadXml(result);
+
+            string returncode = xml.SelectSingleNode("rt/rc").InnerText;
+
+            if (returncode == "0000")
+            {
+                entity.WareHouseId = xml.SelectSingleNode("rt/warehouseid").InnerText;
+                entity.Success = true;
+            }
+            else
+            {
+                entity.Success = false;
+                entity.Message = xml.SelectSingleNode("rt/rm").InnerText;
+            }
 
             return entity;
-
         }
     }
 }

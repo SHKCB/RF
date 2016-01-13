@@ -3,6 +3,7 @@ using SCM.RF.Server.BizEntities.Pick;
 using SCM.RF.Server.BizEntities.Receive;
 using SCM.RF.Server.BizEntities.Sys;
 using SCM.RF.Server.BizProcess.Login;
+using SCM.RF.Server.BizProcess.Pick;
 using SCM.RF.Server.BizProcess.Receive;
 using SCM.RF.Server.Framework.Net;
 using SCM.RF.Server.Utility;
@@ -136,7 +137,7 @@ namespace SCM.RF.Server.Framework.Commond
                 //{
                 //    result = PutawayInsert(content);
                 //}
-                else if (action == "4001")
+                else if (action == "4000")
                 {
                     result = GetPick(content);
                 }
@@ -327,16 +328,13 @@ namespace SCM.RF.Server.Framework.Commond
 
         private string GetPick(string receive)
         {
-            //PickEnity param = SerializeHelper.Deserialize<PickEnity>(receive);
+            PickEnity param = SerializeHelper.Deserialize<PickEnity>(receive);
 
-            //PickEnity entity = new ReceiveBP().GetReceiveDetail(param);
+            PickEnity entity = new PickBP().GetPick(param);
 
-            //string result = SerializeHelper.Serialize(entity);
+            string result = SerializeHelper.Serialize(entity);
 
-            //return result;
-
-
-            return "";
+            return result;
         }
 
         #endregion

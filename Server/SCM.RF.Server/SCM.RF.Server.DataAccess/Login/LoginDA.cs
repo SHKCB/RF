@@ -65,6 +65,7 @@ namespace SCM.RF.Server.DataAccess.Login
                 entity.Message = xml.SelectSingleNode("rt/rm").InnerText;
                 entity.IsLoggedIn = false;
             }
+
             return entity;
         }
 
