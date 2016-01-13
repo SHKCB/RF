@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.lblBarcode = new System.Windows.Forms.Label();
-            this.pbReceiveNo = new System.Windows.Forms.PictureBox();
-            this.txtReceiveNo = new System.Windows.Forms.TextBox();
+            this.pbBarcode = new System.Windows.Forms.PictureBox();
+            this.txtBarCode = new System.Windows.Forms.TextBox();
             this.lvData = new System.Windows.Forms.ListView();
-            this.clBarCode = new System.Windows.Forms.ColumnHeader();
+            this.clCompany = new System.Windows.Forms.ColumnHeader();
             this.clProduct = new System.Windows.Forms.ColumnHeader();
             this.clName = new System.Windows.Forms.ColumnHeader();
             this.clSpec = new System.Windows.Forms.ColumnHeader();
@@ -43,7 +43,6 @@
             this.clId = new System.Windows.Forms.ColumnHeader();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSet = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblBarcode
@@ -55,33 +54,35 @@
             this.lblBarcode.Size = new System.Drawing.Size(100, 20);
             this.lblBarcode.Text = "商品条码：";
             // 
-            // pbReceiveNo
+            // pbBarcode
             // 
-            this.pbReceiveNo.BackColor = System.Drawing.Color.White;
-            this.pbReceiveNo.Location = new System.Drawing.Point(100, 18);
-            this.pbReceiveNo.Name = "pbReceiveNo";
-            this.pbReceiveNo.Size = new System.Drawing.Size(200, 2);
-            this.pbReceiveNo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbBarcode.BackColor = System.Drawing.Color.White;
+            this.pbBarcode.Location = new System.Drawing.Point(100, 18);
+            this.pbBarcode.Name = "pbBarcode";
+            this.pbBarcode.Size = new System.Drawing.Size(200, 2);
+            this.pbBarcode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             // 
-            // txtReceiveNo
+            // txtBarCode
             // 
-            this.txtReceiveNo.BackColor = System.Drawing.Color.Black;
-            this.txtReceiveNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtReceiveNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
-            this.txtReceiveNo.ForeColor = System.Drawing.Color.White;
-            this.txtReceiveNo.Location = new System.Drawing.Point(100, 0);
-            this.txtReceiveNo.MaxLength = 20;
-            this.txtReceiveNo.Name = "txtReceiveNo";
-            this.txtReceiveNo.Size = new System.Drawing.Size(200, 25);
-            this.txtReceiveNo.TabIndex = 1;
-            this.txtReceiveNo.TabStop = false;
-            this.txtReceiveNo.Tag = "True";
-            this.txtReceiveNo.WordWrap = false;
+            this.txtBarCode.BackColor = System.Drawing.Color.Black;
+            this.txtBarCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBarCode.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
+            this.txtBarCode.ForeColor = System.Drawing.Color.White;
+            this.txtBarCode.Location = new System.Drawing.Point(100, 0);
+            this.txtBarCode.MaxLength = 20;
+            this.txtBarCode.Name = "txtBarCode";
+            this.txtBarCode.Size = new System.Drawing.Size(200, 25);
+            this.txtBarCode.TabIndex = 1;
+            this.txtBarCode.TabStop = false;
+            this.txtBarCode.Tag = "True";
+            this.txtBarCode.WordWrap = false;
+            this.txtBarCode.GotFocus += new System.EventHandler(this.txtBarCode_GotFocus);
+            this.txtBarCode.LostFocus += new System.EventHandler(this.txtBarCode_LostFocus);
             // 
             // lvData
             // 
             this.lvData.BackColor = System.Drawing.Color.Black;
-            this.lvData.Columns.Add(this.clBarCode);
+            this.lvData.Columns.Add(this.clCompany);
             this.lvData.Columns.Add(this.clProduct);
             this.lvData.Columns.Add(this.clName);
             this.lvData.Columns.Add(this.clSpec);
@@ -95,15 +96,15 @@
             this.lvData.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvData.Location = new System.Drawing.Point(3, 29);
             this.lvData.Name = "lvData";
-            this.lvData.Size = new System.Drawing.Size(294, 179);
+            this.lvData.Size = new System.Drawing.Size(294, 200);
             this.lvData.TabIndex = 2;
             this.lvData.Tag = "True";
             this.lvData.View = System.Windows.Forms.View.Details;
             // 
-            // clBarCode
+            // clCompany
             // 
-            this.clBarCode.Text = "商品条码";
-            this.clBarCode.Width = 83;
+            this.clCompany.Text = "商家条码";
+            this.clCompany.Width = 83;
             // 
             // clProduct
             // 
@@ -157,6 +158,7 @@
             this.btnCancel.TabStop = false;
             this.btnCancel.Tag = "True";
             this.btnCancel.Text = "返回 [&F4]";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSet
             // 
@@ -170,31 +172,18 @@
             this.btnSet.TabStop = false;
             this.btnSet.Tag = "True";
             this.btnSet.Text = "设置";
-            // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.Color.Black;
-            this.btnNext.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
-            this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(189, 235);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(80, 25);
-            this.btnNext.TabIndex = 6;
-            this.btnNext.TabStop = false;
-            this.btnNext.Tag = "True";
-            this.btnNext.Text = "下一步";
+            this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
             // 
             // UCReceiveDetail_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Black;
-            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnSet);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lvData);
-            this.Controls.Add(this.pbReceiveNo);
-            this.Controls.Add(this.txtReceiveNo);
+            this.Controls.Add(this.pbBarcode);
+            this.Controls.Add(this.txtBarCode);
             this.Controls.Add(this.lblBarcode);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "UCReceiveDetail_2";
@@ -206,13 +195,12 @@
         #endregion
 
         private System.Windows.Forms.Label lblBarcode;
-        private System.Windows.Forms.PictureBox pbReceiveNo;
-        private System.Windows.Forms.TextBox txtReceiveNo;
+        private System.Windows.Forms.PictureBox pbBarcode;
+        private System.Windows.Forms.TextBox txtBarCode;
         private System.Windows.Forms.ListView lvData;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSet;
-        private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.ColumnHeader clBarCode;
+        private System.Windows.Forms.ColumnHeader clCompany;
         private System.Windows.Forms.ColumnHeader clProduct;
         private System.Windows.Forms.ColumnHeader clName;
         private System.Windows.Forms.ColumnHeader clSpec;

@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Text;
 using System.Windows.Forms;
-using SCM.RF.Client.Tool.Controls.Common;
 using SCM.RF.Client.BizEntities.Receive;
+using SCM.RF.Client.Tool.Controls.Common;
 
 namespace SCM.RF.Client.Tool.Controls.Receive
 {
@@ -23,9 +18,35 @@ namespace SCM.RF.Client.Tool.Controls.Receive
             InitializeComponent();
         }
 
-        public void LoadData(ReceiveHeaderViewEntity header) 
+        public void LoadData(ReceiveHeaderViewEntity header)
         {
             this._header = header;
+
+            lvData.Items.Clear();
+
+            lvData.BeginUpdate();
+
+            ListViewItem item;
+
+            for (int i = 0; i < this._header.Detail.Length; i++)
+            {
+                item = new ListViewItem();
+                item.Text = this._header.Detail[i].Outerid;
+                //item.SubItems.Add(this._header.Detail[i].Outerid);
+                item.SubItems.Add(this._header.Detail[i].Cbarcode);
+                item.SubItems.Add(this._header.Detail[i].GName);
+                item.SubItems.Add(this._header.Detail[i].Spec);
+                item.SubItems.Add(this._header.Detail[i].Waitamount);
+                item.SubItems.Add(this._header.Detail[i].Waittxj);
+                item.SubItems.Add(this._header.Detail[i].Planamount);
+                item.SubItems.Add(this._header.Detail[i].Plantxj);
+                item.SubItems.Add(this._header.Detail[i].Did);
+
+                lvData.Items.Add(item);
+            }
+
+            lvData.EndUpdate();
+
         }
 
         #endregion
@@ -36,12 +57,12 @@ namespace SCM.RF.Client.Tool.Controls.Receive
         {
             base.SetTitle("收货详细");
 
-            //this.FocusReceiveNo();
+            this.FocusBarCode();
         }
 
         public override void Proc(EnMessageType type)
         {
-            //this.FocusReceiveNo();
+            this.FocusBarCode();
         }
 
         #endregion
@@ -57,5 +78,57 @@ namespace SCM.RF.Client.Tool.Controls.Receive
         }
 
         #endregion
+        
+        #region FOCUS
+        private void txtBarCode_GotFocus(object sender, EventArgs e)
+        {
+            this.pbBarcode.BackColor = Color.Yellow;
+        }
+
+        private void txtBarCode_LostFocus(object sender, EventArgs e)
+        {
+            this.pbBarcode.BackColor = Color.White;
+        }
+        #endregion
+
+        #region Private Function
+
+        /// <summary>
+        /// 聚焦
+        /// </summary>
+        private void FocusBarCode()
+        {
+            this.txtBarCode.Text = string.Empty;
+            this.txtBarCode.Focus();
+        }
+
+        #endregion
+
+        #region Click Function
+
+        /// <summary>
+        /// 返回
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.btnCancel.Enabled = false;
+            base.Cancel();
+            this.btnCancel.Enabled = true;
+        }
+
+        /// <summary>
+        /// 设置
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSet_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        #endregion
+               
     }
 }
