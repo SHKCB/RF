@@ -51,6 +51,7 @@
             this.btnCancel.TabStop = false;
             this.btnCancel.Tag = "True";
             this.btnCancel.Text = "返回 [&F4]";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // pbTaskNo
             // 

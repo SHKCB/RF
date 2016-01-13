@@ -32,7 +32,11 @@ namespace SCM.RF.Client.Tool.Controls.Picking
 
         public override void Proc(EnMessageType type)
         {
-            this.FocusTaskNo();
+            if (type == EnMessageType.A)
+            {
+                base.RF.ShowPicking1();
+                base.RF.HidePickingByTaskID();
+            }
         }
 
         #endregion
@@ -41,9 +45,7 @@ namespace SCM.RF.Client.Tool.Controls.Picking
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.btnCancel.Enabled = false;
-            base.Cancel();
-            this.btnCancel.Enabled = true;
+            base.ShowMessage("返回上级页面？", true, EnMessageType.A);
         }
 
         private void txtTaskNo_KeyPress(object sender, KeyPressEventArgs e)
