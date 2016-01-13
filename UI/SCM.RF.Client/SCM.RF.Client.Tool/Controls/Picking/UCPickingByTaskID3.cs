@@ -6,13 +6,13 @@ using SCM.RF.Client.Utility;
 
 namespace SCM.RF.Client.Tool.Controls.Picking
 {
-    public partial class UCPickingByTaskID : UCBasicControl
+    public partial class UCPickingByTaskID3 : UCBasicControl
     {
         /// <summary>
         /// 初始化
         /// </summary>
         /// <param name="rf"></param>
-        public UCPickingByTaskID(RF rf)
+        public UCPickingByTaskID3(RF rf)
             : base(rf)
         {
             InitializeComponent();
@@ -24,12 +24,12 @@ namespace SCM.RF.Client.Tool.Controls.Picking
         {
             base.SetTitle("按 [任务号] - 拣货");
 
-            this.FocusTaskNo();
+    
         }
 
         public override void Proc(EnMessageType type)
         {
-            this.FocusTaskNo();
+           
         }
 
         #endregion
@@ -43,37 +43,9 @@ namespace SCM.RF.Client.Tool.Controls.Picking
             this.btnCancel.Enabled = true;
         }
 
-        private void txtTaskNo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                e.Handled = true;
-
-                string txtTaskNo = this.txtTaskNo.Text.Trim().ToUpper();
-
-                if (txtTaskNo.Length > 0)
-                {
-                    if (StringHelper.ISStringInt32(txtTaskNo))
-                    {
-                        //FocusContainer();
-                    }
-                    else
-                    {
-                        base.ShowMessage("集合单格式错误！", false, EnMessageType.A, false);
-                    }
-                }
-            }
-        }
-
         #endregion
 
         #region FOCUS
-
-        private void FocusTaskNo()
-        {
-            this.txtTaskNo.Text = string.Empty;
-            this.txtTaskNo.Focus();
-        }
 
         #endregion
 
@@ -135,6 +107,21 @@ namespace SCM.RF.Client.Tool.Controls.Picking
         }
 
         #endregion
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProv_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
 
      }
 }
