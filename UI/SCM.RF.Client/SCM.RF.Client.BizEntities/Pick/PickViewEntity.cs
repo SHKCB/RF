@@ -12,6 +12,7 @@ namespace SCM.RF.Client.BizEntities.Pick
             this.UName = entity.UName;
             this.PWD = entity.PWD;
             this.WareHouseId = entity.WareHouseId;
+            this.Device = entity.Device;
         }
 
         /// <summary>
