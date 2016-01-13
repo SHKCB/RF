@@ -9,5 +9,9 @@ namespace SCM.RF.Server.BizEntities.Pick
         /// 任务号
         /// </summary>
         public string TaskNo { get; set; }
+
+        public OrderMasterEntity[] OrderMasterList { get; set; }
+
+        public OrderItemEntity[] OrderItemList { get; set; }
     }
 }
