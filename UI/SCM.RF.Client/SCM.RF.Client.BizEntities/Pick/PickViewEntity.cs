@@ -4,12 +4,14 @@ namespace SCM.RF.Client.BizEntities.Pick
 {
     public class PickViewEntity : BaseViewEntity
     {
+        public PickViewEntity() { }
+
         public PickViewEntity(BaseViewEntity entity)
         {
-            this.CID = base.CID;
-            this.UName = base.UName;
-            this.PWD = base.PWD;
-            this.WareHouseId = base.WareHouseId;
+            this.CID = entity.CID;
+            this.UName = entity.UName;
+            this.PWD = entity.PWD;
+            this.WareHouseId = entity.WareHouseId;
         }
 
         /// <summary>

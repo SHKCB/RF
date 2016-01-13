@@ -282,8 +282,6 @@ namespace SCM.RF.Client.Tool.Controls.Login
             }
         }
 
-
-
         #region 1收货
 
         private void Receive()
@@ -302,12 +300,14 @@ namespace SCM.RF.Client.Tool.Controls.Login
         }
 
         #endregion
+
         #region 3上架
         private void PutAway()
         {
             //base.RF.ShowPicking1();
         }
         #endregion
+
         #region 4拣货
 
         private void Pick()
@@ -316,6 +316,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
         }
 
         #endregion
+
         #region 5移库
         private void Transfer()
         {
@@ -323,6 +324,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
         }
 
         #endregion
+
         #region 0交接
         private void HandOver()
         {
@@ -330,6 +332,7 @@ namespace SCM.RF.Client.Tool.Controls.Login
         }
 
         #endregion
+
         #endregion
 
         #endregion

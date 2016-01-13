@@ -9,14 +9,6 @@ using SCM.RF.Client.Utility;
 using SCM.RF.Client.BizProcess.Sys;
 using SCM.RF.Client.BizEntities.Sys;
 using SCM.RF.Client.BizEntities.Receive;
-//using SCM.RF.Client.BizEntities.HandOver;
-//using SCM.RF.Client.BizEntities.Picking;
-//using SCM.RF.Client.BizEntities.Sys;
-//using SCM.RF.Client.BizProcess.Sys;
-//using SCM.RF.Client.Framework.Core;
-//using SCM.RF.Client.Tool.Controls.PutAway;
-//using SCM.RF.Client.Utility;
-//using Justyle.WMS.RF.Server.BizEntities.Putaway;
 
 namespace SCM.RF.Client.Tool
 {
@@ -40,15 +32,18 @@ namespace SCM.RF.Client.Tool
         /// 收货主界面
         /// </summary>
         private SCM.RF.Client.Tool.Controls.Receive.UCReceiveMain ucReceive;
+        /// <summary>
+        /// 收货详细
+        /// </summary>
         private SCM.RF.Client.Tool.Controls.Receive.UCReceiveDetail_2 ucReceive2;
-
         /// <summary>
         /// 拣货1级页面
         /// </summary>
         private SCM.RF.Client.Tool.Controls.Picking.UCPicking1 ucPicking1;
-        //private SCM.RF.Client.Tool.Controls.Picking.UCPicking2 ucPicking2;
-        //private SCM.RF.Client.Tool.Controls.Picking.UCPicking3 ucPicking3;
-
+        /// <summary>
+        /// 拣货 - 按任务单号拣货
+        /// </summary>
+        private SCM.RF.Client.Tool.Controls.Picking.UCPickingByTaskID ucPickingByTaskID;
 
         #endregion
 
@@ -321,6 +316,7 @@ namespace SCM.RF.Client.Tool
             this.ucPicking1.Init(EnHookType.G1);
             this.ucPicking1.Init(this.RemoteServer, this.UserViewEntity);
             this.ucPicking1.Init();
+            this.ucPicking1.LoadData();
         }
 
         /// <summary>
@@ -336,12 +332,46 @@ namespace SCM.RF.Client.Tool
             }
         }
 
+        /// <summary>
+        /// 显示 按任务号拣货
+        /// </summary>
+        public void ShowPickingByTaskID()
+        {
+            if (this.Controls.IndexOf(this.ucPickingByTaskID) < 0)
+            {
+                this.ucPickingByTaskID = new SCM.RF.Client.Tool.Controls.Picking.UCPickingByTaskID(this);
+                this.ucPickingByTaskID.Location = new System.Drawing.Point(10, 30);
+                this.ucPickingByTaskID.Name = "ucPickingByTaskID";
+                this.ucPickingByTaskID.Size = new System.Drawing.Size(300, 260);
+                this.ucPickingByTaskID.TabIndex = 1;
+                this.ucPickingByTaskID.TabStop = false;
+                this.Controls.Add(this.ucPickingByTaskID);
+            }
+            this.ucPickingByTaskID.Visible = true;
+            this.ucPickingByTaskID.BringToFront();
+            this.ucPickingByTaskID.Init(EnHookType.G1);
+            this.ucPickingByTaskID.Init(this.RemoteServer, this.UserViewEntity);
+            this.ucPickingByTaskID.Init();
+        }
+
+        /// <summary>
+        /// 隐藏 按任务号拣货
+        /// </summary>
+        public void HidePickingByTaskID()
+        {
+            if (this.ucPickingByTaskID != null && this.Controls.IndexOf(this.ucPickingByTaskID) > -1)
+            {
+                this.ucPickingByTaskID.Visible = false;
+                this.ucPickingByTaskID = null;
+                this.Controls.Remove(this.ucPickingByTaskID);
+            }
+        }
+
         #endregion
 
         #region 5、移库
 
         #endregion
-
 
         #region 设置
 

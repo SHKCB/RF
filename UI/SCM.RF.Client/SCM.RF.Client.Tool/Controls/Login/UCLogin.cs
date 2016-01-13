@@ -2,9 +2,9 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Net;
 using System.Windows.Forms;
+using SCM.RF.Client.BizEntities.AuthCenter;
 using SCM.RF.Client.Framework.Core;
 using SCM.RF.Client.Tool.Controls.Common;
-using SCM.RF.Client.BizEntities.AuthCenter;
 
 /*
  *  µÇÂ¼½çÃæ
@@ -45,16 +45,6 @@ namespace SCM.RF.Client.Tool.Controls.Login
             this.btnSetting.Enabled = false;
             base.RF.ShowSetting();
             this.btnSetting.Enabled = true;
-        }
-
-        private void txtBarCode_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                e.Handled = true;
-
-                FocusUserName();
-            }
         }
 
         private void txtUserName_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)

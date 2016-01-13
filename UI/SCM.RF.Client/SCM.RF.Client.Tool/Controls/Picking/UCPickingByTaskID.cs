@@ -3,6 +3,9 @@ using SCM.RF.Client.Tool;
 using SCM.RF.Client.Tool.Controls.Common;
 using System.Windows.Forms;
 using SCM.RF.Client.Utility;
+using System.Drawing;
+using SCM.RF.Client.BizEntities.Pick;
+using SCM.RF.Client.BizProcess.Pick;
 
 namespace SCM.RF.Client.Tool.Controls.Picking
 {
@@ -55,7 +58,7 @@ namespace SCM.RF.Client.Tool.Controls.Picking
                 {
                     if (StringHelper.ISStringInt32(txtTaskNo))
                     {
-                        //FocusContainer();
+                        this.LoadData(txtTaskNo);
                     }
                     else
                     {
@@ -63,6 +66,11 @@ namespace SCM.RF.Client.Tool.Controls.Picking
                     }
                 }
             }
+        }
+
+        private void txtType_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
 
         #endregion
@@ -73,6 +81,34 @@ namespace SCM.RF.Client.Tool.Controls.Picking
         {
             this.txtTaskNo.Text = string.Empty;
             this.txtTaskNo.Focus();
+        }
+
+        private void FocusType()
+        {
+            this.txtType.Text = string.Empty;
+            this.txtType.Focus();
+        }
+
+        private void txtTaskNo_GotFocus(object sender, System.EventArgs e)
+        {
+            this.pbTaskNo.BackColor = Color.Yellow;
+            this.pbType.BackColor = Color.White;
+        }
+
+        private void txtTaskNo_LostFocus(object sender, System.EventArgs e)
+        {
+            this.pbTaskNo.BackColor = Color.White;
+        }
+
+        private void txtType_GotFocus(object sender, System.EventArgs e)
+        {
+            this.pbTaskNo.BackColor = Color.White;
+            this.pbType.BackColor = Color.Yellow;
+        }
+
+        private void txtType_LostFocus(object sender, System.EventArgs e)
+        {
+            this.pbType.BackColor = Color.White;
         }
 
         #endregion
@@ -95,31 +131,39 @@ namespace SCM.RF.Client.Tool.Controls.Picking
 
         private void LoadData(string taskno)
         {
+            PickViewEntity param = new PickViewEntity(base.UserView);
+            param.TaskNo = taskno;
+
+            ////加载数据
+            PickViewEntity result = new PickBP().GetEntity(param, base.RemoteServer);
+
+            if (result != null)
+            {
+                // 状态为 A - 准备移库
+                if (result.Success)
+                {
+                    //base.RF.ShowPicking2(result);
+
+                    this.txtType.ReadOnly = false;
+                    this.FocusType();
+                }
+                else
+                {
+                    base.ShowMessage(result.Message, false, EnMessageType.A, false);
+                }
+            }
+            else
+            {
+                base.ShowMessage("错误，重新登录！", false, EnMessageType.B, false);
+            }
+
             //LabelViewEntity param = new LabelViewEntity();
             //param.ContainerID = containerid;
             //param.SysNo = 0;
             //param.LabelNO = taskno;
             //param.InUser = base.UserViewEntity.UserName;
 
-            ////加载数据
-            //LabelViewEntity result = new LabelBP().GetEntity(param, base.RemoteServer);
 
-            //if (result != null)
-            //{
-            //    // 状态为 A - 准备移库
-            //    if (result.Success)
-            //    {
-            //        base.RF.ShowPicking2(result);
-            //    }
-            //    else
-            //    {
-            //        base.ShowMessage(result.Message, false, EnMessageType.A, false);
-            //    }
-            //}
-            //else
-            //{
-            //    base.ShowMessage("错误，重新登录！", false, EnMessageType.B, false);
-            //}
         }
 
         #endregion
@@ -135,6 +179,5 @@ namespace SCM.RF.Client.Tool.Controls.Picking
         }
 
         #endregion
-
      }
 }
