@@ -73,7 +73,10 @@ namespace SCM.RF.Server.Utility
             for (int i = 0; i < properties.Length; i++)
             {
                 try { properties[i].SetValue(t, node[properties[i].Name.ToLower()].InnerText, null); }
-                catch { properties[i].SetValue(t, "", null); }
+                catch 
+                {
+                    continue;
+                }
                 
             }
 

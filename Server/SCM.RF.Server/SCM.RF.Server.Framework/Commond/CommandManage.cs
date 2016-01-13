@@ -53,14 +53,16 @@ namespace SCM.RF.Server.Framework.Commond
                 {
                     result = LoginIn(content);
                 }
+                //获得入库单明细
                 else if (action == "1001")
                 {
                     result = GetReceiveDetail(content);
                 }
-                //else if (action == "0002")
-                //{
-                //    result = CellSelect(content);
-                //}
+                //获得货品信息
+                else if (action == "1002")
+                {
+                    result = GetGoodsUnitInfos(content);
+                }
                 //else if (action == "0003")
                 //{
                 //    result = CellPalSelect(content);
@@ -321,6 +323,17 @@ namespace SCM.RF.Server.Framework.Commond
             return result;
         }
 
+
+        public string GetGoodsUnitInfos(string receive) 
+        {
+            ReceiveDetailViewEntity param = SerializeHelper.Deserialize<ReceiveDetailViewEntity>(receive);
+
+            ReceiveDetailViewEntity entity = new ReceiveBP().GetGoodsUnitInfos(param);
+
+            string result = SerializeHelper.Serialize(entity);
+
+            return result;
+        }
 
         #endregion
 

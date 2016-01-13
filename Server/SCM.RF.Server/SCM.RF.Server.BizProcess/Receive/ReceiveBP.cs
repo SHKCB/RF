@@ -11,5 +11,12 @@ namespace SCM.RF.Server.BizProcess.Receive
 
             return entity;
         }
+
+        public ReceiveDetailViewEntity GetGoodsUnitInfos(ReceiveDetailViewEntity entity)
+        {
+            entity = ReceiveDA.GetGoodsUnitInfos(ref entity);
+
+            return entity;
+        }
     }
 }

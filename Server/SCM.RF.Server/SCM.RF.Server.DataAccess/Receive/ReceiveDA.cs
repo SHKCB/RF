@@ -90,5 +90,33 @@ namespace SCM.RF.Server.DataAccess.Receive
             return entity;
 
         }
+
+        public static ReceiveDetailViewEntity GetGoodsUnitInfos(ref ReceiveDetailViewEntity entity) 
+        {
+            SCM.RF.Server.Adapt.IWebWarehouseServiceQYBService service = new Adapt.IWebWarehouseServiceQYBService();
+
+            string param = @"<?xml version='1.0' encoding='UTF-8'?>
+                                <rt>
+                                <tid>" + entity.TID + @"</tid>
+                                <uname>" + entity.UName + @"</uname>
+                                <pwd>" + entity.PWD + @"</pwd>
+                                <cid>" + entity.CID + @"</cid>        
+                                <warehouseid>" + entity.WareHouseId + @"</warehouseid>                             
+                                <goodsid>" + entity.Goodsid + @"</goodsid>
+                            </rt>";
+
+            string xmlstring = service.getInstockDetail(param);
+
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xmlstring);
+
+            return entity;
+        }
+
+        /*
+         *  CheckBarocdeUnit_service 条码扫入执行
+            getSJGZRule_service 下一步执行
+            receiveGoods_service 确定
+         */
     }
 }

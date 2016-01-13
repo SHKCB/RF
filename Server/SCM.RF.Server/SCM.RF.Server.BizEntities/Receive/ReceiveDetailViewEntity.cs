@@ -1,7 +1,8 @@
 ﻿
+using SCM.RF.Server.BizEntities.Sys;
 namespace SCM.RF.Server.BizEntities.Receive
 {
-    public class ReceiveDetailViewEntity
+    public class ReceiveDetailViewEntity:BaseViewEntity
     {
         /// <summary>
         /// 构造
