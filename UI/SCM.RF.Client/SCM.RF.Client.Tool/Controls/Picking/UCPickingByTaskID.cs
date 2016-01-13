@@ -6,11 +6,19 @@ using SCM.RF.Client.Utility;
 using System.Drawing;
 using SCM.RF.Client.BizEntities.Pick;
 using SCM.RF.Client.BizProcess.Pick;
+using System.Collections;
 
 namespace SCM.RF.Client.Tool.Controls.Picking
 {
     public partial class UCPickingByTaskID : UCBasicControl
     {
+        /// <summary>
+        /// 权限 列表
+        /// </summary>
+        private Hashtable _Hashtable;
+
+        private PickViewEntity _PickViewEntity;
+
         /// <summary>
         /// 初始化
         /// </summary>
@@ -26,6 +34,8 @@ namespace SCM.RF.Client.Tool.Controls.Picking
         public override void Init()
         {
             base.SetTitle("按 [任务号] - 拣货");
+
+            this._PickViewEntity = null;
 
             this.FocusTaskNo();
         }
@@ -70,9 +80,31 @@ namespace SCM.RF.Client.Tool.Controls.Picking
             }
         }
 
-        private void txtType_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtType_TextChanged(object sender, EventArgs e)
         {
+            string txt = this.txtType.Text.Trim();
 
+            if (txt.Length > 0)
+            {
+                if (!SCM.RF.Client.Utility.StringHelper.ISInt(txt))
+                {
+                    base.ShowMessage("请输入正确指令！", false, EnMessageType.A, false);
+                }
+                else
+                {
+                    //判断是否有权限，并且按对键
+                    int keyvalue = GetKey(txt);
+
+                    if (keyvalue > -1)
+                    {
+                        GetModel(int.Parse(txt));
+                    }
+                    else
+                    {
+                        base.ShowMessage("请输入正确指令！", false, EnMessageType.A, false);
+                    }
+                }
+            }
         }
 
         #endregion
@@ -144,9 +176,10 @@ namespace SCM.RF.Client.Tool.Controls.Picking
                 // 状态为 A - 准备移库
                 if (result.Success)
                 {
-                    //base.RF.ShowPicking2(result);
+                    this._PickViewEntity = result;
 
                     this.txtType.ReadOnly = false;
+
                     this.FocusType();
                 }
                 else
@@ -158,16 +191,69 @@ namespace SCM.RF.Client.Tool.Controls.Picking
             {
                 base.ShowMessage("错误，重新登录！", false, EnMessageType.B, false);
             }
-
-            //LabelViewEntity param = new LabelViewEntity();
-            //param.ContainerID = containerid;
-            //param.SysNo = 0;
-            //param.LabelNO = taskno;
-            //param.InUser = base.UserViewEntity.UserName;
-
-
         }
 
+        /// <summary>
+        /// 加载对应的功能
+        /// </summary>
+        /// <param name="key"></param>
+        private void GetModel(int key)
+        {
+            switch (key)
+            {
+                case 1:
+                    base.RF.ShowUCPickingByTaskID4(this._PickViewEntity);
+                    break;
+                //case 2: Location();
+                //    break;
+                default: break;
+            }
+        }
+
+        /// <summary>
+        /// 判断是否有效按键，否者返回。
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        private int GetKey(string txtValue)
+        {
+            switch (txtValue)
+            {
+                case "1":
+                    if (_Hashtable.ContainsKey(1))
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+
+                case "2":
+                    if (_Hashtable.ContainsKey(2))
+                    {
+                        return 2;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+
+                default: return -1;
+            }
+        }
+
+        #endregion
+
+        #region PUBLIC FUNCTION
+
+        public void LoadData()
+        {
+            this._Hashtable = new Hashtable(0);
+
+            this._Hashtable.Add(1, null);
+            this._Hashtable.Add(2, null);
+        }
         #endregion
 
         #region 供快捷键调用 本级页面
@@ -181,5 +267,5 @@ namespace SCM.RF.Client.Tool.Controls.Picking
         }
 
         #endregion
-     }
+    }
 }

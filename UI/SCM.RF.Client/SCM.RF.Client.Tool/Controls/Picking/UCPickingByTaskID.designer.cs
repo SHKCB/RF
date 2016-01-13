@@ -111,8 +111,8 @@
             this.txtType.TabStop = false;
             this.txtType.Tag = "True";
             this.txtType.WordWrap = false;
+            this.txtType.TextChanged += new System.EventHandler(this.txtType_TextChanged);
             this.txtType.GotFocus += new System.EventHandler(this.txtType_GotFocus);
-            this.txtType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtType_KeyPress);
             this.txtType.LostFocus += new System.EventHandler(this.txtType_LostFocus);
             // 
             // lbType

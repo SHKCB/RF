@@ -144,21 +144,6 @@ namespace SCM.RF.Client.Tool.Controls.Login
 
                     if (keyvalue > -1)
                     {
-                        //IEnumerator iEnum = this.panelMenu.Controls.GetEnumerator();
-
-                        //while (iEnum.MoveNext())
-                        //{
-                        //    if (iEnum.Current is Label)
-                        //    {
-                        //        Label lable = iEnum.Current as Label;
-
-                        //        if (lable != null && lable.Tag != null && int.Parse(lable.Tag.ToString()) == keyvalue)
-                        //        {
-                        //            GetModel(int.Parse(lable.Tag.ToString()));
-                        //        }
-                        //    }
-                        //}
-
                         GetModel(int.Parse(txt));
                     }
                     else

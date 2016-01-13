@@ -9,6 +9,7 @@ using SCM.RF.Client.Utility;
 using SCM.RF.Client.BizProcess.Sys;
 using SCM.RF.Client.BizEntities.Sys;
 using SCM.RF.Client.BizEntities.Receive;
+using SCM.RF.Client.BizEntities.Pick;
 
 namespace SCM.RF.Client.Tool
 {
@@ -37,13 +38,17 @@ namespace SCM.RF.Client.Tool
         /// </summary>
         private SCM.RF.Client.Tool.Controls.Receive.UCReceiveDetail_2 ucReceive2;
         /// <summary>
-        /// 拣货1级页面
+        /// 拣货目录
         /// </summary>
         private SCM.RF.Client.Tool.Controls.Picking.UCPicking1 ucPicking1;
         /// <summary>
         /// 拣货 - 按任务单号拣货
         /// </summary>
         private SCM.RF.Client.Tool.Controls.Picking.UCPickingByTaskID ucPickingByTaskID;
+        /// <summary>
+        /// 拣货页面
+        /// </summary>
+        private SCM.RF.Client.Tool.Controls.Picking.UCPickingByTaskID4 ucPickingByTaskID4;
 
         #endregion
 
@@ -349,8 +354,9 @@ namespace SCM.RF.Client.Tool
             }
             this.ucPickingByTaskID.Visible = true;
             this.ucPickingByTaskID.BringToFront();
-            this.ucPickingByTaskID.Init(EnHookType.G1);
+            this.ucPickingByTaskID.Init(EnHookType.G2);
             this.ucPickingByTaskID.Init(this.RemoteServer, this.UserViewEntity);
+            this.ucPickingByTaskID.LoadData();
             this.ucPickingByTaskID.Init();
         }
 
@@ -364,6 +370,42 @@ namespace SCM.RF.Client.Tool
                 this.ucPickingByTaskID.Visible = false;
                 this.ucPickingByTaskID = null;
                 this.Controls.Remove(this.ucPickingByTaskID);
+            }
+        }
+
+        /// <summary>
+        /// 显示 拣货页面
+        /// </summary>
+        public void ShowUCPickingByTaskID4(PickViewEntity entity)
+        {
+            if (this.Controls.IndexOf(this.ucPickingByTaskID4) < 0)
+            {
+                this.ucPickingByTaskID4 = new SCM.RF.Client.Tool.Controls.Picking.UCPickingByTaskID4(this);
+                this.ucPickingByTaskID4.Location = new System.Drawing.Point(10, 30);
+                this.ucPickingByTaskID4.Name = "ucPickingByTaskID4";
+                this.ucPickingByTaskID4.Size = new System.Drawing.Size(300, 260);
+                this.ucPickingByTaskID4.TabIndex = 1;
+                this.ucPickingByTaskID4.TabStop = false;
+                this.Controls.Add(this.ucPickingByTaskID4);
+            }
+            this.ucPickingByTaskID4.Visible = true;
+            this.ucPickingByTaskID4.BringToFront();
+            this.ucPickingByTaskID4.Init(EnHookType.G4);
+            this.ucPickingByTaskID4.Init(this.RemoteServer, this.UserViewEntity);
+            this.ucPickingByTaskID4.LoadData(entity);
+            this.ucPickingByTaskID4.Init();
+        }
+
+        /// <summary>
+        /// 隐藏 拣货页面
+        /// </summary>
+        public void HideUCPickingByTaskID4()
+        {
+            if (this.ucPickingByTaskID4 != null && this.Controls.IndexOf(this.ucPickingByTaskID4) > -1)
+            {
+                this.ucPickingByTaskID4.Visible = false;
+                this.ucPickingByTaskID4 = null;
+                this.Controls.Remove(this.ucPickingByTaskID4);
             }
         }
 
@@ -1312,19 +1354,24 @@ namespace SCM.RF.Client.Tool
         F4 = 14,
 
         /// <summary>
-        /// 拣货1
+        /// 拣货目录
         /// </summary>
         G1 = 15,
 
         /// <summary>
-        /// 拣货2
+        /// 拣货 按任务
         /// </summary>
         G2 = 16,
 
         /// <summary>
-        /// 拣货3 病单
+        /// 拣货
         /// </summary>
         G3 = 17,
+
+        /// <summary>
+        /// 拣货页面
+        /// </summary>
+        G4 = 18,
 
         /// <summary>
         /// 盘点目录
