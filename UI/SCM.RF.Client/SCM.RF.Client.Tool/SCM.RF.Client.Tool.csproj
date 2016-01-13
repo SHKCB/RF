@@ -119,6 +119,12 @@
     <Compile Include="Controls\Picking\UCPickingByTaskID4.designer.cs">
       <DependentUpon>UCPickingByTaskID4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Receive\UCReceiveConfirm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Receive\UCReceiveConfirm.Designer.cs">
+      <DependentUpon>UCReceiveConfirm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Receive\UCReceiveDetail_2.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,6 +136,12 @@
     </Compile>
     <Compile Include="Controls\Receive\UCReceiveItem_3.Designer.cs">
       <DependentUpon>UCReceiveItem_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Receive\UCReceiveItem_3_bak.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Receive\UCReceiveItem_3_bak.Designer.cs">
+      <DependentUpon>UCReceiveItem_3_bak.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Receive\UCReceiveMain.cs">
       <SubType>UserControl</SubType>
@@ -175,11 +187,17 @@
     <EmbeddedResource Include="Controls\Picking\UCPickingByTaskID4.resx">
       <DependentUpon>UCPickingByTaskID4.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Receive\UCReceiveConfirm.resx">
+      <DependentUpon>UCReceiveConfirm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Receive\UCReceiveDetail_2.resx">
       <DependentUpon>UCReceiveDetail_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Receive\UCReceiveItem_3.resx">
       <DependentUpon>UCReceiveItem_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Receive\UCReceiveItem_3_bak.resx">
+      <DependentUpon>UCReceiveItem_3_bak.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Receive\UCReceiveMain.resx">
       <DependentUpon>UCReceiveMain.cs</DependentUpon>

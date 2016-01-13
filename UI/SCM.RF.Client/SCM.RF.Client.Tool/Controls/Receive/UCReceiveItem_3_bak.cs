@@ -10,11 +10,11 @@ using SCM.RF.Client.Tool.Controls.Common;
 
 namespace SCM.RF.Client.Tool.Controls.Receive
 {
-    public partial class UCReceiveItem_3 : UCBasicControl
+    public partial class UCReceiveItem_3_bak : UCBasicControl
     {
         #region LoadFunction
 
-        public UCReceiveItem_3(RF rf)
+        public UCReceiveItem_3_bak(RF rf)
             : base(rf)
         {
             InitializeComponent();
@@ -50,12 +50,17 @@ namespace SCM.RF.Client.Tool.Controls.Receive
 
         #endregion
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void txtReceiveNo_GotFocus(object sender, EventArgs e)
         {
 
         }
 
-        private void btnSet_Click(object sender, EventArgs e)
+        private void txtReceiveNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtReceiveNo_LostFocus(object sender, EventArgs e)
         {
 
         }

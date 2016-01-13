@@ -77,6 +77,7 @@
             this.txtBarCode.Tag = "True";
             this.txtBarCode.WordWrap = false;
             this.txtBarCode.GotFocus += new System.EventHandler(this.txtBarCode_GotFocus);
+            this.txtBarCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBarCode_KeyPress);
             this.txtBarCode.LostFocus += new System.EventHandler(this.txtBarCode_LostFocus);
             // 
             // lvData

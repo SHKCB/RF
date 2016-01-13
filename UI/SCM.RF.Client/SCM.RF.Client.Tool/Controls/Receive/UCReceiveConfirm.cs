@@ -10,11 +10,11 @@ using SCM.RF.Client.Tool.Controls.Common;
 
 namespace SCM.RF.Client.Tool.Controls.Receive
 {
-    public partial class UCReceiveItem_3 : UCBasicControl
+    public partial class UCReceiveConfirm : UCBasicControl
     {
         #region LoadFunction
 
-        public UCReceiveItem_3(RF rf)
+        public UCReceiveConfirm(RF rf)
             : base(rf)
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace SCM.RF.Client.Tool.Controls.Receive
 
         public override void Init()
         {
-            base.SetTitle("收货-商品");
+            base.SetTitle("收货-确认");
 
            //this.FocusReceiveNo();
         }
@@ -49,15 +49,5 @@ namespace SCM.RF.Client.Tool.Controls.Receive
         }
 
         #endregion
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSet_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

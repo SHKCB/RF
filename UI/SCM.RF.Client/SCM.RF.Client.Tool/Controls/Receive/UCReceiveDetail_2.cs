@@ -3,6 +3,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using SCM.RF.Client.BizEntities.Receive;
 using SCM.RF.Client.Tool.Controls.Common;
+using SCM.RF.Client.Utility;
+using SCM.RF.Client.BizProcess.Receive;
 
 namespace SCM.RF.Client.Tool.Controls.Receive
 {
@@ -78,7 +80,7 @@ namespace SCM.RF.Client.Tool.Controls.Receive
         }
 
         #endregion
-        
+
         #region FOCUS
         private void txtBarCode_GotFocus(object sender, EventArgs e)
         {
@@ -100,6 +102,21 @@ namespace SCM.RF.Client.Tool.Controls.Receive
         {
             this.txtBarCode.Text = string.Empty;
             this.txtBarCode.Focus();
+        }
+
+        private void GetSingle(string barcode)
+        {
+            ReceiveDetailViewEntity entity = new ReceiveDetailViewEntity(base.UserView);
+
+            for (int i = 0; i < this._header.Detail.Length; i++)
+            {
+                if (this._header.Detail[i].Cbarcode == barcode)
+                {
+                    entity.Goodsid = this._header.Detail[i].Goodsid;
+                }
+            }
+
+            entity = new ReceiveBP().GetGoodsUnitInfos(entity, this.RF.RemoteServer);
         }
 
         #endregion
@@ -125,10 +142,35 @@ namespace SCM.RF.Client.Tool.Controls.Receive
         /// <param name="e"></param>
         private void btnSet_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void txtBarCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+
+                string txtcode = this.txtBarCode.Text.Trim().ToUpper();
+
+                if (txtcode.Length > 0)
+                {
+                    if (StringHelper.ISStringInt32(txtcode))
+                    {
+                        GetSingle(txtcode);
+                    }
+                    else
+                    {
+                        base.ShowMessage("条码格式错误！", false, EnMessageType.A, false);
+                    }
+                }
+
+            }
         }
 
         #endregion
-               
+
+
+
     }
 }
