@@ -11,5 +11,12 @@ namespace SCM.RF.Client.BizProcess.Receive
 
             return entity;
         }
+
+      public ReceiveDetailViewEntity GetGoodsUnitInfos(ReceiveDetailViewEntity entity, RemoteServer remote)
+      {
+          entity = remote.Commond<ReceiveDetailViewEntity>(entity, "1002");
+
+          return entity;
+      }
     }
 }
