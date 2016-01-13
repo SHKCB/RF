@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Xml;
 
 namespace SCM.RF.Server.Utility
@@ -62,6 +63,21 @@ namespace SCM.RF.Server.Utility
             }
 
             return entity;
+        }
+
+        public T GetEntityByNode(T t, XmlNode node)
+        {
+            XmlNodeList nodes = node.ChildNodes;
+            PropertyInfo[] properties = t.GetType().GetProperties();
+
+            for (int i = 0; i < properties.Length; i++)
+            {
+                try { properties[i].SetValue(t, node[properties[i].Name.ToLower()].InnerText, null); }
+                catch { properties[i].SetValue(t, "", null); }
+                
+            }
+
+            return t;
         }
     }
 }

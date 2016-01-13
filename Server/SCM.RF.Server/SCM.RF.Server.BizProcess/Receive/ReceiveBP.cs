@@ -7,7 +7,7 @@ namespace SCM.RF.Server.BizProcess.Receive
     {
         public ReceiveHeaderViewEntity GetReceiveDetail(ReceiveHeaderViewEntity entity)
         {
-            ReceiveDA.GetReceiveDetail(entity);
+            entity = ReceiveDA.GetReceiveDetail(ref entity);
 
             return entity;
         }
