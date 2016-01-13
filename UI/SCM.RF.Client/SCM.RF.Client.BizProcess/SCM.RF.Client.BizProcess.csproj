@@ -59,7 +59,9 @@
     <Compile Include="Login\LoginBP.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Pick\PickBP.cs" />
+    <Compile Include="Pick\PickBP.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receive\ReceiveBP.cs" />
     <Compile Include="Sys\InstanceBP.cs" />
