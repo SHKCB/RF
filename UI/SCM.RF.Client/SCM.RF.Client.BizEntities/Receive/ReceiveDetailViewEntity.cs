@@ -60,7 +60,7 @@ namespace SCM.RF.Client.BizEntities.Receive
 
         public string Stockstatus { get; set; }
 
-        public string Inserial { get; set; }
+        public bool Inserial { get; set; }
 
         public string Instockid { get; set; }
 
