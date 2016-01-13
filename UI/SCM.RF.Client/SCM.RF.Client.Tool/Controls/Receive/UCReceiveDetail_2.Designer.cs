@@ -33,8 +33,17 @@
             this.txtReceiveNo = new System.Windows.Forms.TextBox();
             this.lvData = new System.Windows.Forms.ListView();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSet = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.clBarCode = new System.Windows.Forms.ColumnHeader();
+            this.clProduct = new System.Windows.Forms.ColumnHeader();
+            this.clName = new System.Windows.Forms.ColumnHeader();
+            this.clSpec = new System.Windows.Forms.ColumnHeader();
+            this.clCount = new System.Windows.Forms.ColumnHeader();
+            this.clBox = new System.Windows.Forms.ColumnHeader();
+            this.clOpenCount = new System.Windows.Forms.ColumnHeader();
+            this.clOpenBox = new System.Windows.Forms.ColumnHeader();
+            this.clId = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // lblBarcode
@@ -72,6 +81,15 @@
             // lvData
             // 
             this.lvData.BackColor = System.Drawing.Color.Black;
+            this.lvData.Columns.Add(this.clBarCode);
+            this.lvData.Columns.Add(this.clProduct);
+            this.lvData.Columns.Add(this.clName);
+            this.lvData.Columns.Add(this.clSpec);
+            this.lvData.Columns.Add(this.clCount);
+            this.lvData.Columns.Add(this.clBox);
+            this.lvData.Columns.Add(this.clOpenCount);
+            this.lvData.Columns.Add(this.clOpenBox);
+            this.lvData.Columns.Add(this.clId);
             this.lvData.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular);
             this.lvData.ForeColor = System.Drawing.Color.White;
             this.lvData.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -95,39 +113,84 @@
             this.btnCancel.Tag = "True";
             this.btnCancel.Text = "返回 [&F4]";
             // 
-            // button1
+            // btnSet
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(100, 235);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 25);
-            this.button1.TabIndex = 5;
-            this.button1.TabStop = false;
-            this.button1.Tag = "True";
-            this.button1.Text = "返回 [&F4]";
+            this.btnSet.BackColor = System.Drawing.Color.Black;
+            this.btnSet.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
+            this.btnSet.ForeColor = System.Drawing.Color.White;
+            this.btnSet.Location = new System.Drawing.Point(100, 235);
+            this.btnSet.Name = "btnSet";
+            this.btnSet.Size = new System.Drawing.Size(80, 25);
+            this.btnSet.TabIndex = 5;
+            this.btnSet.TabStop = false;
+            this.btnSet.Tag = "True";
+            this.btnSet.Text = "设置";
             // 
-            // button2
+            // btnNext
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(189, 235);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 25);
-            this.button2.TabIndex = 6;
-            this.button2.TabStop = false;
-            this.button2.Tag = "True";
-            this.button2.Text = "返回 [&F4]";
+            this.btnNext.BackColor = System.Drawing.Color.Black;
+            this.btnNext.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.Location = new System.Drawing.Point(189, 235);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(80, 25);
+            this.btnNext.TabIndex = 6;
+            this.btnNext.TabStop = false;
+            this.btnNext.Tag = "True";
+            this.btnNext.Text = "下一步";
+            // 
+            // clBarCode
+            // 
+            this.clBarCode.Text = "商品条码";
+            this.clBarCode.Width = 60;
+            // 
+            // clProduct
+            // 
+            this.clProduct.Text = "商品编码";
+            this.clProduct.Width = 60;
+            // 
+            // clName
+            // 
+            this.clName.Text = "商品名称";
+            this.clName.Width = 60;
+            // 
+            // clSpec
+            // 
+            this.clSpec.Text = "规格";
+            this.clSpec.Width = 60;
+            // 
+            // clCount
+            // 
+            this.clCount.Text = "预到数";
+            this.clCount.Width = 60;
+            // 
+            // clBox
+            // 
+            this.clBox.Text = "预到数：托/箱";
+            this.clBox.Width = 60;
+            // 
+            // clOpenCount
+            // 
+            this.clOpenCount.Text = "未收数";
+            this.clOpenCount.Width = 60;
+            // 
+            // clOpenBox
+            // 
+            this.clOpenBox.Text = "未收数：托/箱";
+            this.clOpenBox.Width = 60;
+            // 
+            // clId
+            // 
+            this.clId.Text = "id";
+            this.clId.Width = 60;
             // 
             // UCReceiveDetail_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Black;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnSet);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lvData);
             this.Controls.Add(this.pbReceiveNo);
@@ -147,7 +210,16 @@
         private System.Windows.Forms.TextBox txtReceiveNo;
         private System.Windows.Forms.ListView lvData;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSet;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.ColumnHeader clBarCode;
+        private System.Windows.Forms.ColumnHeader clProduct;
+        private System.Windows.Forms.ColumnHeader clName;
+        private System.Windows.Forms.ColumnHeader clSpec;
+        private System.Windows.Forms.ColumnHeader clCount;
+        private System.Windows.Forms.ColumnHeader clBox;
+        private System.Windows.Forms.ColumnHeader clOpenCount;
+        private System.Windows.Forms.ColumnHeader clOpenBox;
+        private System.Windows.Forms.ColumnHeader clId;
     }
 }
